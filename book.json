@@ -1,0 +1,10 @@
+{
+    "title": "alt:V Unofficial Docs",
+    "description": "",
+    "plugins": ["gitbook-plugin-expandable-contract-chapters", "honkit-plugin-sitemap"],
+    "pluginsConfig": {
+        "sitemap": {
+            "url": "https://localhost:4000"
+        }
+    }
+}
