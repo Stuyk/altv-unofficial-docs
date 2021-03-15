@@ -4,23 +4,19 @@ description: "The official starting page to get started with alt:V."
 prefix: "[!!!]"
 ---
 
-<img src="https://i.imgur.com/0aXCU9X.gif" height="150" align="right">&nbsp;&nbsp;<h1>Welcome! v1.1.7</h1>
-
-Thanks for trying the alt:V IDE Extension. We have added our most important links below to get you started with development for alt:V. Please check them out below and make sure you read the original extensions `README` file to fully understand how this extension works.
-
-_You may be seeing this page if the extension just updated_
+<img src="https://i.imgur.com/0aXCU9X.gif" height="150" align="right">&nbsp;&nbsp;<h1>alt:V Unofficial Documentation</h1>
 
 ## 📝 Getting Started
 
 Here are some other things you can explore.
 
--   [🚀 alt:V Coding Bootcamp](./docs/articles/bootcamp/index.md)
--   [Articles](./articles/index.md)
--   [Client Articles](./articles/client/index.md)
--   [Concepts Articles](./articles/concepts/index.md)
--   [Server Articles](./articles/server/index.md)
--   [Snippets](./articles/snippets/index.md)
--   [Tables](./articles/tables/index.md)
+-   [🚀 alt:V Coding Bootcamp](./docs/articles/bootcamp/README.md)
+-   [Articles](./docs/articles/README.md)
+-   [Client Articles](./docs/articles/client/README.md)
+-   [Concepts Articles](./docs/articles/concepts/README.md)
+-   [Server Articles](./docs/articles/server/README.md)
+-   [Snippets](./docs/articles/snippets/README.md)
+-   [Tables](./docs/articles/tables/README.md)
 
 _You will find API specific documentatin by searching or hovering._
 
