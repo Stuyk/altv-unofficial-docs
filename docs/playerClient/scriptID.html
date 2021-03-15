@@ -1,0 +1,2648 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>[C] player.scriptID · alt:V Unofficial Docs</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="Get the script ID of a player.">
+        <meta name="generator" content="HonKit 3.6.17">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-gitbook-plugin-expandable-contract-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="seat.html" />
+    
+    
+    <link rel="prev" href="rot.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../alt/">
+            
+                <a href="../alt/">
+            
+                    
+                    Server
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../alt/clearEveryTick.html">
+            
+                <a href="../alt/clearEveryTick.html">
+            
+                    
+                    [S] alt.clearEveryTick
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../alt/clearInterval.html">
+            
+                <a href="../alt/clearInterval.html">
+            
+                    
+                    [S] alt.clearInterval
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../alt/clearNextTick.html">
+            
+                <a href="../alt/clearNextTick.html">
+            
+                    
+                    [S] alt.clearNextTick
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../alt/clearTimeout.html">
+            
+                <a href="../alt/clearTimeout.html">
+            
+                    
+                    [S] alt.ClearTimeout
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../alt/emit.html">
+            
+                <a href="../alt/emit.html">
+            
+                    
+                    [S] alt.emit
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../alt/emitAllClients.html">
+            
+                <a href="../alt/emitAllClients.html">
+            
+                    
+                    [S] alt.emitAllClients
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../alt/emitClient.html">
+            
+                <a href="../alt/emitClient.html">
+            
+                    
+                    [S] alt.emitClient
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../alt/everyTick.html">
+            
+                <a href="../alt/everyTick.html">
+            
+                    
+                    [S] alt.everyTick
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../alt/getNetTime.html">
+            
+                <a href="../alt/getNetTime.html">
+            
+                    
+                    [S] alt.getNetTime
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../alt/getResourceExports.html">
+            
+                <a href="../alt/getResourceExports.html">
+            
+                    
+                    [S] alt.getResourceExports
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="../alt/getResourceMain.html">
+            
+                <a href="../alt/getResourceMain.html">
+            
+                    
+                    [S] alt.getResourceMain
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="../alt/getResourcePath.html">
+            
+                <a href="../alt/getResourcePath.html">
+            
+                    
+                    [S] alt.getResourcePath
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="../alt/hash.html">
+            
+                <a href="../alt/hash.html">
+            
+                    
+                    [S] alt.hash
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="../alt/hasResource.html">
+            
+                <a href="../alt/hasResource.html">
+            
+                    
+                    [S] alt.hasResource
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" data-path="../alt/log.html">
+            
+                <a href="../alt/log.html">
+            
+                    
+                    [S] alt.log
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.16" data-path="../alt/logError.html">
+            
+                <a href="../alt/logError.html">
+            
+                    
+                    [S] alt.logError
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.17" data-path="../alt/logWarning.html">
+            
+                <a href="../alt/logWarning.html">
+            
+                    
+                    [S] alt.logWarning
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.18" data-path="../alt/nextTick.html">
+            
+                <a href="../alt/nextTick.html">
+            
+                    
+                    [S] alt.nextTick
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.19" data-path="../alt/on.html">
+            
+                <a href="../alt/on.html">
+            
+                    
+                    [S] alt.on
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.20" data-path="../alt/once.html">
+            
+                <a href="../alt/once.html">
+            
+                    
+                    [S] alt.once
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.21" data-path="../alt/onceClient.html">
+            
+                <a href="../alt/onceClient.html">
+            
+                    
+                    [S] alt.onceClient
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.22" data-path="../alt/onClient.html">
+            
+                <a href="../alt/onClient.html">
+            
+                    
+                    [S] alt.onClient
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.23" data-path="../alt/restartResource.html">
+            
+                <a href="../alt/restartResource.html">
+            
+                    
+                    [S] alt.restartResource
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.24" data-path="../alt/setInterval.html">
+            
+                <a href="../alt/setInterval.html">
+            
+                    
+                    [S] alt.setInterval
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.25" data-path="../alt/setPassword.html">
+            
+                <a href="../alt/setPassword.html">
+            
+                    
+                    [S] alt.setPassword
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.26" data-path="../alt/setTimeout.html">
+            
+                <a href="../alt/setTimeout.html">
+            
+                    
+                    [S] alt.setTimeout
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.27" data-path="../alt/startResource.html">
+            
+                <a href="../alt/startResource.html">
+            
+                    
+                    [S] alt.startResource
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.28" data-path="../alt/stopResource.html">
+            
+                <a href="../alt/stopResource.html">
+            
+                    
+                    [S] alt.stopResource
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.29" data-path="../alt/version.html">
+            
+                <a href="../alt/version.html">
+            
+                    
+                    [S] alt.version
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../altClient/">
+            
+                <a href="../altClient/">
+            
+                    
+                    Client
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../altClient/addGxtText.html">
+            
+                <a href="../altClient/addGxtText.html">
+            
+                    
+                    [C] alt.addGxtText
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../altClient/beginScaleformMovieMethodMinimap.html">
+            
+                <a href="../altClient/beginScaleformMovieMethodMinimap.html">
+            
+                    
+                    [C] alt.beginScaleformMovieMethodMinimap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../altClient/clearEveryTick.html">
+            
+                <a href="../altClient/clearEveryTick.html">
+            
+                    
+                    [C] alt.clearEveryTick
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../altClient/clearInterval.html">
+            
+                <a href="../altClient/clearInterval.html">
+            
+                    
+                    [C] alt.clearInterval
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../altClient/clearNextTick.html">
+            
+                <a href="../altClient/clearNextTick.html">
+            
+                    
+                    [C] alt.clearNextTick
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../altClient/clearTimeout.html">
+            
+                <a href="../altClient/clearTimeout.html">
+            
+                    
+                    [C] alt.clearTimeout
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../altClient/doesConfigFlagExist.html">
+            
+                <a href="../altClient/doesConfigFlagExist.html">
+            
+                    
+                    [C] alt.doesConfigFlagExist
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../altClient/emitServer.html">
+            
+                <a href="../altClient/emitServer.html">
+            
+                    
+                    [C] alt.emitServer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../altClient/everyTick.html">
+            
+                <a href="../altClient/everyTick.html">
+            
+                    
+                    [C] alt.everyTick
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="../altClient/gameControlsEnabled.html">
+            
+                <a href="../altClient/gameControlsEnabled.html">
+            
+                    
+                    [C] alt.gameControlsEnabled
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="../altClient/getConfigFlag.html">
+            
+                <a href="../altClient/getConfigFlag.html">
+            
+                    
+                    [C] alt.getConfigFlag
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="../altClient/getCursorPos.html">
+            
+                <a href="../altClient/getCursorPos.html">
+            
+                    
+                    [C] alt.getCursorPos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.13" data-path="../altClient/getGxtText.html">
+            
+                <a href="../altClient/getGxtText.html">
+            
+                    
+                    [C] alt.getGxtText
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.14" data-path="../altClient/hash.html">
+            
+                <a href="../altClient/hash.html">
+            
+                    
+                    [C] alt.hash
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.15" data-path="../altClient/log.html">
+            
+                <a href="../altClient/log.html">
+            
+                    
+                    [C] alt.log
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.16" data-path="../altClient/logError.html">
+            
+                <a href="../altClient/logError.html">
+            
+                    
+                    [C] alt.logError
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.17" data-path="../altClient/logWarning.html">
+            
+                <a href="../altClient/logWarning.html">
+            
+                    
+                    [C] alt.logWarning
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.18" data-path="../altClient/on.html">
+            
+                <a href="../altClient/on.html">
+            
+                    
+                    [C] alt.on
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.19" data-path="../altClient/setInterval.html">
+            
+                <a href="../altClient/setInterval.html">
+            
+                    
+                    [C] alt.setInterval
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.20" data-path="../altClient/setTimeout.html">
+            
+                <a href="../altClient/setTimeout.html">
+            
+                    
+                    [C] alt.setTimeout
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.21" data-path="../altClient/setWeatherCycle.html">
+            
+                <a href="../altClient/setWeatherCycle.html">
+            
+                    
+                    [C] alt.setWeatherCycle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.22" data-path="../altClient/takeScreenshot.html">
+            
+                <a href="../altClient/takeScreenshot.html">
+            
+                    
+                    [C] alt.takeScreenshot
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.23" data-path="../altClient/takeScreenshotGameOnly.html">
+            
+                <a href="../altClient/takeScreenshotGameOnly.html">
+            
+                    
+                    [C] alt.takeScreenshotGameOnly
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../articles/bootcamp/">
+            
+                <a href="../articles/bootcamp/">
+            
+                    
+                    Bootcamp
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../articles/bootcamp/001.html">
+            
+                <a href="../articles/bootcamp/001.html">
+            
+                    
+                    001 - The alt:V Client
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../articles/bootcamp/002.html">
+            
+                <a href="../articles/bootcamp/002.html">
+            
+                    
+                    002 - alt:V Client Configuration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../articles/bootcamp/003.html">
+            
+                <a href="../articles/bootcamp/003.html">
+            
+                    
+                    003 - alt:V Server Binaries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../articles/bootcamp/004.html">
+            
+                <a href="../articles/bootcamp/004.html">
+            
+                    
+                    004 - Running Server Binaries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../articles/bootcamp/005.html">
+            
+                <a href="../articles/bootcamp/005.html">
+            
+                    
+                    005 - Understanding Resource Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../articles/bootcamp/006.html">
+            
+                <a href="../articles/bootcamp/006.html">
+            
+                    
+                    006 - Creating a Resource
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../articles/bootcamp/007.html">
+            
+                <a href="../articles/bootcamp/007.html">
+            
+                    
+                    007 - Adding a Resource
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../articles/bootcamp/008.html">
+            
+                <a href="../articles/bootcamp/008.html">
+            
+                    
+                    008 - Understanding VSCode & Javascript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../articles/bootcamp/009.html">
+            
+                <a href="../articles/bootcamp/009.html">
+            
+                    
+                    009 - Spawning the Player
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../articles/bootcamp/010.html">
+            
+                <a href="../articles/bootcamp/010.html">
+            
+                    
+                    010 - Respawning the Player
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="../articles/bootcamp/011.html">
+            
+                <a href="../articles/bootcamp/011.html">
+            
+                    
+                    011 - Spawning a Vehicle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="../articles/bootcamp/012.html">
+            
+                <a href="../articles/bootcamp/012.html">
+            
+                    
+                    012 - Installing a Chat Resource
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="../articles/bootcamp/013.html">
+            
+                <a href="../articles/bootcamp/013.html">
+            
+                    
+                    013 - Writing Commands
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../articles/concepts/">
+            
+                <a href="../articles/concepts/">
+            
+                    
+                    Concept
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../articles/concepts/radians-degrees.html">
+            
+                <a href="../articles/concepts/radians-degrees.html">
+            
+                    
+                    Radians and Degrees
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../articles/concepts/ragemp-migration.html">
+            
+                <a href="../articles/concepts/ragemp-migration.html">
+            
+                    
+                    Migrating from RAGE:MP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../articles/concepts/understanding-script-id.html">
+            
+                <a href="../articles/concepts/understanding-script-id.html">
+            
+                    
+                    Script ID
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../articles/concepts/using-events.html">
+            
+                <a href="../articles/concepts/using-events.html">
+            
+                    
+                    Using Events
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../articles/server/">
+            
+                <a href="../articles/server/">
+            
+                    
+                    Server
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../articles/server/server-events.html">
+            
+                <a href="../articles/server/server-events.html">
+            
+                    
+                    [S] Server Events
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../articles/snippets/">
+            
+                <a href="../articles/snippets/">
+            
+                    
+                    Snippet
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../articles/snippets/cayo-period-island.html">
+            
+                <a href="../articles/snippets/cayo-period-island.html">
+            
+                    
+                    Cayo Perico Island
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../articles/snippets/flickering-webview.html">
+            
+                <a href="../articles/snippets/flickering-webview.html">
+            
+                    
+                    Flickering Webview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../articles/snippets/help-text.html">
+            
+                <a href="../articles/snippets/help-text.html">
+            
+                    
+                    Using Help Text
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../articles/snippets/markers.html">
+            
+                <a href="../articles/snippets/markers.html">
+            
+                    
+                    Create a Marker
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../articles/snippets/notifications.html">
+            
+                <a href="../articles/snippets/notifications.html">
+            
+                    
+                    Create a Notification
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../articles/snippets/password-encryption.html">
+            
+                <a href="../articles/snippets/password-encryption.html">
+            
+                    
+                    Encryption / Password Hashing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="../articles/snippets/prototyping.html">
+            
+                <a href="../articles/snippets/prototyping.html">
+            
+                    
+                    How to Prototype Classes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8" data-path="../articles/snippets/request-model.html">
+            
+                <a href="../articles/snippets/request-model.html">
+            
+                    
+                    Request Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.9" data-path="../articles/snippets/sha-256.html">
+            
+                <a href="../articles/snippets/sha-256.html">
+            
+                    
+                    Pure JS SHA256
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.10" data-path="../articles/snippets/textlabels.html">
+            
+                <a href="../articles/snippets/textlabels.html">
+            
+                    
+                    How to Create 2D & 3D Text Labels
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.11" data-path="../articles/snippets/voice.html">
+            
+                <a href="../articles/snippets/voice.html">
+            
+                    
+                    How to use alt:V Voice
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../articles/tables/">
+            
+                <a href="../articles/tables/">
+            
+                    
+                    Table
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../articles/tables/cause-of-death.html">
+            
+                <a href="../articles/tables/cause-of-death.html">
+            
+                    
+                    Cause of Death
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../articles/tables/controls.html">
+            
+                <a href="../articles/tables/controls.html">
+            
+                    
+                    GTA:V Controls
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../articles/tables/explosions.html">
+            
+                <a href="../articles/tables/explosions.html">
+            
+                    
+                    Explosion Types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../articles/tables/frontend-sounds.html">
+            
+                <a href="../articles/tables/frontend-sounds.html">
+            
+                    
+                    Frontend Sounds
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../articles/tables/ipls.html">
+            
+                <a href="../articles/tables/ipls.html">
+            
+                    
+                    Missing Interiors - IPLs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../articles/tables/ped-bones.html">
+            
+                <a href="../articles/tables/ped-bones.html">
+            
+                    
+                    Ped Bones
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="../articles/tables/vehicle-bones.html">
+            
+                <a href="../articles/tables/vehicle-bones.html">
+            
+                    
+                    Vehicle Bones
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="../articles/tables/vehicle-colors.html">
+            
+                <a href="../articles/tables/vehicle-colors.html">
+            
+                    
+                    Vehicle Color IDs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.9" data-path="../articles/tables/vehicle-mods.html">
+            
+                <a href="../articles/tables/vehicle-mods.html">
+            
+                    
+                    Vehicle Mods
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.10" data-path="../articles/tables/vehicle-seats.html">
+            
+                <a href="../articles/tables/vehicle-seats.html">
+            
+                    
+                    Vehicle Seats
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.11" data-path="../articles/tables/vehicle-window-tint.html">
+            
+                <a href="../articles/tables/vehicle-window-tint.html">
+            
+                    
+                    Vehicle Window Tint
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.12" data-path="../articles/tables/weapon-components.html">
+            
+                <a href="../articles/tables/weapon-components.html">
+            
+                    
+                    Weapon Components
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.13" data-path="../articles/tables/weapon-pickups.html">
+            
+                <a href="../articles/tables/weapon-pickups.html">
+            
+                    
+                    Weapon Pickups
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.14" data-path="../articles/tables/weapon-tint.html">
+            
+                <a href="../articles/tables/weapon-tint.html">
+            
+                    
+                    Weapon Tint
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.15" data-path="../articles/tables/weapons.html">
+            
+                <a href="../articles/tables/weapons.html">
+            
+                    
+                    Weapon List
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.16" data-path="../articles/tables/weather.html">
+            
+                <a href="../articles/tables/weather.html">
+            
+                    
+                    Weather IDs
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../native/">
+            
+                <a href="../native/">
+            
+                    
+                    Natives
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../native/removeIpl.html">
+            
+                <a href="../native/removeIpl.html">
+            
+                    
+                    native.removeIpl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../player/">
+            
+                <a href="../player/">
+            
+                    
+                    Player Server
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../player/armour.html">
+            
+                <a href="../player/armour.html">
+            
+                    
+                    [S] player.armour
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../player/authToken.html">
+            
+                <a href="../player/authToken.html">
+            
+                    
+                    [S] player.authToken
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../player/clearBloodDamage.html">
+            
+                <a href="../player/clearBloodDamage.html">
+            
+                    
+                    [S] player.clearBloodDamage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="../player/currentWeapon.html">
+            
+                <a href="../player/currentWeapon.html">
+            
+                    
+                    [S] player.currentWeapon
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="../player/dimension.html">
+            
+                <a href="../player/dimension.html">
+            
+                    
+                    [S] player.dimension
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" data-path="../player/entityAimingAt.html">
+            
+                <a href="../player/entityAimingAt.html">
+            
+                    
+                    [S] player.entityAimingAt
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7" data-path="../player/flashlightActive.html">
+            
+                <a href="../player/flashlightActive.html">
+            
+                    
+                    [S] player.flashlightActive
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.8" data-path="../player/getMeta.html">
+            
+                <a href="../player/getMeta.html">
+            
+                    
+                    [S] player.getMeta
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.9" data-path="../player/getStreamSyncedMeta.html">
+            
+                <a href="../player/getStreamSyncedMeta.html">
+            
+                    
+                    [S] player.getStreamSyncedMeta
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.10" data-path="../player/getSyncedMeta.html">
+            
+                <a href="../player/getSyncedMeta.html">
+            
+                    
+                    [S] player.getSyncedMeta
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.11" data-path="../player/giveWeapon.html">
+            
+                <a href="../player/giveWeapon.html">
+            
+                    
+                    [S] player.giveWeapon
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.12" data-path="../player/health.html">
+            
+                <a href="../player/health.html">
+            
+                    
+                    [S] player.health
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.13" data-path="../player/hwidExHash.html">
+            
+                <a href="../player/hwidExHash.html">
+            
+                    
+                    [S] player.hwidExHash
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.14" data-path="../player/hwidHash.html">
+            
+                <a href="../player/hwidHash.html">
+            
+                    
+                    [S] player.hwidHash
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.15" data-path="../player/id.html">
+            
+                <a href="../player/id.html">
+            
+                    
+                    [S] player.id
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.16" data-path="../player/ip.html">
+            
+                <a href="../player/ip.html">
+            
+                    
+                    [S] player.ip
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.17" data-path="../player/kick.html">
+            
+                <a href="../player/kick.html">
+            
+                    
+                    [S] player.kick
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.18" data-path="../player/maxArmour.html">
+            
+                <a href="../player/maxArmour.html">
+            
+                    
+                    [S] player.maxArmour
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.19" data-path="../player/maxHealth.html">
+            
+                <a href="../player/maxHealth.html">
+            
+                    
+                    [S] player.maxHealth
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.20" data-path="../player/model.html">
+            
+                <a href="../player/model.html">
+            
+                    
+                    [S] player.model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.21" data-path="../player/name.html">
+            
+                <a href="../player/name.html">
+            
+                    
+                    [S] player.name
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.22" data-path="../player/netOwner.html">
+            
+                <a href="../player/netOwner.html">
+            
+                    
+                    [S] player.netOwner
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.23" data-path="../player/ping.html">
+            
+                <a href="../player/ping.html">
+            
+                    
+                    [S] player.ping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.24" data-path="../player/pos.html">
+            
+                <a href="../player/pos.html">
+            
+                    
+                    [S] player.pos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.25" data-path="../player/removeAllWeapons.html">
+            
+                <a href="../player/removeAllWeapons.html">
+            
+                    
+                    [S] player.removeAllWeapons
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.26" data-path="../player/removeWeapon.html">
+            
+                <a href="../player/removeWeapon.html">
+            
+                    
+                    [S] player.removeWeapon
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.27" data-path="../player/rot.html">
+            
+                <a href="../player/rot.html">
+            
+                    
+                    [S] player.rot
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.28" data-path="../player/seat.html">
+            
+                <a href="../player/seat.html">
+            
+                    
+                    [S] player.seat
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.29" data-path="../player/setDateTime.html">
+            
+                <a href="../player/setDateTime.html">
+            
+                    
+                    [S] player.setDateTime
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.30" data-path="../player/setMeta.html">
+            
+                <a href="../player/setMeta.html">
+            
+                    
+                    [S] player.setMeta
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.31" data-path="../player/setStreamSyncedMeta.html">
+            
+                <a href="../player/setStreamSyncedMeta.html">
+            
+                    
+                    [S] player.setStreamSyncedMeta
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.32" data-path="../player/setSyncedMeta.html">
+            
+                <a href="../player/setSyncedMeta.html">
+            
+                    
+                    [S] player.setSyncedMeta
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.33" data-path="../player/setWeather.html">
+            
+                <a href="../player/setWeather.html">
+            
+                    
+                    [S] player.setWeather
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.34" data-path="../player/socialId.html">
+            
+                <a href="../player/socialId.html">
+            
+                    
+                    [S] player.socialId
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.35" data-path="../player/spawn.html">
+            
+                <a href="../player/spawn.html">
+            
+                    
+                    [S] player.spawn
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.36" data-path="../player/valid.html">
+            
+                <a href="../player/valid.html">
+            
+                    
+                    [S] player.valid
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.37" data-path="../player/vehicle.html">
+            
+                <a href="../player/vehicle.html">
+            
+                    
+                    [S] player.vehicle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.38" data-path="../player/visible.html">
+            
+                <a href="../player/visible.html">
+            
+                    
+                    [S] player.visible
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Player Client
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="aimPos.html">
+            
+                <a href="aimPos.html">
+            
+                    
+                    [C] player.aimPos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="all.html">
+            
+                <a href="all.html">
+            
+                    
+                    [C] alt.Player.all
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="armour.html">
+            
+                <a href="armour.html">
+            
+                    
+                    [C] player.armour
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="entityAimingAt.html">
+            
+                <a href="entityAimingAt.html">
+            
+                    
+                    [C] player.entityAimingAt
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="flashlightActive.html">
+            
+                <a href="flashlightActive.html">
+            
+                    
+                    [C] player.flashlightActive
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.6" data-path="getMeta.html">
+            
+                <a href="getMeta.html">
+            
+                    
+                    [C] player.getMeta
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.7" data-path="getStreamSyncedMeta.html">
+            
+                <a href="getStreamSyncedMeta.html">
+            
+                    
+                    [C] player.getStreamSyncedMeta
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.8" data-path="getSyncedMeta.html">
+            
+                <a href="getSyncedMeta.html">
+            
+                    
+                    [C] player.getSyncedMeta
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.9" data-path="headRot.html">
+            
+                <a href="headRot.html">
+            
+                    
+                    [C] player.headRot
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.10" data-path="health.html">
+            
+                <a href="health.html">
+            
+                    
+                    [C] player.health
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.11" data-path="id.html">
+            
+                <a href="id.html">
+            
+                    
+                    [C] player.id
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.12" data-path="isAiming.html">
+            
+                <a href="isAiming.html">
+            
+                    
+                    [C] player.isAiming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.13" data-path="isInRagdoll.html">
+            
+                <a href="isInRagdoll.html">
+            
+                    
+                    [C] player.isInRagdoll
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.14" data-path="isTalking.html">
+            
+                <a href="isTalking.html">
+            
+                    
+                    [C] player.isTalking
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.15" data-path="local.html">
+            
+                <a href="local.html">
+            
+                    
+                    [C] alt.Player.local
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.16" data-path="maxArmour.html">
+            
+                <a href="maxArmour.html">
+            
+                    
+                    [C] player.maxArmour
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.17" data-path="maxHealth.html">
+            
+                <a href="maxHealth.html">
+            
+                    
+                    [C] player.maxHealth
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.18" data-path="micLevel.html">
+            
+                <a href="micLevel.html">
+            
+                    
+                    [C] player.micLevel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.19" data-path="model.html">
+            
+                <a href="model.html">
+            
+                    
+                    [C] player.model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.20" data-path="moveSpeed.html">
+            
+                <a href="moveSpeed.html">
+            
+                    
+                    [C] player.moveSpeed
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.21" data-path="name.html">
+            
+                <a href="name.html">
+            
+                    
+                    [C] player.name
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.22" data-path="pos.html">
+            
+                <a href="pos.html">
+            
+                    
+                    [C] player.pos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.23" data-path="rot.html">
+            
+                <a href="rot.html">
+            
+                    
+                    [C] player.rot
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.11.24" data-path="scriptID.html">
+            
+                <a href="scriptID.html">
+            
+                    
+                    [C] player.scriptID
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.25" data-path="seat.html">
+            
+                <a href="seat.html">
+            
+                    
+                    [C] player.seat
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.26" data-path="setMeta.html">
+            
+                <a href="setMeta.html">
+            
+                    
+                    [C] player.setMeta
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.27" data-path="valid.html">
+            
+                <a href="valid.html">
+            
+                    
+                    [C] player.valid
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.28" data-path="vehicle.html">
+            
+                <a href="vehicle.html">
+            
+                    
+                    [C] player.vehicle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.29" data-path="visible.html">
+            
+                <a href="visible.html">
+            
+                    
+                    [C] player.visible
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../vehicle/">
+            
+                <a href="../vehicle/">
+            
+                    
+                    Vehicle Server
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../vehicleClient/">
+            
+                <a href="../vehicleClient/">
+            
+                    
+                    Vehicle Client
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >[C] player.scriptID</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="altplayerlocalscriptid">alt.Player.local.scriptID</h1>
+<p>Used to get the script identifier of a player.</p>
+<p>This is used to talk to natives and apply natives to a player or vehicle.</p>
+<p><strong>Syntax</strong></p>
+<pre><code class="lang-ts"><span class="hljs-keyword">readonly</span> scriptID: <span class="hljs-built_in">number</span>;
+</code></pre>
+<p><strong>Example Usage</strong></p>
+<pre><code class="lang-js"><span class="hljs-comment">// Freeze the local player.</span>
+native.freezeEntityPosition(alt.Player.local.scriptID, <span class="hljs-literal">true</span>);
+</code></pre>
+<p><em>alt.Player.local can also be a <strong>player instance</strong> from server</em></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="rot.html" class="navigation navigation-prev " aria-label="Previous page: [C] player.rot">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="seat.html" class="navigation navigation-next " aria-label="Next page: [C] player.seat">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"[C] player.scriptID","description":"Get the script ID of a player.","prefix":"[Client]","level":"1.11.24","depth":2,"next":{"title":"[C] player.seat","level":"1.11.25","depth":2,"path":"docs/playerClient/seat.md","ref":"docs/playerClient/seat.md","articles":[]},"previous":{"title":"[C] player.rot","level":"1.11.23","depth":2,"path":"docs/playerClient/rot.md","ref":"docs/playerClient/rot.md","articles":[]},"dir":"ltr"},"config":{"plugins":["gitbook-plugin-expandable-contract-chapters","honkit-plugin-sitemap"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sitemap":{"url":"https://altv.stuyk.com"},"gitbook-plugin-expandable-contract-chapters":{},"honkit-plugin-sitemap":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"alt:V Unofficial Docs","gitbook":"*","description":""},"file":{"path":"docs/playerClient/scriptID.md","mtime":"2021-03-15T23:08:30.891Z","type":"markdown"},"gitbook":{"version":"3.6.17","time":"2021-03-15T23:08:42.382Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-gitbook-plugin-expandable-contract-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

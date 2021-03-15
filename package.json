@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "serve": "npm run update && honkit serve",
-        "build": "npm run update && honkit build",
+        "build": "npm run update && npm run build-nav && honkit build",
         "build-nav": "node ./scripts/build-summary.js",
         "update": "git submodule update --init --recursive --force --remote"
     },
