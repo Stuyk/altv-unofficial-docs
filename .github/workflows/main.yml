@@ -10,7 +10,7 @@ jobs:
         steps:
             - uses: actions/checkout@v2
               with:
-                  submodules: 'recursive'
+                  submodules: "recursive"
 
             - uses: actions/setup-node@v1
               with:
@@ -22,8 +22,8 @@ jobs:
             - name: Build Documentation
               run: npm run build
 
-            # - name: Copy CNAME
-            #   run: cp ./CNAME ./src/.vuepress/dist/CNAME
+            - name: Copy CNAME
+              run: cp ./CNAME ./_book
 
             - name: Deploy
               uses: JamesIves/github-pages-deploy-action@releases/v3
