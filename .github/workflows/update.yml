@@ -1,4 +1,4 @@
-name: Deploy pages
+name: update
 
 on:
     push:
