@@ -20,7 +20,7 @@
         "honkit": "^3.6.17",
         "honkit-plugin-robots": "^1.0.1",
         "honkit-plugin-sitemap": "^1.0.2",
-        "honkit-plugin-theme-osiris": "^1.0.1"
+        "honkit-plugin-theme-osiris": "^1.0.3"
     },
     "prettier": {
         "tabWidth": 4,
