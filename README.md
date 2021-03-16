@@ -1,6 +1,6 @@
 ---
-title: "Welcome to alt:V"
-description: "The official starting page to get started with alt:V."
+title: "alt:V Unofficial Documentation"
+description: "The unofficial documentation for alt:V's Javascript Modules."
 prefix: "[!!!]"
 ---
 
@@ -8,21 +8,19 @@ prefix: "[!!!]"
 
 ## 📝 Getting Started
 
-Here are some other things you can explore.
+It is highly recommended that you start with the Bootcamp.
 
--   [🚀 alt:V Coding Bootcamp](./docs/articles/bootcamp/README.md)
--   [Articles](./docs/articles/README.md)
--   [Client Articles](./docs/articles/client/README.md)
--   [Concepts Articles](./docs/articles/concepts/README.md)
--   [Server Articles](./docs/articles/server/README.md)
--   [Snippets](./docs/articles/snippets/README.md)
--   [Tables](./docs/articles/tables/README.md)
-
-_You will find API specific documentatin by searching or hovering._
+[Try the alt:V Coding Bootcamp to learn how to script for alt:V.](./docs/articles/bootcamp/README.md)
 
 ## 💭 Want this page as an extension for VSCode?
 
 -   [⭐ Grab the alt:V IDE Extension](https://marketplace.visualstudio.com/items?itemName=stuyk.altv-vscode-docs)
+
+## ✏️ Want to Contribute?
+
+The goal with this was to make contributing so easy that you just make a pull request. You write all of your documentation in markdown and when it's merged in it automatically gets generated.
+
+-   [Visit the Markdown Documentation Repo](https://github.com/stuyk/altv-markdown-docs)
 
 ## 🔗 Important Links
 
