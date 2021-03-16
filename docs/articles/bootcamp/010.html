@@ -20,7 +20,11 @@
                 
             
                 
-                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-honkit-plugin-theme-osiris/osiris.css">
                 
             
                 
@@ -2535,71 +2539,71 @@
 <h2 id="handling-death">Handling Death</h2>
 <p>We are going to check if the <code>player.id</code> is an <code>object</code> <code>key</code> for the <code>deadPlayers</code> object. This will determine whether or not they have died multiple times and prevent any additional duplication of death events.</p>
 <p>Then we are going to introduce the <code>player.id</code> to the object to mark them as dead.</p>
-<pre><code class="lang-js"><span class="hljs-comment">/// &lt;reference types=&quot;@altv/types-server&quot; /&gt;</span>
-<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> alt <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;alt-server&apos;</span>;
+<pre class="language-"><code class="lang-js"><span class="token comment">/// &lt;reference types=&quot;@altv/types-server&quot; /&gt;</span>
+<span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> alt <span class="token keyword">from</span> <span class="token string">&apos;alt-server&apos;</span><span class="token punctuation">;</span>
 
-alt.on(<span class="hljs-string">&apos;playerDeath&apos;</span>, handleDeath);
+alt<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">&apos;playerDeath&apos;</span><span class="token punctuation">,</span> handleDeath<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> DeadPlayers = {};
+<span class="token keyword">export</span> <span class="token keyword">const</span> DeadPlayers <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-<span class="hljs-comment">/**
- * <span class="hljs-doctag">@param <span class="hljs-type">{alt.Player}</span> <span class="hljs-variable">player</span></span>
+<span class="token comment">/**
+ * @param {alt.Player} player
  */</span>
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handleDeath</span>(<span class="hljs-params">player</span>) </span>{
-    <span class="hljs-comment">// If it exists they are already dead.</span>
-    <span class="hljs-keyword">if</span> (deadPlayers[player.id]) {
-        <span class="hljs-keyword">return</span>;
-    }
+<span class="token keyword">function</span> <span class="token function">handleDeath</span><span class="token punctuation">(</span><span class="token parameter">player</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// If it exists they are already dead.</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>deadPlayers<span class="token punctuation">[</span>player<span class="token punctuation">.</span>id<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    <span class="hljs-comment">// Mark the player as dead.</span>
-    deadPlayers[player.id] = <span class="hljs-literal">true</span>;
-}
+    <span class="token comment">// Mark the player as dead.</span>
+    deadPlayers<span class="token punctuation">[</span>player<span class="token punctuation">.</span>id<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>What we&apos;ve done is added a single reference to the <code>player.id</code> inside of <code>DeadPlayers</code>. Which is accessible by calling <code>deadPlayers[player.id]</code>. If this does not come back as <code>undefined</code> that means that the player has died and introduced a value into the object.</p>
 <p>We can now expand on this concept and introduce a respawn timeout to the object instead of a <code>boolean</code>. This will give us better control over what happens while a player is waiting to be respawned.</p>
-<pre><code class="lang-js"><span class="hljs-comment">/// &lt;reference types=&quot;@altv/types-server&quot; /&gt;</span>
-<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> alt <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;alt-server&apos;</span>;
+<pre class="language-"><code class="lang-js"><span class="token comment">/// &lt;reference types=&quot;@altv/types-server&quot; /&gt;</span>
+<span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> alt <span class="token keyword">from</span> <span class="token string">&apos;alt-server&apos;</span><span class="token punctuation">;</span>
 
-alt.on(<span class="hljs-string">&apos;playerDeath&apos;</span>, handleDeath);
+alt<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">&apos;playerDeath&apos;</span><span class="token punctuation">,</span> handleDeath<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> DeadPlayers = {};
-<span class="hljs-keyword">const</span> TimeBetweenRespawn = <span class="hljs-number">5000</span>; <span class="hljs-comment">// 5 Seconds</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> DeadPlayers <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> TimeBetweenRespawn <span class="token operator">=</span> <span class="token number">5000</span><span class="token punctuation">;</span> <span class="token comment">// 5 Seconds</span>
 
-<span class="hljs-comment">/**
- * <span class="hljs-doctag">@param <span class="hljs-type">{alt.Player}</span> <span class="hljs-variable">player</span></span>
+<span class="token comment">/**
+ * @param {alt.Player} player
  */</span>
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handleDeath</span>(<span class="hljs-params">player</span>) </span>{
-    <span class="hljs-keyword">if</span> (deadPlayers[player.id]) {
-        <span class="hljs-keyword">return</span>;
-    }
+<span class="token keyword">function</span> <span class="token function">handleDeath</span><span class="token punctuation">(</span><span class="token parameter">player</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>deadPlayers<span class="token punctuation">[</span>player<span class="token punctuation">.</span>id<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    deadPlayers[player.id] = alt.setTimeout(<span class="hljs-function">() =&gt;</span> {
-        <span class="hljs-comment">// Check if the player still has an entry.</span>
-        <span class="hljs-keyword">if</span> (deadPlayers[player.id]) {
-            <span class="hljs-keyword">delete</span> deadPlayers[player.id];
-        }
+    deadPlayers<span class="token punctuation">[</span>player<span class="token punctuation">.</span>id<span class="token punctuation">]</span> <span class="token operator">=</span> alt<span class="token punctuation">.</span><span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token comment">// Check if the player still has an entry.</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>deadPlayers<span class="token punctuation">[</span>player<span class="token punctuation">.</span>id<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">delete</span> deadPlayers<span class="token punctuation">[</span>player<span class="token punctuation">.</span>id<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
 
-        <span class="hljs-comment">// Check if the player hasn&apos;t just left the server yet.</span>
-        <span class="hljs-keyword">if</span> (!player || !player.valid) {
-            <span class="hljs-keyword">return</span>;
-        }
+        <span class="token comment">// Check if the player hasn&apos;t just left the server yet.</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>player <span class="token operator">||</span> <span class="token operator">!</span>player<span class="token punctuation">.</span>valid<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
 
-        player.spawn(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>); <span class="hljs-comment">// Respawn the player.</span>
-    }, TimeBetweenRespawn);
-}
+        player<span class="token punctuation">.</span><span class="token function">spawn</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Respawn the player.</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> TimeBetweenRespawn<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>Now that we&apos;ve added the code to respawn the player after <code>5s</code> or <code>5000ms</code>. We now have a <code>Timeout</code> that we can cancel if we want to interrupt their ability to respawn.</p>
 <p>An example of interrupting the respawn and leaving them in ragdoll mode forever can be done by calling a function such as...</p>
-<pre><code class="lang-js"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">cancelRespawn</span>(<span class="hljs-params">player</span>) </span>{
-    <span class="hljs-comment">// Check if an entry exists for a player respawn.</span>
-    <span class="hljs-keyword">if</span> (!deadPlayers[player.id]) {
-        <span class="hljs-keyword">return</span>;
-    }
+<pre class="language-"><code class="lang-js"><span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">cancelRespawn</span><span class="token punctuation">(</span><span class="token parameter">player</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Check if an entry exists for a player respawn.</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>deadPlayers<span class="token punctuation">[</span>player<span class="token punctuation">.</span>id<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    <span class="hljs-comment">// This cancels the timeout from ever being finished.</span>
-    alt.clearTimeout(deadPlayers[player.id]);
-    <span class="hljs-keyword">delete</span> deadPlayers[player.id];
-}
+    <span class="token comment">// This cancels the timeout from ever being finished.</span>
+    alt<span class="token punctuation">.</span><span class="token function">clearTimeout</span><span class="token punctuation">(</span>deadPlayers<span class="token punctuation">[</span>player<span class="token punctuation">.</span>id<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">delete</span> deadPlayers<span class="token punctuation">[</span>player<span class="token punctuation">.</span>id<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>This is just a basic example of how to handle respawning.</p>
 <p>Written by Stuyk</p>
@@ -2656,7 +2660,7 @@ alt.on(<span class="hljs-string">&apos;playerDeath&apos;</span>, handleDeath);
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"010 - Respawning the Player","description":"How to handle respawning a player.","prefix":"[Bootcamp]","level":"1.4.10","depth":2,"next":{"title":"011 - Spawning a Vehicle","level":"1.4.11","depth":2,"path":"docs/articles/bootcamp/011.md","ref":"docs/articles/bootcamp/011.md","articles":[]},"previous":{"title":"009 - Spawning the Player","level":"1.4.9","depth":2,"path":"docs/articles/bootcamp/009.md","ref":"docs/articles/bootcamp/009.md","articles":[]},"dir":"ltr"},"config":{"plugins":["gitbook-plugin-expandable-contract-chapters","honkit-plugin-sitemap","honkit-plugin-robots"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"honkit-plugin-robots":{},"search":{},"robots":{"data":["User-agent: *","Disallow:"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"gitbook-plugin-expandable-contract-chapters":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"url":"https://altv.stuyk.com"},"honkit-plugin-sitemap":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"alt:V Unofficial Docs","gitbook":"*","description":"The unofficial documentation for alt:V's Javascript Modules."},"file":{"path":"docs/articles/bootcamp/010.md","mtime":"2021-03-16T14:10:39.591Z","type":"markdown"},"gitbook":{"version":"3.6.17","time":"2021-03-16T14:10:57.364Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"010 - Respawning the Player","description":"How to handle respawning a player.","prefix":"[Bootcamp]","level":"1.4.10","depth":2,"next":{"title":"011 - Spawning a Vehicle","level":"1.4.11","depth":2,"path":"docs/articles/bootcamp/011.md","ref":"docs/articles/bootcamp/011.md","articles":[]},"previous":{"title":"009 - Spawning the Player","level":"1.4.9","depth":2,"path":"docs/articles/bootcamp/009.md","ref":"docs/articles/bootcamp/009.md","articles":[]},"dir":"ltr"},"config":{"plugins":["gitbook-plugin-expandable-contract-chapters","-highlight","prism","honkit-plugin-sitemap","honkit-plugin-robots","honkit-plugin-theme-osiris"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"honkit-plugin-robots":{},"search":{},"robots":{"data":["User-agent: *","Disallow:"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"gitbook-plugin-expandable-contract-chapters":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"url":"https://altv.stuyk.com"},"honkit-plugin-theme-osiris":{},"honkit-plugin-sitemap":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"alt:V Unofficial Docs","gitbook":"*","description":"The unofficial documentation for alt:V's Javascript Modules."},"file":{"path":"docs/articles/bootcamp/010.md","mtime":"2021-03-16T16:43:40.824Z","type":"markdown"},"gitbook":{"version":"3.6.17","time":"2021-03-16T16:43:53.318Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -2734,6 +2738,6 @@ alt.on(<span class="hljs-string">&apos;playerDeath&apos;</span>, handleDeath);
         
     
 
+        <script src="https://cdn.jsdelivr.net/npm/less@3.13" ></script>
     </body>
 </html>
-

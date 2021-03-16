@@ -20,7 +20,11 @@
                 
             
                 
-                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-honkit-plugin-theme-osiris/osiris.css">
                 
             
                 
@@ -2538,64 +2542,64 @@
 <p>It is looking for something called a <code>listener</code> and it has one single <code>parameter</code> called <code>player</code> with a type of <code>alt.Player</code>. This means it&apos;s going to send us a <code>player</code> when a player connects to the server.</p>
 <h2 id="fat-arrow-example">Fat Arrow Example</h2>
 <p>Alow known as lambda, anonymous, or closure functions.</p>
-<pre><code class="lang-js"><span class="hljs-comment">/// &lt;reference types=&quot;@altv/types-server&quot; /&gt;</span>
-<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> alt <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;alt-server&apos;</span>;
+<pre class="language-"><code class="lang-js"><span class="token comment">/// &lt;reference types=&quot;@altv/types-server&quot; /&gt;</span>
+<span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> alt <span class="token keyword">from</span> <span class="token string">&apos;alt-server&apos;</span><span class="token punctuation">;</span>
 
-alt.log(<span class="hljs-string">&apos;Hello from server&apos;</span>);
-alt.on(<span class="hljs-string">&apos;playerConnect&apos;</span>, <span class="hljs-function">(<span class="hljs-params">player</span>) =&gt;</span> {
-    <span class="hljs-comment">// Do something to the player.</span>
-});
+alt<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;Hello from server&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">&apos;playerConnect&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">player</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Do something to the player.</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p><em>This is one of many ways to handle an event. This uses a fat arrow function to create a new function inside of <code>alt.on</code>.</em></p>
 <h2 id="traditional-function-example">Traditional Function Example</h2>
 <p>Here&apos;s an <code>alternative way</code> to write the above connection string.</p>
-<pre><code class="lang-js"><span class="hljs-comment">/// &lt;reference types=&quot;@altv/types-server&quot; /&gt;</span>
-<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> alt <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;alt-server&apos;</span>;
+<pre class="language-"><code class="lang-js"><span class="token comment">/// &lt;reference types=&quot;@altv/types-server&quot; /&gt;</span>
+<span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> alt <span class="token keyword">from</span> <span class="token string">&apos;alt-server&apos;</span><span class="token punctuation">;</span>
 
-alt.log(<span class="hljs-string">&apos;Hello from server&apos;</span>);
-alt.on(<span class="hljs-string">&apos;playerConnect&apos;</span>, handleConnect);
+alt<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;Hello from server&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">&apos;playerConnect&apos;</span><span class="token punctuation">,</span> handleConnect<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="hljs-comment">/**
- * <span class="hljs-doctag">@param <span class="hljs-type">{alt.Player}</span> <span class="hljs-variable">player</span></span>
+<span class="token comment">/**
+ * @param {alt.Player} player
  */</span>
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handleConnect</span>(<span class="hljs-params">player</span>) </span>{
-    <span class="hljs-comment">// Do something to the player.</span>
-}
+<span class="token keyword">function</span> <span class="token function">handleConnect</span><span class="token punctuation">(</span><span class="token parameter">player</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Do something to the player.</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p><em>This uses a normal function with a type definition in @param to help give auto-completion inside of our new function.</em></p>
 <h2 id="which-is-better">Which is Better?</h2>
 <p>Both are completely fine and valid in JavaScript. The document writer prefers the traditional method for the sake of readability and understanding code.</p>
 <h2 id="add-the-spawn-code">Add the Spawn Code</h2>
 <p>In order to spawn the <code>player</code> we need to modify the <code>player</code> we recieved from the <code>event</code>. Simply type <code>player.spawn</code> and you&apos;ll see that it is a <code>function</code> and that it needs additional parameters. Here is what we ended up with in the <code>server/startup.js</code> file.</p>
-<pre><code class="lang-js"><span class="hljs-comment">/// &lt;reference types=&quot;@altv/types-server&quot; /&gt;</span>
-<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> alt <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;alt-server&apos;</span>;
+<pre class="language-"><code class="lang-js"><span class="token comment">/// &lt;reference types=&quot;@altv/types-server&quot; /&gt;</span>
+<span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> alt <span class="token keyword">from</span> <span class="token string">&apos;alt-server&apos;</span><span class="token punctuation">;</span>
 
-alt.log(<span class="hljs-string">&apos;Hello from server&apos;</span>);
-alt.on(<span class="hljs-string">&apos;playerConnect&apos;</span>, handleConnect);
+alt<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;Hello from server&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">&apos;playerConnect&apos;</span><span class="token punctuation">,</span> handleConnect<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="hljs-comment">/**
- * <span class="hljs-doctag">@param <span class="hljs-type">{alt.Player}</span> <span class="hljs-variable">player</span></span>
+<span class="token comment">/**
+ * @param {alt.Player} player
  */</span>
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handleConnect</span>(<span class="hljs-params">player</span>) </span>{
-    <span class="hljs-comment">// x, y, z, delay in ms</span>
-    player.spawn(-<span class="hljs-number">1291.71</span>, <span class="hljs-number">83.43</span>, <span class="hljs-number">54.89</span>, <span class="hljs-number">1000</span>); <span class="hljs-comment">// Spawns after 1 second.</span>
-}
+<span class="token keyword">function</span> <span class="token function">handleConnect</span><span class="token punctuation">(</span><span class="token parameter">player</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// x, y, z, delay in ms</span>
+    player<span class="token punctuation">.</span><span class="token function">spawn</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1291.71</span><span class="token punctuation">,</span> <span class="token number">83.43</span><span class="token punctuation">,</span> <span class="token number">54.89</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Spawns after 1 second.</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h2 id="add-the-model-code">Add the Model Code</h2>
 <p>By default <a href="../../../GLOSSARY.html#altv" class="glossary-term" title="The client that this documentation is for. You can download it at https://altv.mp/.">alt:V</a> does not automatically spawn or give the player a model when they join the game. It&apos;s important to give them at least one of the two customizable models for GTA:Online when they join. Those models are <code>mp_m_freemode_01</code> and <code>mp_f_freemode_01</code>. They can be assigned to the <code>.model</code> parameter of a <code>player</code>.</p>
-<pre><code class="lang-js"><span class="hljs-comment">/// &lt;reference types=&quot;@altv/types-server&quot; /&gt;</span>
-<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> alt <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;alt-server&apos;</span>;
+<pre class="language-"><code class="lang-js"><span class="token comment">/// &lt;reference types=&quot;@altv/types-server&quot; /&gt;</span>
+<span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> alt <span class="token keyword">from</span> <span class="token string">&apos;alt-server&apos;</span><span class="token punctuation">;</span>
 
-alt.log(<span class="hljs-string">&apos;Hello from server&apos;</span>);
-alt.on(<span class="hljs-string">&apos;playerConnect&apos;</span>, handleConnect);
+alt<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;Hello from server&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">&apos;playerConnect&apos;</span><span class="token punctuation">,</span> handleConnect<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="hljs-comment">/**
- * <span class="hljs-doctag">@param <span class="hljs-type">{alt.Player}</span> <span class="hljs-variable">player</span></span>
+<span class="token comment">/**
+ * @param {alt.Player} player
  */</span>
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handleConnect</span>(<span class="hljs-params">player</span>) </span>{
-    player.spawn(-<span class="hljs-number">1291.71</span>, <span class="hljs-number">83.43</span>, <span class="hljs-number">54.89</span>, <span class="hljs-number">1000</span>); <span class="hljs-comment">// Spawns after 1 second.</span>
-    player.model = <span class="hljs-string">`mp_m_freemode_01`</span>;
-}
+<span class="token keyword">function</span> <span class="token function">handleConnect</span><span class="token punctuation">(</span><span class="token parameter">player</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    player<span class="token punctuation">.</span><span class="token function">spawn</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1291.71</span><span class="token punctuation">,</span> <span class="token number">83.43</span><span class="token punctuation">,</span> <span class="token number">54.89</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Spawns after 1 second.</span>
+    player<span class="token punctuation">.</span>model <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">mp_m_freemode_01</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>Bootup your server from the command line, join or reconnect. Then see what happens. You should be spawned into the world and you will be free to move around.</p>
 <div style="text-align: right">
@@ -2653,7 +2657,7 @@ alt.on(<span class="hljs-string">&apos;playerConnect&apos;</span>, handleConnect
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"009 - Spawning the Player","description":"How to spawn the player in your resource.","prefix":"[Bootcamp]","level":"1.4.9","depth":2,"next":{"title":"010 - Respawning the Player","level":"1.4.10","depth":2,"path":"docs/articles/bootcamp/010.md","ref":"docs/articles/bootcamp/010.md","articles":[]},"previous":{"title":"008 - Understanding VSCode & Javascript","level":"1.4.8","depth":2,"path":"docs/articles/bootcamp/008.md","ref":"docs/articles/bootcamp/008.md","articles":[]},"dir":"ltr"},"config":{"plugins":["gitbook-plugin-expandable-contract-chapters","honkit-plugin-sitemap","honkit-plugin-robots"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"honkit-plugin-robots":{},"search":{},"robots":{"data":["User-agent: *","Disallow:"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"gitbook-plugin-expandable-contract-chapters":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"url":"https://altv.stuyk.com"},"honkit-plugin-sitemap":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"alt:V Unofficial Docs","gitbook":"*","description":"The unofficial documentation for alt:V's Javascript Modules."},"file":{"path":"docs/articles/bootcamp/009.md","mtime":"2021-03-16T14:10:39.591Z","type":"markdown"},"gitbook":{"version":"3.6.17","time":"2021-03-16T14:10:57.364Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"009 - Spawning the Player","description":"How to spawn the player in your resource.","prefix":"[Bootcamp]","level":"1.4.9","depth":2,"next":{"title":"010 - Respawning the Player","level":"1.4.10","depth":2,"path":"docs/articles/bootcamp/010.md","ref":"docs/articles/bootcamp/010.md","articles":[]},"previous":{"title":"008 - Understanding VSCode & Javascript","level":"1.4.8","depth":2,"path":"docs/articles/bootcamp/008.md","ref":"docs/articles/bootcamp/008.md","articles":[]},"dir":"ltr"},"config":{"plugins":["gitbook-plugin-expandable-contract-chapters","-highlight","prism","honkit-plugin-sitemap","honkit-plugin-robots","honkit-plugin-theme-osiris"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"honkit-plugin-robots":{},"search":{},"robots":{"data":["User-agent: *","Disallow:"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"gitbook-plugin-expandable-contract-chapters":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"url":"https://altv.stuyk.com"},"honkit-plugin-theme-osiris":{},"honkit-plugin-sitemap":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"alt:V Unofficial Docs","gitbook":"*","description":"The unofficial documentation for alt:V's Javascript Modules."},"file":{"path":"docs/articles/bootcamp/009.md","mtime":"2021-03-16T16:43:40.824Z","type":"markdown"},"gitbook":{"version":"3.6.17","time":"2021-03-16T16:43:53.318Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -2731,6 +2735,6 @@ alt.on(<span class="hljs-string">&apos;playerConnect&apos;</span>, handleConnect
         
     
 
+        <script src="https://cdn.jsdelivr.net/npm/less@3.13" ></script>
     </body>
 </html>
-

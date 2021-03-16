@@ -20,7 +20,11 @@
                 
             
                 
-                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-honkit-plugin-theme-osiris/osiris.css">
                 
             
                 
@@ -2523,168 +2527,168 @@
 <p>This is taken from <a href="https://github.com/jovanivanovic/altv-os-missing-interiors/" target="_blank">Dzeknjak&apos;s Missing Interiors</a>.</p>
 <p>It will patch holes, gaps, and missing interiors for GTA:V.</p>
 <p>Must be loaded <strong>client-side</strong>.</p>
-<pre><code class="lang-js">alt.requestIpl(<span class="hljs-string">&apos;ex_dt1_02_office_02b&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;chop_props&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;FIBlobby&apos;</span>);
-alt.removeIpl(<span class="hljs-string">&apos;FIBlobbyfake&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;FBI_colPLUG&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;FBI_repair&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;v_tunnel_hole&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;TrevorsMP&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;TrevorsTrailer&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;TrevorsTrailerTidy&apos;</span>);
-alt.removeIpl(<span class="hljs-string">&apos;farm_burnt&apos;</span>);
-alt.removeIpl(<span class="hljs-string">&apos;farm_burnt_lod&apos;</span>);
-alt.removeIpl(<span class="hljs-string">&apos;farm_burnt_props&apos;</span>);
-alt.removeIpl(<span class="hljs-string">&apos;farmint_cap&apos;</span>);
-alt.removeIpl(<span class="hljs-string">&apos;farmint_cap_lod&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;farm&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;farmint&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;farm_lod&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;farm_props&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;facelobby&apos;</span>);
-alt.removeIpl(<span class="hljs-string">&apos;CS1_02_cf_offmission&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;CS1_02_cf_onmission1&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;CS1_02_cf_onmission2&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;CS1_02_cf_onmission3&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;CS1_02_cf_onmission4&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;v_rockclub&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;v_janitor&apos;</span>);
-alt.removeIpl(<span class="hljs-string">&apos;hei_bi_hw1_13_door&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;bkr_bi_hw1_13_int&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;ufo&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;ufo_lod&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;ufo_eye&apos;</span>);
-alt.removeIpl(<span class="hljs-string">&apos;v_carshowroom&apos;</span>);
-alt.removeIpl(<span class="hljs-string">&apos;shutter_open&apos;</span>);
-alt.removeIpl(<span class="hljs-string">&apos;shutter_closed&apos;</span>);
-alt.removeIpl(<span class="hljs-string">&apos;shr_int&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;csr_afterMission&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;v_carshowroom&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;shr_int&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;shutter_closed&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;smboat&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;smboat_distantlights&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;smboat_lod&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;smboat_lodlights&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;cargoship&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;railing_start&apos;</span>);
-alt.removeIpl(<span class="hljs-string">&apos;sp1_10_fake_interior&apos;</span>);
-alt.removeIpl(<span class="hljs-string">&apos;sp1_10_fake_interior_lod&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;sp1_10_real_interior&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;sp1_10_real_interior_lod&apos;</span>);
-alt.removeIpl(<span class="hljs-string">&apos;id2_14_during_door&apos;</span>);
-alt.removeIpl(<span class="hljs-string">&apos;id2_14_during1&apos;</span>);
-alt.removeIpl(<span class="hljs-string">&apos;id2_14_during2&apos;</span>);
-alt.removeIpl(<span class="hljs-string">&apos;id2_14_on_fire&apos;</span>);
-alt.removeIpl(<span class="hljs-string">&apos;id2_14_post_no_int&apos;</span>);
-alt.removeIpl(<span class="hljs-string">&apos;id2_14_pre_no_int&apos;</span>);
-alt.removeIpl(<span class="hljs-string">&apos;id2_14_during_door&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;id2_14_during1&apos;</span>);
-alt.removeIpl(<span class="hljs-string">&apos;Coroner_Int_off&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;coronertrash&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;Coroner_Int_on&apos;</span>);
-alt.removeIpl(<span class="hljs-string">&apos;bh1_16_refurb&apos;</span>);
-alt.removeIpl(<span class="hljs-string">&apos;jewel2fake&apos;</span>);
-alt.removeIpl(<span class="hljs-string">&apos;bh1_16_doors_shut&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;refit_unload&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;post_hiest_unload&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;Carwash_with_spinners&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;KT_CarWash&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;ferris_finale_Anim&apos;</span>);
-alt.removeIpl(<span class="hljs-string">&apos;ch1_02_closed&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;ch1_02_open&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;AP1_04_TriAf01&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;CS2_06_TriAf02&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;CS4_04_TriAf03&apos;</span>);
-alt.removeIpl(<span class="hljs-string">&apos;scafstartimap&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;scafendimap&apos;</span>);
-alt.removeIpl(<span class="hljs-string">&apos;DT1_05_HC_REMOVE&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;DT1_05_HC_REQ&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;DT1_05_REQUEST&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;dt1_05_hc_remove&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;dt1_05_hc_remove_lod&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;FINBANK&apos;</span>);
-alt.removeIpl(<span class="hljs-string">&apos;DT1_03_Shutter&apos;</span>);
-alt.removeIpl(<span class="hljs-string">&apos;DT1_03_Gr_Closed&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;golfflags&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;airfield&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;v_garages&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;v_foundry&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;hei_yacht_heist&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;hei_yacht_heist_Bar&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;hei_yacht_heist_Bedrm&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;hei_yacht_heist_Bridge&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;hei_yacht_heist_DistantLights&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;hei_yacht_heist_enginrm&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;hei_yacht_heist_LODLights&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;hei_yacht_heist_Lounge&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;hei_carrier&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;hei_Carrier_int1&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;hei_Carrier_int2&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;hei_Carrier_int3&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;hei_Carrier_int4&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;hei_Carrier_int5&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;hei_Carrier_int6&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;hei_carrier_LODLights&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;bkr_bi_id1_23_door&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;lr_cs6_08_grave_closed&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;hei_sm_16_interior_v_bahama_milo_&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;CS3_07_MPGates&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;cs5_4_trains&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;v_lesters&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;v_trevors&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;v_michael&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;v_comedy&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;v_cinema&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;V_Sweat&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;V_35_Fireman&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;redCarpet&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;triathlon2_VBprops&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;jetstenativeurnel&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;Jetsteal_ipl_grp1&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;v_hospital&apos;</span>);
-alt.removeIpl(<span class="hljs-string">&apos;RC12B_Default&apos;</span>);
-alt.removeIpl(<span class="hljs-string">&apos;RC12B_Fixed&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;RC12B_Destroyed&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;RC12B_HospitalInterior&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;canyonriver01&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;canyonriver01_lod&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;cs3_05_water_grp1&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;cs3_05_water_grp1_lod&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;trv1_trail_start&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;CanyonRvrShallow&apos;</span>);
+<pre class="language-"><code class="lang-js">alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;ex_dt1_02_office_02b&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;chop_props&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;FIBlobby&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">removeIpl</span><span class="token punctuation">(</span><span class="token string">&apos;FIBlobbyfake&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;FBI_colPLUG&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;FBI_repair&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;v_tunnel_hole&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;TrevorsMP&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;TrevorsTrailer&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;TrevorsTrailerTidy&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">removeIpl</span><span class="token punctuation">(</span><span class="token string">&apos;farm_burnt&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">removeIpl</span><span class="token punctuation">(</span><span class="token string">&apos;farm_burnt_lod&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">removeIpl</span><span class="token punctuation">(</span><span class="token string">&apos;farm_burnt_props&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">removeIpl</span><span class="token punctuation">(</span><span class="token string">&apos;farmint_cap&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">removeIpl</span><span class="token punctuation">(</span><span class="token string">&apos;farmint_cap_lod&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;farm&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;farmint&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;farm_lod&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;farm_props&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;facelobby&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">removeIpl</span><span class="token punctuation">(</span><span class="token string">&apos;CS1_02_cf_offmission&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;CS1_02_cf_onmission1&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;CS1_02_cf_onmission2&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;CS1_02_cf_onmission3&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;CS1_02_cf_onmission4&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;v_rockclub&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;v_janitor&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">removeIpl</span><span class="token punctuation">(</span><span class="token string">&apos;hei_bi_hw1_13_door&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;bkr_bi_hw1_13_int&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;ufo&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;ufo_lod&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;ufo_eye&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">removeIpl</span><span class="token punctuation">(</span><span class="token string">&apos;v_carshowroom&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">removeIpl</span><span class="token punctuation">(</span><span class="token string">&apos;shutter_open&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">removeIpl</span><span class="token punctuation">(</span><span class="token string">&apos;shutter_closed&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">removeIpl</span><span class="token punctuation">(</span><span class="token string">&apos;shr_int&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;csr_afterMission&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;v_carshowroom&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;shr_int&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;shutter_closed&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;smboat&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;smboat_distantlights&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;smboat_lod&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;smboat_lodlights&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;cargoship&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;railing_start&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">removeIpl</span><span class="token punctuation">(</span><span class="token string">&apos;sp1_10_fake_interior&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">removeIpl</span><span class="token punctuation">(</span><span class="token string">&apos;sp1_10_fake_interior_lod&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;sp1_10_real_interior&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;sp1_10_real_interior_lod&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">removeIpl</span><span class="token punctuation">(</span><span class="token string">&apos;id2_14_during_door&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">removeIpl</span><span class="token punctuation">(</span><span class="token string">&apos;id2_14_during1&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">removeIpl</span><span class="token punctuation">(</span><span class="token string">&apos;id2_14_during2&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">removeIpl</span><span class="token punctuation">(</span><span class="token string">&apos;id2_14_on_fire&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">removeIpl</span><span class="token punctuation">(</span><span class="token string">&apos;id2_14_post_no_int&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">removeIpl</span><span class="token punctuation">(</span><span class="token string">&apos;id2_14_pre_no_int&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">removeIpl</span><span class="token punctuation">(</span><span class="token string">&apos;id2_14_during_door&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;id2_14_during1&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">removeIpl</span><span class="token punctuation">(</span><span class="token string">&apos;Coroner_Int_off&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;coronertrash&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;Coroner_Int_on&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">removeIpl</span><span class="token punctuation">(</span><span class="token string">&apos;bh1_16_refurb&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">removeIpl</span><span class="token punctuation">(</span><span class="token string">&apos;jewel2fake&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">removeIpl</span><span class="token punctuation">(</span><span class="token string">&apos;bh1_16_doors_shut&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;refit_unload&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;post_hiest_unload&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;Carwash_with_spinners&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;KT_CarWash&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;ferris_finale_Anim&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">removeIpl</span><span class="token punctuation">(</span><span class="token string">&apos;ch1_02_closed&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;ch1_02_open&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;AP1_04_TriAf01&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;CS2_06_TriAf02&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;CS4_04_TriAf03&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">removeIpl</span><span class="token punctuation">(</span><span class="token string">&apos;scafstartimap&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;scafendimap&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">removeIpl</span><span class="token punctuation">(</span><span class="token string">&apos;DT1_05_HC_REMOVE&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;DT1_05_HC_REQ&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;DT1_05_REQUEST&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;dt1_05_hc_remove&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;dt1_05_hc_remove_lod&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;FINBANK&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">removeIpl</span><span class="token punctuation">(</span><span class="token string">&apos;DT1_03_Shutter&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">removeIpl</span><span class="token punctuation">(</span><span class="token string">&apos;DT1_03_Gr_Closed&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;golfflags&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;airfield&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;v_garages&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;v_foundry&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;hei_yacht_heist&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;hei_yacht_heist_Bar&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;hei_yacht_heist_Bedrm&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;hei_yacht_heist_Bridge&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;hei_yacht_heist_DistantLights&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;hei_yacht_heist_enginrm&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;hei_yacht_heist_LODLights&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;hei_yacht_heist_Lounge&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;hei_carrier&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;hei_Carrier_int1&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;hei_Carrier_int2&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;hei_Carrier_int3&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;hei_Carrier_int4&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;hei_Carrier_int5&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;hei_Carrier_int6&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;hei_carrier_LODLights&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;bkr_bi_id1_23_door&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;lr_cs6_08_grave_closed&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;hei_sm_16_interior_v_bahama_milo_&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;CS3_07_MPGates&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;cs5_4_trains&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;v_lesters&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;v_trevors&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;v_michael&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;v_comedy&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;v_cinema&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;V_Sweat&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;V_35_Fireman&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;redCarpet&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;triathlon2_VBprops&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;jetstenativeurnel&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;Jetsteal_ipl_grp1&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;v_hospital&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">removeIpl</span><span class="token punctuation">(</span><span class="token string">&apos;RC12B_Default&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">removeIpl</span><span class="token punctuation">(</span><span class="token string">&apos;RC12B_Fixed&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;RC12B_Destroyed&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;RC12B_HospitalInterior&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;canyonriver01&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;canyonriver01_lod&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;cs3_05_water_grp1&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;cs3_05_water_grp1_lod&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;trv1_trail_start&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;CanyonRvrShallow&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="hljs-comment">// CASINO</span>
-alt.requestIpl(<span class="hljs-string">&apos;vw_casino_penthouse&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;vw_casino_main&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;vw_casino_carpark&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;vw_dlc_casino_door&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;vw_casino_door&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;hei_dlc_windows_casino&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;hei_dlc_casino_door&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;hei_dlc_casino_aircon&apos;</span>);
-alt.requestIpl(<span class="hljs-string">&apos;vw_casino_garage&apos;</span>);
+<span class="token comment">// CASINO</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;vw_casino_penthouse&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;vw_casino_main&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;vw_casino_carpark&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;vw_dlc_casino_door&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;vw_casino_door&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;hei_dlc_windows_casino&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;hei_dlc_casino_door&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;hei_dlc_casino_aircon&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;vw_casino_garage&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="hljs-keyword">let</span> interiorID = natives.getInteriorAtCoords(<span class="hljs-number">1100.0</span>, <span class="hljs-number">220.0</span>, -<span class="hljs-number">50.0</span>);
-<span class="hljs-keyword">if</span> (natives.isValidInterior(interiorID)) {
-    natives.activateInteriorEntitySet(interiorID, <span class="hljs-string">&apos;0x30240D11&apos;</span>);
-    natives.activateInteriorEntitySet(interiorID, <span class="hljs-string">&apos;0xA3C89BB2&apos;</span>);
-    natives.refreshInterior(interiorID);
-}
+<span class="token keyword">let</span> interiorID <span class="token operator">=</span> natives<span class="token punctuation">.</span><span class="token function">getInteriorAtCoords</span><span class="token punctuation">(</span><span class="token number">1100.0</span><span class="token punctuation">,</span> <span class="token number">220.0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">50.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>natives<span class="token punctuation">.</span><span class="token function">isValidInterior</span><span class="token punctuation">(</span>interiorID<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    natives<span class="token punctuation">.</span><span class="token function">activateInteriorEntitySet</span><span class="token punctuation">(</span>interiorID<span class="token punctuation">,</span> <span class="token string">&apos;0x30240D11&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    natives<span class="token punctuation">.</span><span class="token function">activateInteriorEntitySet</span><span class="token punctuation">(</span>interiorID<span class="token punctuation">,</span> <span class="token string">&apos;0xA3C89BB2&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    natives<span class="token punctuation">.</span><span class="token function">refreshInterior</span><span class="token punctuation">(</span>interiorID<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-interiorID = natives.getInteriorAtCoords(<span class="hljs-number">976.6364</span>, <span class="hljs-number">70.29476</span>, <span class="hljs-number">115.1641</span>);
-<span class="hljs-keyword">if</span> (natives.isValidInterior(interiorID)) {
-    natives.activateInteriorEntitySet(interiorID, <span class="hljs-string">&apos;Set_Pent_Tint_Shell&apos;</span>);
-    natives.activateInteriorEntitySet(interiorID, <span class="hljs-string">&apos;Set_Pent_Pattern_09&apos;</span>);
-    natives.activateInteriorEntitySet(interiorID, <span class="hljs-string">&apos;Set_Pent_Spa_Bar_Open&apos;</span>);
-    natives.activateInteriorEntitySet(interiorID, <span class="hljs-string">&apos;Set_Pent_Media_Bar_Open&apos;</span>);
-    natives.activateInteriorEntitySet(interiorID, <span class="hljs-string">&apos;Set_Pent_Arcade_Modern&apos;</span>);
-    natives.activateInteriorEntitySet(interiorID, <span class="hljs-string">&apos;Set_Pent_Bar_Clutter&apos;</span>);
-    natives.activateInteriorEntitySet(interiorID, <span class="hljs-string">&apos;Set_Pent_Clutter_03&apos;</span>);
-    natives.activateInteriorEntitySet(interiorID, <span class="hljs-string">&apos;Set_pent_bar_light_02&apos;</span>);
-    natives.refreshInterior(interiorID);
-}
+interiorID <span class="token operator">=</span> natives<span class="token punctuation">.</span><span class="token function">getInteriorAtCoords</span><span class="token punctuation">(</span><span class="token number">976.6364</span><span class="token punctuation">,</span> <span class="token number">70.29476</span><span class="token punctuation">,</span> <span class="token number">115.1641</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>natives<span class="token punctuation">.</span><span class="token function">isValidInterior</span><span class="token punctuation">(</span>interiorID<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    natives<span class="token punctuation">.</span><span class="token function">activateInteriorEntitySet</span><span class="token punctuation">(</span>interiorID<span class="token punctuation">,</span> <span class="token string">&apos;Set_Pent_Tint_Shell&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    natives<span class="token punctuation">.</span><span class="token function">activateInteriorEntitySet</span><span class="token punctuation">(</span>interiorID<span class="token punctuation">,</span> <span class="token string">&apos;Set_Pent_Pattern_09&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    natives<span class="token punctuation">.</span><span class="token function">activateInteriorEntitySet</span><span class="token punctuation">(</span>interiorID<span class="token punctuation">,</span> <span class="token string">&apos;Set_Pent_Spa_Bar_Open&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    natives<span class="token punctuation">.</span><span class="token function">activateInteriorEntitySet</span><span class="token punctuation">(</span>interiorID<span class="token punctuation">,</span> <span class="token string">&apos;Set_Pent_Media_Bar_Open&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    natives<span class="token punctuation">.</span><span class="token function">activateInteriorEntitySet</span><span class="token punctuation">(</span>interiorID<span class="token punctuation">,</span> <span class="token string">&apos;Set_Pent_Arcade_Modern&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    natives<span class="token punctuation">.</span><span class="token function">activateInteriorEntitySet</span><span class="token punctuation">(</span>interiorID<span class="token punctuation">,</span> <span class="token string">&apos;Set_Pent_Bar_Clutter&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    natives<span class="token punctuation">.</span><span class="token function">activateInteriorEntitySet</span><span class="token punctuation">(</span>interiorID<span class="token punctuation">,</span> <span class="token string">&apos;Set_Pent_Clutter_03&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    natives<span class="token punctuation">.</span><span class="token function">activateInteriorEntitySet</span><span class="token punctuation">(</span>interiorID<span class="token punctuation">,</span> <span class="token string">&apos;Set_pent_bar_light_02&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    natives<span class="token punctuation">.</span><span class="token function">refreshInterior</span><span class="token punctuation">(</span>interiorID<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 
                                 
@@ -2729,7 +2733,7 @@ interiorID = natives.getInteriorAtCoords(<span class="hljs-number">976.6364</spa
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Missing Interiors - IPLs","description":"List of all missing interiors to load.","prefix":"[Table]","level":"1.7.5","depth":2,"next":{"title":"Ped Bones","level":"1.7.6","depth":2,"path":"docs/articles/tables/ped-bones.md","ref":"docs/articles/tables/ped-bones.md","articles":[]},"previous":{"title":"Frontend Sounds","level":"1.7.4","depth":2,"path":"docs/articles/tables/frontend-sounds.md","ref":"docs/articles/tables/frontend-sounds.md","articles":[]},"dir":"ltr"},"config":{"plugins":["gitbook-plugin-expandable-contract-chapters","honkit-plugin-sitemap","honkit-plugin-robots"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"honkit-plugin-robots":{},"search":{},"robots":{"data":["User-agent: *","Disallow:"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"gitbook-plugin-expandable-contract-chapters":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"url":"https://altv.stuyk.com"},"honkit-plugin-sitemap":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"alt:V Unofficial Docs","gitbook":"*","description":"The unofficial documentation for alt:V's Javascript Modules."},"file":{"path":"docs/articles/tables/ipls.md","mtime":"2021-03-16T14:10:39.595Z","type":"markdown"},"gitbook":{"version":"3.6.17","time":"2021-03-16T14:10:57.364Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Missing Interiors - IPLs","description":"List of all missing interiors to load.","prefix":"[Table]","level":"1.7.5","depth":2,"next":{"title":"Ped Bones","level":"1.7.6","depth":2,"path":"docs/articles/tables/ped-bones.md","ref":"docs/articles/tables/ped-bones.md","articles":[]},"previous":{"title":"Frontend Sounds","level":"1.7.4","depth":2,"path":"docs/articles/tables/frontend-sounds.md","ref":"docs/articles/tables/frontend-sounds.md","articles":[]},"dir":"ltr"},"config":{"plugins":["gitbook-plugin-expandable-contract-chapters","-highlight","prism","honkit-plugin-sitemap","honkit-plugin-robots","honkit-plugin-theme-osiris"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"honkit-plugin-robots":{},"search":{},"robots":{"data":["User-agent: *","Disallow:"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"gitbook-plugin-expandable-contract-chapters":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"url":"https://altv.stuyk.com"},"honkit-plugin-theme-osiris":{},"honkit-plugin-sitemap":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"alt:V Unofficial Docs","gitbook":"*","description":"The unofficial documentation for alt:V's Javascript Modules."},"file":{"path":"docs/articles/tables/ipls.md","mtime":"2021-03-16T16:43:40.828Z","type":"markdown"},"gitbook":{"version":"3.6.17","time":"2021-03-16T16:43:53.318Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -2807,6 +2811,6 @@ interiorID = natives.getInteriorAtCoords(<span class="hljs-number">976.6364</spa
         
     
 
+        <script src="https://cdn.jsdelivr.net/npm/less@3.13" ></script>
     </body>
 </html>
-

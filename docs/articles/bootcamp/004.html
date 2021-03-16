@@ -20,7 +20,11 @@
                 
             
                 
-                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-honkit-plugin-theme-osiris/osiris.css">
                 
             
                 
@@ -2541,17 +2545,17 @@
 <p><img src="https://i.imgur.com/9KaG7Ol.png" alt></p>
 <h2 id="🖥️-windows-environment">🖥️ Windows Environment</h2>
 <p>If the drop down menu on the right says <code>cmd</code> or then you can start your <a href="../../../GLOSSARY.html#altv" class="glossary-term" title="The client that this documentation is for. You can download it at https://altv.mp/.">alt:V</a> server by running the following command:</p>
-<pre><code>altv-server
+<pre class="language-"><code>altv-server
 </code></pre><p>However if it says <code>powershell</code> then you can start your <a href="../../../GLOSSARY.html#altv" class="glossary-term" title="The client that this documentation is for. You can download it at https://altv.mp/.">alt:V</a> server by running the following command:</p>
-<pre><code>./altv-server
+<pre class="language-"><code>./altv-server
 </code></pre><p><em>You must use the correct command for the correct terminal, they are not cross-compatible</em></p>
 <h2 id="🐧-linux-environment">🐧 Linux Environment</h2>
 <p>The only caveat with the above commands is that they do not work in a Linux environment. If you are running your <a href="../../../GLOSSARY.html#altv" class="glossary-term" title="The client that this documentation is for. You can download it at https://altv.mp/.">alt:V</a> server in a linux environment then you need to run the following inside of the directory where your binaries are located inside of a <code>terminal</code>.</p>
-<pre><code class="lang-sh">chmod +x ./start.sh
-chmod +x ./altv-server
+<pre class="language-"><code class="lang-sh"><span class="token function">chmod</span> +x ./start.sh
+<span class="token function">chmod</span> +x ./altv-server
 </code></pre>
 <p>You may start your server on Linux with.</p>
-<pre><code class="lang-sh">./start.sh
+<pre class="language-"><code class="lang-sh">./start.sh
 </code></pre>
 <p><em>You must use the correct command for the correct terminal, they are not cross-compatible</em></p>
 <div style="text-align: right">
@@ -2609,7 +2613,7 @@ chmod +x ./altv-server
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"004 - Running Server Binaries","description":"","prefix":"[Bootcamp]","level":"1.4.4","depth":2,"next":{"title":"005 - Understanding Resource Structure","level":"1.4.5","depth":2,"path":"docs/articles/bootcamp/005.md","ref":"docs/articles/bootcamp/005.md","articles":[]},"previous":{"title":"003 - alt:V Server Binaries","level":"1.4.3","depth":2,"path":"docs/articles/bootcamp/003.md","ref":"docs/articles/bootcamp/003.md","articles":[]},"dir":"ltr"},"config":{"plugins":["gitbook-plugin-expandable-contract-chapters","honkit-plugin-sitemap","honkit-plugin-robots"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"honkit-plugin-robots":{},"search":{},"robots":{"data":["User-agent: *","Disallow:"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"gitbook-plugin-expandable-contract-chapters":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"url":"https://altv.stuyk.com"},"honkit-plugin-sitemap":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"alt:V Unofficial Docs","gitbook":"*","description":"The unofficial documentation for alt:V's Javascript Modules."},"file":{"path":"docs/articles/bootcamp/004.md","mtime":"2021-03-16T14:10:39.591Z","type":"markdown"},"gitbook":{"version":"3.6.17","time":"2021-03-16T14:10:57.364Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"004 - Running Server Binaries","description":"","prefix":"[Bootcamp]","level":"1.4.4","depth":2,"next":{"title":"005 - Understanding Resource Structure","level":"1.4.5","depth":2,"path":"docs/articles/bootcamp/005.md","ref":"docs/articles/bootcamp/005.md","articles":[]},"previous":{"title":"003 - alt:V Server Binaries","level":"1.4.3","depth":2,"path":"docs/articles/bootcamp/003.md","ref":"docs/articles/bootcamp/003.md","articles":[]},"dir":"ltr"},"config":{"plugins":["gitbook-plugin-expandable-contract-chapters","-highlight","prism","honkit-plugin-sitemap","honkit-plugin-robots","honkit-plugin-theme-osiris"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"honkit-plugin-robots":{},"search":{},"robots":{"data":["User-agent: *","Disallow:"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"gitbook-plugin-expandable-contract-chapters":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"url":"https://altv.stuyk.com"},"honkit-plugin-theme-osiris":{},"honkit-plugin-sitemap":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"alt:V Unofficial Docs","gitbook":"*","description":"The unofficial documentation for alt:V's Javascript Modules."},"file":{"path":"docs/articles/bootcamp/004.md","mtime":"2021-03-16T16:43:40.824Z","type":"markdown"},"gitbook":{"version":"3.6.17","time":"2021-03-16T16:43:53.318Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -2687,6 +2691,6 @@ chmod +x ./altv-server
         
     
 
+        <script src="https://cdn.jsdelivr.net/npm/less@3.13" ></script>
     </body>
 </html>
-

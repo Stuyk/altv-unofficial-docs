@@ -20,7 +20,11 @@
                 
             
                 
-                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-honkit-plugin-theme-osiris/osiris.css">
                 
             
                 
@@ -2536,54 +2540,54 @@
 <h2 id="command-syntax">Command Syntax</h2>
 <p>Almost all chat resources have a similar format where they require a <code>callback</code> function to execute your command.</p>
 <p>Let&apos;s take a look at what that looks like.</p>
-<pre><code class="lang-js">chat.registerCmd(<span class="hljs-string">&apos;test&apos;</span>, <span class="hljs-function">(<span class="hljs-params">player</span>) =&gt;</span> {
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;hello world&apos;</span>);
-});
+<pre class="language-"><code class="lang-js">chat<span class="token punctuation">.</span><span class="token function">registerCmd</span><span class="token punctuation">(</span><span class="token string">&apos;test&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">player</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;hello world&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p>When a player types <code>/test</code> in-game. Your server console will print <code>hello world</code>. What is happening in the function above is that a <code>player</code> instance is being passed back from</p>
 <h2 id="writing-positions-to-chat">Writing Positions to Chat</h2>
 <p>A utility that a lot of people usually need is to get the position of the player. Here&apos;s how we can do that and print that to chat.</p>
-<pre><code class="lang-js">chat.registerCmd(<span class="hljs-string">&apos;pos&apos;</span>, <span class="hljs-function">(<span class="hljs-params">player</span>) =&gt;</span> {
-    chat.send(player, <span class="hljs-string">`<span class="hljs-subst">${<span class="hljs-built_in">JSON</span>.stringify(player.pos)}</span>`</span>);
-    <span class="hljs-built_in">console</span>.log(player.pos);
-});
+<pre class="language-"><code class="lang-js">chat<span class="token punctuation">.</span><span class="token function">registerCmd</span><span class="token punctuation">(</span><span class="token string">&apos;pos&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">player</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    chat<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>player<span class="token punctuation">,</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>player<span class="token punctuation">.</span>pos<span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>player<span class="token punctuation">.</span>pos<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p><em>If you want to print these positions to the local player&apos;s console you can add a console.log for messages on client-side.</em></p>
 <h2 id="writing-a-vehicle-spawner">Writing a Vehicle Spawner</h2>
 <p>Below is some provided code to spawn a vehicle when you type <code>/vehicle infernus</code> in-game. It will spawn the vehicle model known as infernus in the game and place it right on top of the player.</p>
 <p><em>Sorry if your player dies doing this.</em></p>
-<pre><code class="lang-js">chat.registerCmd(<span class="hljs-string">&apos;vehicle&apos;</span>, <span class="hljs-function">(<span class="hljs-params">player, modelName</span>) =&gt;</span> {
-    <span class="hljs-keyword">if</span> (!modelName) {
-        chat.send(player, <span class="hljs-string">`/vehicle [modelName]`</span>);
-        <span class="hljs-keyword">return</span>;
-    }
+<pre class="language-"><code class="lang-js">chat<span class="token punctuation">.</span><span class="token function">registerCmd</span><span class="token punctuation">(</span><span class="token string">&apos;vehicle&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">player<span class="token punctuation">,</span> modelName</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>modelName<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        chat<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>player<span class="token punctuation">,</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">/vehicle [modelName]</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    <span class="hljs-keyword">let</span> vehicle;
+    <span class="token keyword">let</span> vehicle<span class="token punctuation">;</span>
 
-    <span class="hljs-keyword">try</span> {
-        vehicle = <span class="hljs-keyword">new</span> alt.Vehicle(modelName, player.pos.x, player.pos.y, player.pos.z, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
-    } <span class="hljs-keyword">catch</span> (err) {
-        chat.send(player, <span class="hljs-string">`~r~Invalid vehicle model.`</span>);
-        <span class="hljs-keyword">return</span>;
-    }
-});
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+        vehicle <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">alt<span class="token punctuation">.</span>Vehicle</span><span class="token punctuation">(</span>modelName<span class="token punctuation">,</span> player<span class="token punctuation">.</span>pos<span class="token punctuation">.</span>x<span class="token punctuation">,</span> player<span class="token punctuation">.</span>pos<span class="token punctuation">.</span>y<span class="token punctuation">,</span> player<span class="token punctuation">.</span>pos<span class="token punctuation">.</span>z<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        chat<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>player<span class="token punctuation">,</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">~r~Invalid vehicle model.</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <h2 id="spawn-the-player-with-a-command">Spawn the Player with a Command</h2>
 <p>You can assign a player model or use a default player using this simple command. In most cases servers won&apos;t require you to spawn the player so this could be seen as a change model command as well.</p>
-<pre><code class="lang-js">chat.registerCmd(<span class="hljs-string">&apos;spawn&apos;</span>, <span class="hljs-function">(<span class="hljs-params">player, modelName</span>) =&gt;</span> {
-    <span class="hljs-keyword">if</span> (!modelName) {
-        modelName = <span class="hljs-string">&apos;mp_m_freemode_01&apos;</span>;
-    }
+<pre class="language-"><code class="lang-js">chat<span class="token punctuation">.</span><span class="token function">registerCmd</span><span class="token punctuation">(</span><span class="token string">&apos;spawn&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">player<span class="token punctuation">,</span> modelName</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>modelName<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        modelName <span class="token operator">=</span> <span class="token string">&apos;mp_m_freemode_01&apos;</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    player.spawn(player.pos.x, player.pos.y, player.pos.z, <span class="hljs-number">0</span>);
+    player<span class="token punctuation">.</span><span class="token function">spawn</span><span class="token punctuation">(</span>player<span class="token punctuation">.</span>pos<span class="token punctuation">.</span>x<span class="token punctuation">,</span> player<span class="token punctuation">.</span>pos<span class="token punctuation">.</span>y<span class="token punctuation">,</span> player<span class="token punctuation">.</span>pos<span class="token punctuation">.</span>z<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    <span class="hljs-keyword">try</span> {
-        player.model = modelName;
-    } <span class="hljs-keyword">catch</span> (err) {
-        player.send(player, <span class="hljs-string">&apos;Invalid Model. Using default.&apos;</span>);
-        player.model = <span class="hljs-string">&apos;mp_m_freemode_01&apos;</span>;
-    }
-});
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+        player<span class="token punctuation">.</span>model <span class="token operator">=</span> modelName<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        player<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>player<span class="token punctuation">,</span> <span class="token string">&apos;Invalid Model. Using default.&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        player<span class="token punctuation">.</span>model <span class="token operator">=</span> <span class="token string">&apos;mp_m_freemode_01&apos;</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <h2 id="excercises">Excercises</h2>
 <p>Try solving these problems based on their vague descriptions to get more familiar with the <a href="../../../GLOSSARY.html#altv" class="glossary-term" title="The client that this documentation is for. You can download it at https://altv.mp/.">alt:V</a> API.</p>
@@ -2650,7 +2654,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"013 - Writing Commands","description":"How to write commands using chat resource.","prefix":"[Bootcamp]","level":"1.4.13","depth":2,"next":{"title":"Concept","level":"1.5","depth":1,"path":"docs/articles/concepts/README.md","ref":"docs/articles/concepts/README.md","articles":[{"title":"How to import alt:V natives","level":"1.5.1","depth":2,"path":"docs/articles/concepts/import-native.md","ref":"docs/articles/concepts/import-native.md","articles":[]},{"title":"How to import alt:V packages","level":"1.5.2","depth":2,"path":"docs/articles/concepts/importing-alt.md","ref":"docs/articles/concepts/importing-alt.md","articles":[]},{"title":"Radians and Degrees","level":"1.5.3","depth":2,"path":"docs/articles/concepts/radians-degrees.md","ref":"docs/articles/concepts/radians-degrees.md","articles":[]},{"title":"Migrating from RAGE:MP","level":"1.5.4","depth":2,"path":"docs/articles/concepts/ragemp-migration.md","ref":"docs/articles/concepts/ragemp-migration.md","articles":[]},{"title":"Server Events","level":"1.5.5","depth":2,"path":"docs/articles/concepts/server-events.md","ref":"docs/articles/concepts/server-events.md","articles":[]},{"title":"Script ID","level":"1.5.6","depth":2,"path":"docs/articles/concepts/understanding-script-id.md","ref":"docs/articles/concepts/understanding-script-id.md","articles":[]},{"title":"Using Events","level":"1.5.7","depth":2,"path":"docs/articles/concepts/using-events.md","ref":"docs/articles/concepts/using-events.md","articles":[]}]},"previous":{"title":"012 - Installing a Chat Resource","level":"1.4.12","depth":2,"path":"docs/articles/bootcamp/012.md","ref":"docs/articles/bootcamp/012.md","articles":[]},"dir":"ltr"},"config":{"plugins":["gitbook-plugin-expandable-contract-chapters","honkit-plugin-sitemap","honkit-plugin-robots"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"honkit-plugin-robots":{},"search":{},"robots":{"data":["User-agent: *","Disallow:"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"gitbook-plugin-expandable-contract-chapters":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"url":"https://altv.stuyk.com"},"honkit-plugin-sitemap":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"alt:V Unofficial Docs","gitbook":"*","description":"The unofficial documentation for alt:V's Javascript Modules."},"file":{"path":"docs/articles/bootcamp/013.md","mtime":"2021-03-16T14:10:39.591Z","type":"markdown"},"gitbook":{"version":"3.6.17","time":"2021-03-16T14:10:57.364Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"013 - Writing Commands","description":"How to write commands using chat resource.","prefix":"[Bootcamp]","level":"1.4.13","depth":2,"next":{"title":"Concept","level":"1.5","depth":1,"path":"docs/articles/concepts/README.md","ref":"docs/articles/concepts/README.md","articles":[{"title":"How to import alt:V natives","level":"1.5.1","depth":2,"path":"docs/articles/concepts/import-native.md","ref":"docs/articles/concepts/import-native.md","articles":[]},{"title":"How to import alt:V packages","level":"1.5.2","depth":2,"path":"docs/articles/concepts/importing-alt.md","ref":"docs/articles/concepts/importing-alt.md","articles":[]},{"title":"Radians and Degrees","level":"1.5.3","depth":2,"path":"docs/articles/concepts/radians-degrees.md","ref":"docs/articles/concepts/radians-degrees.md","articles":[]},{"title":"Migrating from RAGE:MP","level":"1.5.4","depth":2,"path":"docs/articles/concepts/ragemp-migration.md","ref":"docs/articles/concepts/ragemp-migration.md","articles":[]},{"title":"Server Events","level":"1.5.5","depth":2,"path":"docs/articles/concepts/server-events.md","ref":"docs/articles/concepts/server-events.md","articles":[]},{"title":"Script ID","level":"1.5.6","depth":2,"path":"docs/articles/concepts/understanding-script-id.md","ref":"docs/articles/concepts/understanding-script-id.md","articles":[]},{"title":"Using Events","level":"1.5.7","depth":2,"path":"docs/articles/concepts/using-events.md","ref":"docs/articles/concepts/using-events.md","articles":[]}]},"previous":{"title":"012 - Installing a Chat Resource","level":"1.4.12","depth":2,"path":"docs/articles/bootcamp/012.md","ref":"docs/articles/bootcamp/012.md","articles":[]},"dir":"ltr"},"config":{"plugins":["gitbook-plugin-expandable-contract-chapters","-highlight","prism","honkit-plugin-sitemap","honkit-plugin-robots","honkit-plugin-theme-osiris"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"honkit-plugin-robots":{},"search":{},"robots":{"data":["User-agent: *","Disallow:"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"gitbook-plugin-expandable-contract-chapters":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"url":"https://altv.stuyk.com"},"honkit-plugin-theme-osiris":{},"honkit-plugin-sitemap":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"alt:V Unofficial Docs","gitbook":"*","description":"The unofficial documentation for alt:V's Javascript Modules."},"file":{"path":"docs/articles/bootcamp/013.md","mtime":"2021-03-16T16:43:40.824Z","type":"markdown"},"gitbook":{"version":"3.6.17","time":"2021-03-16T16:43:53.318Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -2728,6 +2732,6 @@
         
     
 
+        <script src="https://cdn.jsdelivr.net/npm/less@3.13" ></script>
     </body>
 </html>
-

@@ -20,7 +20,11 @@
                 
             
                 
-                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-honkit-plugin-theme-osiris/osiris.css">
                 
             
                 
@@ -2527,116 +2531,116 @@
 <h2 id="limitations-and-performance-with-prototyping">Limitations and Performance with Prototyping</h2>
 <p>While prototypes seem like a handy way to get accessible functions, data, etc. keep in mind that the data that is stored on a player has to be transferred between resources, and sometimes even events. Try to keep the data you store on a Player, or a Vehicle relatively small.</p>
 <h2 id="javascript-example">Javascript Example</h2>
-<pre><code class="lang-js">alt.Player.prototype.emitMeta = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">emitMeta</span>(<span class="hljs-params">key, value</span>) </span>{
-    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> value === <span class="hljs-string">&apos;function&apos;</span>) {
-        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">`Value cannot be a function. emitMeta.prototype`</span>);
-    }
+<pre class="language-"><code class="lang-js">alt<span class="token punctuation">.</span><span class="token class-name">Player</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">emitMeta</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token function">emitMeta</span><span class="token punctuation">(</span><span class="token parameter">key<span class="token punctuation">,</span> value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> value <span class="token operator">===</span> <span class="token string">&apos;function&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Value cannot be a function. emitMeta.prototype</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    <span class="hljs-built_in">this</span>.setMeta(key, value);
-    alt.emitClient(<span class="hljs-built_in">this</span>, <span class="hljs-string">&apos;meta:Emit&apos;</span>, key, value);
-};
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setMeta</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">emitClient</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token string">&apos;meta:Emit&apos;</span><span class="token punctuation">,</span> key<span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-alt.Player.prototype.init = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span>(<span class="hljs-params"></span>) </span>{
-    <span class="hljs-built_in">this</span>.data = {};
-};
+alt<span class="token punctuation">.</span><span class="token class-name">Player</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">init</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>data <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-alt.Player.prototype.syncCash = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">syncCash</span>(<span class="hljs-params"></span>) </span>{
-    <span class="hljs-built_in">this</span>.emitMeta(<span class="hljs-string">&apos;cash&apos;</span>, <span class="hljs-built_in">this</span>.data.cash);
-};
+alt<span class="token punctuation">.</span><span class="token class-name">Player</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">syncCash</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token function">syncCash</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">emitMeta</span><span class="token punctuation">(</span><span class="token string">&apos;cash&apos;</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span>cash<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-alt.Player.prototype.setCash = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setCash</span>(<span class="hljs-params">value</span>) </span>{
-    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">isNaN</span>(value)) {
-        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">`Value is not a number. setCash.prototype`</span>);
-    }
+alt<span class="token punctuation">.</span><span class="token class-name">Player</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">setCash</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token function">setCash</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isNaN</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Value is not a number. setCash.prototype</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    <span class="hljs-keyword">if</span> (!<span class="hljs-built_in">this</span>.data) {
-        <span class="hljs-built_in">this</span>.data = {};
-    }
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>data <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    <span class="hljs-built_in">this</span>.data.cash = value;
-    <span class="hljs-built_in">this</span>.syncCash();
-};
+    <span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span>cash <span class="token operator">=</span> value<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">syncCash</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-alt.Player.prototype.subCash = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">subCash</span>(<span class="hljs-params">value</span>) </span>{
-    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">isNaN</span>(value)) {
-        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">`Value is not a number. subCash.prototype`</span>);
-    }
+alt<span class="token punctuation">.</span><span class="token class-name">Player</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">subCash</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token function">subCash</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isNaN</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Value is not a number. subCash.prototype</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    <span class="hljs-keyword">if</span> (!<span class="hljs-built_in">this</span>.data) {
-        <span class="hljs-built_in">this</span>.data = {};
-    }
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>data <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    <span class="hljs-keyword">const</span> absValue = <span class="hljs-built_in">Math</span>.abs(<span class="hljs-built_in">parseFloat</span>(value)) * <span class="hljs-number">1</span>;
-    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.data.cash &lt; absValue) {
-        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
-    }
+    <span class="token keyword">const</span> absValue <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span><span class="token function">parseFloat</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span>cash <span class="token operator">&lt;</span> absValue<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    <span class="hljs-built_in">this</span>.data.cash -= absValue;
-    <span class="hljs-built_in">this</span>.data.cash = <span class="hljs-built_in">Number</span>.parseFloat(<span class="hljs-built_in">this</span>.data.cash).toFixed(<span class="hljs-number">2</span>) * <span class="hljs-number">1</span>;
-    <span class="hljs-built_in">this</span>.syncCash();
-    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
-};
+    <span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span>cash <span class="token operator">-=</span> absValue<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span>cash <span class="token operator">=</span> Number<span class="token punctuation">.</span><span class="token function">parseFloat</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span>cash<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toFixed</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">syncCash</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-alt.Player.prototype.addCash = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addCash</span>(<span class="hljs-params">value</span>) </span>{
-    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">isNaN</span>(value)) {
-        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">`Value is not a number. addCash.prototype`</span>);
-    }
+alt<span class="token punctuation">.</span><span class="token class-name">Player</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">addCash</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token function">addCash</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isNaN</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Value is not a number. addCash.prototype</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    <span class="hljs-keyword">if</span> (!<span class="hljs-built_in">this</span>.data) {
-        <span class="hljs-built_in">this</span>.data = {};
-    }
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>data <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    <span class="hljs-keyword">const</span> absValue = <span class="hljs-built_in">Math</span>.abs(<span class="hljs-built_in">parseFloat</span>(value));
-    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.data.cash + absValue &gt; <span class="hljs-number">92233720368547757</span>) {
-        absValue = <span class="hljs-number">92233720368547757</span>;
-    }
+    <span class="token keyword">const</span> absValue <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span><span class="token function">parseFloat</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span>cash <span class="token operator">+</span> absValue <span class="token operator">&gt;</span> <span class="token number">92233720368547757</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        absValue <span class="token operator">=</span> <span class="token number">92233720368547757</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    <span class="hljs-built_in">this</span>.data.cash += absValue;
-    <span class="hljs-built_in">this</span>.data.cash = <span class="hljs-built_in">Number</span>.parseFloat(<span class="hljs-built_in">this</span>.data.cash).toFixed(<span class="hljs-number">2</span>) * <span class="hljs-number">1</span>;
-    <span class="hljs-built_in">this</span>.syncCash();
-    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
-};
+    <span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span>cash <span class="token operator">+=</span> absValue<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span>cash <span class="token operator">=</span> Number<span class="token punctuation">.</span><span class="token function">parseFloat</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span>cash<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toFixed</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">syncCash</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
 <h2 id="typescript-server-side-example">Typescript Server Side Example</h2>
-<pre><code class="lang-ts"><span class="hljs-comment">// Use `alt-client` to do prototyping on client-side.</span>
-<span class="hljs-keyword">declare</span> <span class="hljs-built_in">module</span> <span class="hljs-string">&apos;alt-server&apos;</span> {
-    <span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> Player {
-        cash?: <span class="hljs-built_in">number</span>;
-        bank?: <span class="hljs-built_in">number</span>;
+<pre class="language-"><code class="lang-ts">// Use `alt-client` to do prototyping on client-side.
+declare module &apos;alt-server&apos; {
+    export interface Player {
+        cash?: number;
+        bank?: number;
 
-        <span class="hljs-comment">// You must declare your function interfaces.</span>
-        addToCash(value: <span class="hljs-built_in">number</span>): <span class="hljs-built_in">boolean</span>;
-        addToBank(value: <span class="hljs-built_in">number</span>): <span class="hljs-built_in">boolean</span>;
+        // You must declare your function interfaces.
+        addToCash(value: number): boolean;
+        addToBank(value: number): boolean;
     }
 }
 
-<span class="hljs-comment">// Then you can define your prototype functions.</span>
-alt.Player.prototype.addToCash = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addToCash</span>(<span class="hljs-params">value: <span class="hljs-built_in">number</span></span>) </span>{
-    <span class="hljs-keyword">if</span> (!<span class="hljs-built_in">this</span>.cash) {
-        <span class="hljs-built_in">this</span>.cash = value;
-    } <span class="hljs-keyword">else</span> {
-        <span class="hljs-built_in">this</span>.cash += value;
+// Then you can define your prototype functions.
+alt.Player.prototype.addToCash = function addToCash(value: number) {
+    if (!this.cash) {
+        this.cash = value;
+    } else {
+        this.cash += value;
     }
 
-    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+    return true;
 };
 
-alt.Player.prototype.addToBank = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addToBank</span>(<span class="hljs-params">value: <span class="hljs-built_in">number</span></span>) </span>{
-    <span class="hljs-keyword">if</span> (!<span class="hljs-built_in">this</span>.bank) {
-        <span class="hljs-built_in">this</span>.bank = value;
-    } <span class="hljs-keyword">else</span> {
-        <span class="hljs-built_in">this</span>.bank += value;
+alt.Player.prototype.addToBank = function addToBank(value: number) {
+    if (!this.bank) {
+        this.bank = value;
+    } else {
+        this.bank += value;
     }
 
-    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+    return true;
 };
 </code></pre>
 <h2 id="example-usage">Example Usage</h2>
-<pre><code class="lang-js">player.init();
-player.emitMeta(<span class="hljs-string">&apos;test&apos;</span>, <span class="hljs-literal">true</span>);
-player.setCash(<span class="hljs-number">25</span>);
-player.subCash(<span class="hljs-number">5</span>);
-player.addCash(<span class="hljs-number">2</span>);
+<pre class="language-"><code class="lang-js">player<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+player<span class="token punctuation">.</span><span class="token function">emitMeta</span><span class="token punctuation">(</span><span class="token string">&apos;test&apos;</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+player<span class="token punctuation">.</span><span class="token function">setCash</span><span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+player<span class="token punctuation">.</span><span class="token function">subCash</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+player<span class="token punctuation">.</span><span class="token function">addCash</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 
                                 
@@ -2681,7 +2685,7 @@ player.addCash(<span class="hljs-number">2</span>);
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"How to Prototype Classes","description":"Add more functionality to a Player or Vehicle","prefix":"[Snippet]","level":"1.6.7","depth":2,"next":{"title":"Request Model","level":"1.6.8","depth":2,"path":"docs/articles/snippets/request-model.md","ref":"docs/articles/snippets/request-model.md","articles":[]},"previous":{"title":"Encryption / Password Hashing","level":"1.6.6","depth":2,"path":"docs/articles/snippets/password-encryption.md","ref":"docs/articles/snippets/password-encryption.md","articles":[]},"dir":"ltr"},"config":{"plugins":["gitbook-plugin-expandable-contract-chapters","honkit-plugin-sitemap","honkit-plugin-robots"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"honkit-plugin-robots":{},"search":{},"robots":{"data":["User-agent: *","Disallow:"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"gitbook-plugin-expandable-contract-chapters":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"url":"https://altv.stuyk.com"},"honkit-plugin-sitemap":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"alt:V Unofficial Docs","gitbook":"*","description":"The unofficial documentation for alt:V's Javascript Modules."},"file":{"path":"docs/articles/snippets/prototyping.md","mtime":"2021-03-16T14:10:39.595Z","type":"markdown"},"gitbook":{"version":"3.6.17","time":"2021-03-16T14:10:57.364Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"How to Prototype Classes","description":"Add more functionality to a Player or Vehicle","prefix":"[Snippet]","level":"1.6.7","depth":2,"next":{"title":"Request Model","level":"1.6.8","depth":2,"path":"docs/articles/snippets/request-model.md","ref":"docs/articles/snippets/request-model.md","articles":[]},"previous":{"title":"Encryption / Password Hashing","level":"1.6.6","depth":2,"path":"docs/articles/snippets/password-encryption.md","ref":"docs/articles/snippets/password-encryption.md","articles":[]},"dir":"ltr"},"config":{"plugins":["gitbook-plugin-expandable-contract-chapters","-highlight","prism","honkit-plugin-sitemap","honkit-plugin-robots","honkit-plugin-theme-osiris"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"honkit-plugin-robots":{},"search":{},"robots":{"data":["User-agent: *","Disallow:"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"gitbook-plugin-expandable-contract-chapters":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"url":"https://altv.stuyk.com"},"honkit-plugin-theme-osiris":{},"honkit-plugin-sitemap":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"alt:V Unofficial Docs","gitbook":"*","description":"The unofficial documentation for alt:V's Javascript Modules."},"file":{"path":"docs/articles/snippets/prototyping.md","mtime":"2021-03-16T16:43:40.828Z","type":"markdown"},"gitbook":{"version":"3.6.17","time":"2021-03-16T16:43:53.318Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -2759,6 +2763,6 @@ player.addCash(<span class="hljs-number">2</span>);
         
     
 
+        <script src="https://cdn.jsdelivr.net/npm/less@3.13" ></script>
     </body>
 </html>
-

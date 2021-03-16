@@ -20,7 +20,11 @@
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-honkit-plugin-theme-osiris/osiris.css">
                 
             
                 
@@ -2524,11 +2528,11 @@
 <p><a href="../articles/tables/weather.html">Weather IDs &amp; Names</a></p>
 <p><em>If you wish to do weather transitions you must do it client-side.</em></p>
 <p><strong>Syntax</strong></p>
-<pre><code class="lang-ts">setWeather(weatherType: WeatherType): <span class="hljs-built_in">void</span>;
+<pre class="language-"><code class="lang-ts">setWeather(weatherType: WeatherType): void;
 </code></pre>
 <p><strong>Example Usage</strong></p>
-<pre><code class="lang-js"><span class="hljs-comment">// weather id</span>
-player.setWeather(<span class="hljs-number">0</span>); <span class="hljs-comment">// Extra Sunny</span>
+<pre class="language-"><code class="lang-js"><span class="token comment">// weather id</span>
+player<span class="token punctuation">.</span><span class="token function">setWeather</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Extra Sunny</span>
 </code></pre>
 
                                 
@@ -2573,7 +2577,7 @@ player.setWeather(<span class="hljs-number">0</span>); <span class="hljs-comment
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"[S] player.setWeather","description":"Used to set player weather.","prefix":"[Server]","level":"1.9.33","depth":2,"next":{"title":"[S] player.socialId","level":"1.9.34","depth":2,"path":"docs/player/socialId.md","ref":"docs/player/socialId.md","articles":[]},"previous":{"title":"[S] player.setSyncedMeta","level":"1.9.32","depth":2,"path":"docs/player/setSyncedMeta.md","ref":"docs/player/setSyncedMeta.md","articles":[]},"dir":"ltr"},"config":{"plugins":["gitbook-plugin-expandable-contract-chapters","honkit-plugin-sitemap","honkit-plugin-robots"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"honkit-plugin-robots":{},"search":{},"robots":{"data":["User-agent: *","Disallow:"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"gitbook-plugin-expandable-contract-chapters":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"url":"https://altv.stuyk.com"},"honkit-plugin-sitemap":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"alt:V Unofficial Docs","gitbook":"*","description":"The unofficial documentation for alt:V's Javascript Modules."},"file":{"path":"docs/player/setWeather.md","mtime":"2021-03-16T14:10:39.595Z","type":"markdown"},"gitbook":{"version":"3.6.17","time":"2021-03-16T14:10:57.364Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"[S] player.setWeather","description":"Used to set player weather.","prefix":"[Server]","level":"1.9.33","depth":2,"next":{"title":"[S] player.socialId","level":"1.9.34","depth":2,"path":"docs/player/socialId.md","ref":"docs/player/socialId.md","articles":[]},"previous":{"title":"[S] player.setSyncedMeta","level":"1.9.32","depth":2,"path":"docs/player/setSyncedMeta.md","ref":"docs/player/setSyncedMeta.md","articles":[]},"dir":"ltr"},"config":{"plugins":["gitbook-plugin-expandable-contract-chapters","-highlight","prism","honkit-plugin-sitemap","honkit-plugin-robots","honkit-plugin-theme-osiris"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"honkit-plugin-robots":{},"search":{},"robots":{"data":["User-agent: *","Disallow:"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"gitbook-plugin-expandable-contract-chapters":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"url":"https://altv.stuyk.com"},"honkit-plugin-theme-osiris":{},"honkit-plugin-sitemap":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"alt:V Unofficial Docs","gitbook":"*","description":"The unofficial documentation for alt:V's Javascript Modules."},"file":{"path":"docs/player/setWeather.md","mtime":"2021-03-16T16:43:40.828Z","type":"markdown"},"gitbook":{"version":"3.6.17","time":"2021-03-16T16:43:53.318Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -2651,6 +2655,6 @@ player.setWeather(<span class="hljs-number">0</span>); <span class="hljs-comment
         
     
 
+        <script src="https://cdn.jsdelivr.net/npm/less@3.13" ></script>
     </body>
 </html>
-

@@ -20,7 +20,11 @@
                 
             
                 
-                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-honkit-plugin-theme-osiris/osiris.css">
                 
             
                 
@@ -2524,195 +2528,195 @@
 <p>Cayo Perico Island has been added with The Cayo Perico Heist Update (mpheist4), the island can be found at <code>4895.28, -5744.58, 26.351</code>. There are two ways to load the island. You should use <strong>one</strong> of the following methods:</p>
 <h2 id="load-island-and-unload-los-santos">Load Island and Unload Los Santos</h2>
 <p>This method is more performant and better for weak PCs.</p>
-<pre><code class="lang-js">alt.on(<span class="hljs-string">&apos;connectionComplete&apos;</span>, <span class="hljs-function">() =&gt;</span> {
-    <span class="hljs-keyword">let</span> blip = natives.addBlipForCoord(<span class="hljs-number">5943.5679611650485</span>, -<span class="hljs-number">6272.114833599767</span>, <span class="hljs-number">2</span>); <span class="hljs-comment">// An invisible blip to make the map clickable at the island</span>
-    natives.setBlipSprite(blip, <span class="hljs-number">407</span>);
-    natives.setBlipScale(blip, <span class="hljs-number">0</span>);
-    natives.setBlipAsShortRange(blip, <span class="hljs-literal">false</span>);
-});
+<pre class="language-"><code class="lang-js">alt<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">&apos;connectionComplete&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> blip <span class="token operator">=</span> natives<span class="token punctuation">.</span><span class="token function">addBlipForCoord</span><span class="token punctuation">(</span><span class="token number">5943.5679611650485</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">6272.114833599767</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// An invisible blip to make the map clickable at the island</span>
+    natives<span class="token punctuation">.</span><span class="token function">setBlipSprite</span><span class="token punctuation">(</span>blip<span class="token punctuation">,</span> <span class="token number">407</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    natives<span class="token punctuation">.</span><span class="token function">setBlipScale</span><span class="token punctuation">(</span>blip<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    natives<span class="token punctuation">.</span><span class="token function">setBlipAsShortRange</span><span class="token punctuation">(</span>blip<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="hljs-keyword">let</span> nearIsland = <span class="hljs-literal">false</span>;
+<span class="token keyword">let</span> nearIsland <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
 
-alt.everyTick(<span class="hljs-function">() =&gt;</span> {
-    <span class="hljs-keyword">let</span> distance = alt.Player.local.pos.distanceTo(<span class="hljs-keyword">new</span> alt.Vector3(<span class="hljs-number">4840.571</span>, -<span class="hljs-number">5174.425</span>, <span class="hljs-number">2.0</span>));
+alt<span class="token punctuation">.</span><span class="token function">everyTick</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> distance <span class="token operator">=</span> alt<span class="token punctuation">.</span>Player<span class="token punctuation">.</span>local<span class="token punctuation">.</span>pos<span class="token punctuation">.</span><span class="token function">distanceTo</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">alt<span class="token punctuation">.</span>Vector3</span><span class="token punctuation">(</span><span class="token number">4840.571</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">5174.425</span><span class="token punctuation">,</span> <span class="token number">2.0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    <span class="hljs-keyword">if</span> (distance &lt; <span class="hljs-number">2000</span>) {
-        <span class="hljs-keyword">if</span> (!nearIsland) {
-            nearIsland = <span class="hljs-literal">true</span>;
-            natives.setIslandHopperEnabled(<span class="hljs-string">&apos;HeistIsland&apos;</span>, <span class="hljs-literal">true</span>);
-            natives.setScenarioGroupEnabled(<span class="hljs-string">&apos;Heist_Island_Peds&apos;</span>, <span class="hljs-literal">true</span>);
-            natives.setAudioFlag(<span class="hljs-string">&apos;PlayerOnDLCHeist4Island&apos;</span>, <span class="hljs-literal">true</span>);
-            natives.setAmbientZoneListStatePersistent(<span class="hljs-string">&apos;AZL_DLC_Hei4_Island_Zones&apos;</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>);
-            natives.setAmbientZoneListStatePersistent(<span class="hljs-string">&apos;AZL_DLC_Hei4_Island_Disabled_Zones&apos;</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">true</span>);
-        }
-    } <span class="hljs-keyword">else</span> {
-        <span class="hljs-keyword">if</span> (nearIsland) {
-            nearIsland = <span class="hljs-literal">false</span>;
-            natives.setIslandHopperEnabled(<span class="hljs-string">&apos;HeistIsland&apos;</span>, <span class="hljs-literal">false</span>);
-            natives.setScenarioGroupEnabled(<span class="hljs-string">&apos;Heist_Island_Peds&apos;</span>, <span class="hljs-literal">false</span>);
-            natives.setAudioFlag(<span class="hljs-string">&apos;PlayerOnDLCHeist4Island&apos;</span>, <span class="hljs-literal">false</span>);
-            natives.setAmbientZoneListStatePersistent(<span class="hljs-string">&apos;AZL_DLC_Hei4_Island_Zones&apos;</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>);
-            natives.setAmbientZoneListStatePersistent(<span class="hljs-string">&apos;AZL_DLC_Hei4_Island_Disabled_Zones&apos;</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>);
-        }
-    }
-    <span class="hljs-keyword">if</span> (nearIsland) {
-        natives.setRadarAsExteriorThisFrame();
-        natives.setRadarAsInteriorThisFrame(alt.hash(<span class="hljs-string">&apos;h4_fake_islandx&apos;</span>), <span class="hljs-number">4700.0</span>, -<span class="hljs-number">5145.0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
-    }
-});
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>distance <span class="token operator">&lt;</span> <span class="token number">2000</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>nearIsland<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            nearIsland <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+            natives<span class="token punctuation">.</span><span class="token function">setIslandHopperEnabled</span><span class="token punctuation">(</span><span class="token string">&apos;HeistIsland&apos;</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            natives<span class="token punctuation">.</span><span class="token function">setScenarioGroupEnabled</span><span class="token punctuation">(</span><span class="token string">&apos;Heist_Island_Peds&apos;</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            natives<span class="token punctuation">.</span><span class="token function">setAudioFlag</span><span class="token punctuation">(</span><span class="token string">&apos;PlayerOnDLCHeist4Island&apos;</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            natives<span class="token punctuation">.</span><span class="token function">setAmbientZoneListStatePersistent</span><span class="token punctuation">(</span><span class="token string">&apos;AZL_DLC_Hei4_Island_Zones&apos;</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            natives<span class="token punctuation">.</span><span class="token function">setAmbientZoneListStatePersistent</span><span class="token punctuation">(</span><span class="token string">&apos;AZL_DLC_Hei4_Island_Disabled_Zones&apos;</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>nearIsland<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            nearIsland <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+            natives<span class="token punctuation">.</span><span class="token function">setIslandHopperEnabled</span><span class="token punctuation">(</span><span class="token string">&apos;HeistIsland&apos;</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            natives<span class="token punctuation">.</span><span class="token function">setScenarioGroupEnabled</span><span class="token punctuation">(</span><span class="token string">&apos;Heist_Island_Peds&apos;</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            natives<span class="token punctuation">.</span><span class="token function">setAudioFlag</span><span class="token punctuation">(</span><span class="token string">&apos;PlayerOnDLCHeist4Island&apos;</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            natives<span class="token punctuation">.</span><span class="token function">setAmbientZoneListStatePersistent</span><span class="token punctuation">(</span><span class="token string">&apos;AZL_DLC_Hei4_Island_Zones&apos;</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            natives<span class="token punctuation">.</span><span class="token function">setAmbientZoneListStatePersistent</span><span class="token punctuation">(</span><span class="token string">&apos;AZL_DLC_Hei4_Island_Disabled_Zones&apos;</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>nearIsland<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        natives<span class="token punctuation">.</span><span class="token function">setRadarAsExteriorThisFrame</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        natives<span class="token punctuation">.</span><span class="token function">setRadarAsInteriorThisFrame</span><span class="token punctuation">(</span>alt<span class="token punctuation">.</span><span class="token function">hash</span><span class="token punctuation">(</span><span class="token string">&apos;h4_fake_islandx&apos;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">4700.0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">5145.0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <h2 id="load-island-and-keep-los-santos-island">Load Island and Keep Los Santos Island</h2>
 <p>This method loads all IPLs and keeps Los Santos loaded, this can have a big performance impact on weaker PCs.</p>
 <p><em>Note: You probably need to run additional natives, to reduce wave size etc.</em></p>
-<pre><code class="lang-js">alt.on(<span class="hljs-string">&apos;connectionComplete&apos;</span>, <span class="hljs-function">() =&gt;</span> {
-    <span class="hljs-keyword">let</span> blip = natives.addBlipForCoord(<span class="hljs-number">5943.5679611650485</span>, -<span class="hljs-number">6272.114833599767</span>, <span class="hljs-number">2</span>); <span class="hljs-comment">// a invisible blip to make the map clickable at the island</span>
-    natives.setBlipSprite(blip, <span class="hljs-number">407</span>);
-    natives.setBlipScale(blip, <span class="hljs-number">0</span>);
-    natives.setBlipAsShortRange(blip, <span class="hljs-literal">false</span>);
+<pre class="language-"><code class="lang-js">alt<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">&apos;connectionComplete&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> blip <span class="token operator">=</span> natives<span class="token punctuation">.</span><span class="token function">addBlipForCoord</span><span class="token punctuation">(</span><span class="token number">5943.5679611650485</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">6272.114833599767</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// a invisible blip to make the map clickable at the island</span>
+    natives<span class="token punctuation">.</span><span class="token function">setBlipSprite</span><span class="token punctuation">(</span>blip<span class="token punctuation">,</span> <span class="token number">407</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    natives<span class="token punctuation">.</span><span class="token function">setBlipScale</span><span class="token punctuation">(</span>blip<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    natives<span class="token punctuation">.</span><span class="token function">setBlipAsShortRange</span><span class="token punctuation">(</span>blip<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    alt.requestIpl(<span class="hljs-string">&apos;h4_islandairstrip&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_islandairstrip_props&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_islandx_mansion&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_islandx_mansion_props&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_islandx_props&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_islandxdock&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_islandxdock_props&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_islandxdock_props_2&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_islandxtower&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_islandx_maindock&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_islandx_maindock_props&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_islandx_maindock_props_2&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_IslandX_Mansion_Vault&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_islandairstrip_propsb&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_beach&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_beach_props&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_beach_bar_props&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_islandx_barrack_props&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_islandx_checkpoint&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_islandx_checkpoint_props&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_islandx_Mansion_Office&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_islandx_Mansion_LockUp_01&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_islandx_Mansion_LockUp_02&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_islandx_Mansion_LockUp_03&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_islandairstrip_hangar_props&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_IslandX_Mansion_B&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_islandairstrip_doorsclosed&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_Underwater_Gate_Closed&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_mansion_gate_closed&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_aa_guns&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_IslandX_Mansion_GuardFence&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_IslandX_Mansion_Entrance_Fence&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_IslandX_Mansion_B_Side_Fence&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_IslandX_Mansion_Lights&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_islandxcanal_props&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_beach_props_party&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_islandX_Terrain_props_06_a&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_islandX_Terrain_props_06_b&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_islandX_Terrain_props_06_c&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_islandX_Terrain_props_05_a&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_islandX_Terrain_props_05_b&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_islandX_Terrain_props_05_c&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_islandX_Terrain_props_05_d&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_islandX_Terrain_props_05_e&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_islandX_Terrain_props_05_f&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;H4_islandx_terrain_01&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;H4_islandx_terrain_02&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;H4_islandx_terrain_03&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;H4_islandx_terrain_04&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;H4_islandx_terrain_05&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;H4_islandx_terrain_06&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_ne_ipl_00&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_ne_ipl_01&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_ne_ipl_02&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_ne_ipl_03&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_ne_ipl_04&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_ne_ipl_05&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_ne_ipl_06&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_ne_ipl_07&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_ne_ipl_08&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_ne_ipl_09&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_nw_ipl_00&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_nw_ipl_01&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_nw_ipl_02&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_nw_ipl_03&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_nw_ipl_04&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_nw_ipl_05&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_nw_ipl_06&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_nw_ipl_07&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_nw_ipl_08&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_nw_ipl_09&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_se_ipl_00&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_se_ipl_01&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_se_ipl_02&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_se_ipl_03&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_se_ipl_04&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_se_ipl_05&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_se_ipl_06&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_se_ipl_07&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_se_ipl_08&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_se_ipl_09&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_sw_ipl_00&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_sw_ipl_01&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_sw_ipl_02&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_sw_ipl_03&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_sw_ipl_04&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_sw_ipl_05&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_sw_ipl_06&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_sw_ipl_07&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_sw_ipl_08&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_sw_ipl_09&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_islandx_mansion&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_islandxtower_veg&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_islandx_sea_mines&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_islandx&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_islandx_barrack_hatch&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_islandxdock_water_hatch&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_beach_party&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_mph4_terrain_01_grass_0&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_mph4_terrain_01_grass_1&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_mph4_terrain_02_grass_0&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_mph4_terrain_02_grass_1&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_mph4_terrain_02_grass_2&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_mph4_terrain_02_grass_3&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_mph4_terrain_04_grass_0&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_mph4_terrain_04_grass_1&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_mph4_terrain_04_grass_2&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_mph4_terrain_04_grass_3&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_mph4_terrain_05_grass_0&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_mph4_terrain_06_grass_0&apos;</span>);
-    alt.requestIpl(<span class="hljs-string">&apos;h4_mph4_airstrip_interior_0_airstrip_hanger&apos;</span>);
-});
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_islandairstrip&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_islandairstrip_props&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_islandx_mansion&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_islandx_mansion_props&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_islandx_props&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_islandxdock&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_islandxdock_props&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_islandxdock_props_2&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_islandxtower&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_islandx_maindock&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_islandx_maindock_props&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_islandx_maindock_props_2&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_IslandX_Mansion_Vault&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_islandairstrip_propsb&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_beach&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_beach_props&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_beach_bar_props&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_islandx_barrack_props&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_islandx_checkpoint&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_islandx_checkpoint_props&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_islandx_Mansion_Office&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_islandx_Mansion_LockUp_01&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_islandx_Mansion_LockUp_02&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_islandx_Mansion_LockUp_03&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_islandairstrip_hangar_props&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_IslandX_Mansion_B&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_islandairstrip_doorsclosed&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_Underwater_Gate_Closed&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_mansion_gate_closed&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_aa_guns&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_IslandX_Mansion_GuardFence&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_IslandX_Mansion_Entrance_Fence&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_IslandX_Mansion_B_Side_Fence&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_IslandX_Mansion_Lights&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_islandxcanal_props&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_beach_props_party&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_islandX_Terrain_props_06_a&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_islandX_Terrain_props_06_b&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_islandX_Terrain_props_06_c&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_islandX_Terrain_props_05_a&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_islandX_Terrain_props_05_b&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_islandX_Terrain_props_05_c&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_islandX_Terrain_props_05_d&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_islandX_Terrain_props_05_e&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_islandX_Terrain_props_05_f&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;H4_islandx_terrain_01&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;H4_islandx_terrain_02&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;H4_islandx_terrain_03&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;H4_islandx_terrain_04&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;H4_islandx_terrain_05&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;H4_islandx_terrain_06&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_ne_ipl_00&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_ne_ipl_01&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_ne_ipl_02&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_ne_ipl_03&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_ne_ipl_04&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_ne_ipl_05&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_ne_ipl_06&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_ne_ipl_07&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_ne_ipl_08&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_ne_ipl_09&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_nw_ipl_00&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_nw_ipl_01&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_nw_ipl_02&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_nw_ipl_03&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_nw_ipl_04&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_nw_ipl_05&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_nw_ipl_06&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_nw_ipl_07&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_nw_ipl_08&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_nw_ipl_09&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_se_ipl_00&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_se_ipl_01&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_se_ipl_02&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_se_ipl_03&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_se_ipl_04&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_se_ipl_05&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_se_ipl_06&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_se_ipl_07&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_se_ipl_08&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_se_ipl_09&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_sw_ipl_00&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_sw_ipl_01&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_sw_ipl_02&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_sw_ipl_03&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_sw_ipl_04&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_sw_ipl_05&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_sw_ipl_06&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_sw_ipl_07&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_sw_ipl_08&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_sw_ipl_09&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_islandx_mansion&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_islandxtower_veg&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_islandx_sea_mines&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_islandx&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_islandx_barrack_hatch&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_islandxdock_water_hatch&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_beach_party&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_mph4_terrain_01_grass_0&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_mph4_terrain_01_grass_1&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_mph4_terrain_02_grass_0&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_mph4_terrain_02_grass_1&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_mph4_terrain_02_grass_2&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_mph4_terrain_02_grass_3&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_mph4_terrain_04_grass_0&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_mph4_terrain_04_grass_1&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_mph4_terrain_04_grass_2&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_mph4_terrain_04_grass_3&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_mph4_terrain_05_grass_0&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_mph4_terrain_06_grass_0&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">requestIpl</span><span class="token punctuation">(</span><span class="token string">&apos;h4_mph4_airstrip_interior_0_airstrip_hanger&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="hljs-keyword">let</span> nearIsland = <span class="hljs-literal">false</span>;
+<span class="token keyword">let</span> nearIsland <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
 
-alt.everyTick(<span class="hljs-function">() =&gt;</span> {
-    <span class="hljs-keyword">let</span> distance = alt.Player.local.pos.distanceTo(<span class="hljs-keyword">new</span> alt.Vector3(<span class="hljs-number">4840.571</span>, -<span class="hljs-number">5174.425</span>, <span class="hljs-number">2.0</span>));
+alt<span class="token punctuation">.</span><span class="token function">everyTick</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> distance <span class="token operator">=</span> alt<span class="token punctuation">.</span>Player<span class="token punctuation">.</span>local<span class="token punctuation">.</span>pos<span class="token punctuation">.</span><span class="token function">distanceTo</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">alt<span class="token punctuation">.</span>Vector3</span><span class="token punctuation">(</span><span class="token number">4840.571</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">5174.425</span><span class="token punctuation">,</span> <span class="token number">2.0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    <span class="hljs-keyword">if</span> (distance &lt; <span class="hljs-number">2000</span>) {
-        <span class="hljs-keyword">if</span> (!nearIsland) {
-            nearIsland = <span class="hljs-literal">true</span>;
-            natives.setScenarioGroupEnabled(<span class="hljs-string">&apos;Heist_Island_Peds&apos;</span>, <span class="hljs-literal">true</span>);
-            natives.setAudioFlag(<span class="hljs-string">&apos;PlayerOnDLCHeist4Island&apos;</span>, <span class="hljs-literal">true</span>);
-            natives.setAmbientZoneListStatePersistent(<span class="hljs-string">&apos;AZL_DLC_Hei4_Island_Zones&apos;</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>);
-            natives.setAmbientZoneListStatePersistent(<span class="hljs-string">&apos;AZL_DLC_Hei4_Island_Disabled_Zones&apos;</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">true</span>);
-            natives.setDeepOceanScaler(<span class="hljs-number">0.1</span>);
-        }
-    } <span class="hljs-keyword">else</span> {
-        <span class="hljs-keyword">if</span> (nearIsland) {
-            nearIsland = <span class="hljs-literal">false</span>;
-            natives.setScenarioGroupEnabled(<span class="hljs-string">&apos;Heist_Island_Peds&apos;</span>, <span class="hljs-literal">false</span>);
-            natives.setAudioFlag(<span class="hljs-string">&apos;PlayerOnDLCHeist4Island&apos;</span>, <span class="hljs-literal">false</span>);
-            natives.setAmbientZoneListStatePersistent(<span class="hljs-string">&apos;AZL_DLC_Hei4_Island_Zones&apos;</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>);
-            natives.setAmbientZoneListStatePersistent(<span class="hljs-string">&apos;AZL_DLC_Hei4_Island_Disabled_Zones&apos;</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>);
-            natives.resetDeepOceanScaler();
-        }
-    }
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>distance <span class="token operator">&lt;</span> <span class="token number">2000</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>nearIsland<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            nearIsland <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+            natives<span class="token punctuation">.</span><span class="token function">setScenarioGroupEnabled</span><span class="token punctuation">(</span><span class="token string">&apos;Heist_Island_Peds&apos;</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            natives<span class="token punctuation">.</span><span class="token function">setAudioFlag</span><span class="token punctuation">(</span><span class="token string">&apos;PlayerOnDLCHeist4Island&apos;</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            natives<span class="token punctuation">.</span><span class="token function">setAmbientZoneListStatePersistent</span><span class="token punctuation">(</span><span class="token string">&apos;AZL_DLC_Hei4_Island_Zones&apos;</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            natives<span class="token punctuation">.</span><span class="token function">setAmbientZoneListStatePersistent</span><span class="token punctuation">(</span><span class="token string">&apos;AZL_DLC_Hei4_Island_Disabled_Zones&apos;</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            natives<span class="token punctuation">.</span><span class="token function">setDeepOceanScaler</span><span class="token punctuation">(</span><span class="token number">0.1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>nearIsland<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            nearIsland <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+            natives<span class="token punctuation">.</span><span class="token function">setScenarioGroupEnabled</span><span class="token punctuation">(</span><span class="token string">&apos;Heist_Island_Peds&apos;</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            natives<span class="token punctuation">.</span><span class="token function">setAudioFlag</span><span class="token punctuation">(</span><span class="token string">&apos;PlayerOnDLCHeist4Island&apos;</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            natives<span class="token punctuation">.</span><span class="token function">setAmbientZoneListStatePersistent</span><span class="token punctuation">(</span><span class="token string">&apos;AZL_DLC_Hei4_Island_Zones&apos;</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            natives<span class="token punctuation">.</span><span class="token function">setAmbientZoneListStatePersistent</span><span class="token punctuation">(</span><span class="token string">&apos;AZL_DLC_Hei4_Island_Disabled_Zones&apos;</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            natives<span class="token punctuation">.</span><span class="token function">resetDeepOceanScaler</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
 
-    <span class="hljs-keyword">if</span> (nearIsland) {
-        natives.setRadarAsExteriorThisFrame();
-        natives.setRadarAsInteriorThisFrame(alt.hash(<span class="hljs-string">&apos;h4_fake_islandx&apos;</span>), <span class="hljs-number">4700.0</span>, -<span class="hljs-number">5145.0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
-    }
-});
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>nearIsland<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        natives<span class="token punctuation">.</span><span class="token function">setRadarAsExteriorThisFrame</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        natives<span class="token punctuation">.</span><span class="token function">setRadarAsInteriorThisFrame</span><span class="token punctuation">(</span>alt<span class="token punctuation">.</span><span class="token function">hash</span><span class="token punctuation">(</span><span class="token string">&apos;h4_fake_islandx&apos;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">4700.0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">5145.0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p><sub><a href="https://wiki.altv.mp/wiki/Snippet:Cayo_Perico_Island" target="_blank">Source</a></sub></p>
 
@@ -2758,7 +2762,7 @@ alt.everyTick(<span class="hljs-function">() =&gt;</span> {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Cayo Perico Island","description":"Load the new island from The Cayo Perico Heist Update","prefix":"[Snippet]","level":"1.6.1","depth":2,"next":{"title":"Flickering Webview","level":"1.6.2","depth":2,"path":"docs/articles/snippets/flickering-webview.md","ref":"docs/articles/snippets/flickering-webview.md","articles":[]},"previous":{"title":"Snippet","level":"1.6","depth":1,"path":"docs/articles/snippets/README.md","ref":"docs/articles/snippets/README.md","articles":[{"title":"Cayo Perico Island","level":"1.6.1","depth":2,"path":"docs/articles/snippets/cayo-period-island.md","ref":"docs/articles/snippets/cayo-period-island.md","articles":[]},{"title":"Flickering Webview","level":"1.6.2","depth":2,"path":"docs/articles/snippets/flickering-webview.md","ref":"docs/articles/snippets/flickering-webview.md","articles":[]},{"title":"Using Help Text","level":"1.6.3","depth":2,"path":"docs/articles/snippets/help-text.md","ref":"docs/articles/snippets/help-text.md","articles":[]},{"title":"Create a Marker","level":"1.6.4","depth":2,"path":"docs/articles/snippets/markers.md","ref":"docs/articles/snippets/markers.md","articles":[]},{"title":"Create a Notification","level":"1.6.5","depth":2,"path":"docs/articles/snippets/notifications.md","ref":"docs/articles/snippets/notifications.md","articles":[]},{"title":"Encryption / Password Hashing","level":"1.6.6","depth":2,"path":"docs/articles/snippets/password-encryption.md","ref":"docs/articles/snippets/password-encryption.md","articles":[]},{"title":"How to Prototype Classes","level":"1.6.7","depth":2,"path":"docs/articles/snippets/prototyping.md","ref":"docs/articles/snippets/prototyping.md","articles":[]},{"title":"Request Model","level":"1.6.8","depth":2,"path":"docs/articles/snippets/request-model.md","ref":"docs/articles/snippets/request-model.md","articles":[]},{"title":"Pure JS SHA256","level":"1.6.9","depth":2,"path":"docs/articles/snippets/sha-256.md","ref":"docs/articles/snippets/sha-256.md","articles":[]},{"title":"How to Create 2D & 3D Text Labels","level":"1.6.10","depth":2,"path":"docs/articles/snippets/textlabels.md","ref":"docs/articles/snippets/textlabels.md","articles":[]},{"title":"How to use alt:V Voice","level":"1.6.11","depth":2,"path":"docs/articles/snippets/voice.md","ref":"docs/articles/snippets/voice.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["gitbook-plugin-expandable-contract-chapters","honkit-plugin-sitemap","honkit-plugin-robots"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"honkit-plugin-robots":{},"search":{},"robots":{"data":["User-agent: *","Disallow:"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"gitbook-plugin-expandable-contract-chapters":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"url":"https://altv.stuyk.com"},"honkit-plugin-sitemap":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"alt:V Unofficial Docs","gitbook":"*","description":"The unofficial documentation for alt:V's Javascript Modules."},"file":{"path":"docs/articles/snippets/cayo-period-island.md","mtime":"2021-03-16T14:10:39.595Z","type":"markdown"},"gitbook":{"version":"3.6.17","time":"2021-03-16T14:10:57.364Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Cayo Perico Island","description":"Load the new island from The Cayo Perico Heist Update","prefix":"[Snippet]","level":"1.6.1","depth":2,"next":{"title":"Flickering Webview","level":"1.6.2","depth":2,"path":"docs/articles/snippets/flickering-webview.md","ref":"docs/articles/snippets/flickering-webview.md","articles":[]},"previous":{"title":"Snippet","level":"1.6","depth":1,"path":"docs/articles/snippets/README.md","ref":"docs/articles/snippets/README.md","articles":[{"title":"Cayo Perico Island","level":"1.6.1","depth":2,"path":"docs/articles/snippets/cayo-period-island.md","ref":"docs/articles/snippets/cayo-period-island.md","articles":[]},{"title":"Flickering Webview","level":"1.6.2","depth":2,"path":"docs/articles/snippets/flickering-webview.md","ref":"docs/articles/snippets/flickering-webview.md","articles":[]},{"title":"Using Help Text","level":"1.6.3","depth":2,"path":"docs/articles/snippets/help-text.md","ref":"docs/articles/snippets/help-text.md","articles":[]},{"title":"Create a Marker","level":"1.6.4","depth":2,"path":"docs/articles/snippets/markers.md","ref":"docs/articles/snippets/markers.md","articles":[]},{"title":"Create a Notification","level":"1.6.5","depth":2,"path":"docs/articles/snippets/notifications.md","ref":"docs/articles/snippets/notifications.md","articles":[]},{"title":"Encryption / Password Hashing","level":"1.6.6","depth":2,"path":"docs/articles/snippets/password-encryption.md","ref":"docs/articles/snippets/password-encryption.md","articles":[]},{"title":"How to Prototype Classes","level":"1.6.7","depth":2,"path":"docs/articles/snippets/prototyping.md","ref":"docs/articles/snippets/prototyping.md","articles":[]},{"title":"Request Model","level":"1.6.8","depth":2,"path":"docs/articles/snippets/request-model.md","ref":"docs/articles/snippets/request-model.md","articles":[]},{"title":"Pure JS SHA256","level":"1.6.9","depth":2,"path":"docs/articles/snippets/sha-256.md","ref":"docs/articles/snippets/sha-256.md","articles":[]},{"title":"How to Create 2D & 3D Text Labels","level":"1.6.10","depth":2,"path":"docs/articles/snippets/textlabels.md","ref":"docs/articles/snippets/textlabels.md","articles":[]},{"title":"How to use alt:V Voice","level":"1.6.11","depth":2,"path":"docs/articles/snippets/voice.md","ref":"docs/articles/snippets/voice.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["gitbook-plugin-expandable-contract-chapters","-highlight","prism","honkit-plugin-sitemap","honkit-plugin-robots","honkit-plugin-theme-osiris"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"honkit-plugin-robots":{},"search":{},"robots":{"data":["User-agent: *","Disallow:"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"gitbook-plugin-expandable-contract-chapters":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"url":"https://altv.stuyk.com"},"honkit-plugin-theme-osiris":{},"honkit-plugin-sitemap":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"alt:V Unofficial Docs","gitbook":"*","description":"The unofficial documentation for alt:V's Javascript Modules."},"file":{"path":"docs/articles/snippets/cayo-period-island.md","mtime":"2021-03-16T16:43:40.824Z","type":"markdown"},"gitbook":{"version":"3.6.17","time":"2021-03-16T16:43:53.318Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -2836,6 +2840,6 @@ alt.everyTick(<span class="hljs-function">() =&gt;</span> {
         
     
 
+        <script src="https://cdn.jsdelivr.net/npm/less@3.13" ></script>
     </body>
 </html>
-

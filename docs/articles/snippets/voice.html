@@ -20,7 +20,11 @@
                 
             
                 
-                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-honkit-plugin-theme-osiris/osiris.css">
                 
             
                 
@@ -2523,34 +2527,34 @@
 <p><a href="../../../GLOSSARY.html#altv" class="glossary-term" title="The client that this documentation is for. You can download it at https://altv.mp/.">alt:V</a> has its own built-in voice server into the server itself. It has been tested up to 500~ players and has generally worked quite well. It is recommended to try out the voice option in <a href="../../../GLOSSARY.html#altv" class="glossary-term" title="The client that this documentation is for. You can download it at https://altv.mp/.">alt:V</a> before looking at third-party options as it already handles distance and panning.</p>
 <h2 id="enabling-voice">Enabling Voice</h2>
 <p>Inside of your <code>server.cfg</code> introduce a section called voice with something along the lines of:</p>
-<pre><code>voice: {
+<pre class="language-"><code>voice: {
     bitrate: 64000
 },
 </code></pre><h2 id="creating-a-voice-channel">Creating a Voice Channel</h2>
-<pre><code class="lang-js"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> alt <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;alt-server&apos;</span>;
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> alt <span class="token keyword">from</span> <span class="token string">&apos;alt-server&apos;</span><span class="token punctuation">;</span>
 
-<span class="hljs-comment">// The last parameter is the maximum distance of this channel.</span>
-<span class="hljs-keyword">let</span> mainChannel = <span class="hljs-keyword">new</span> alt.VoiceChannel(<span class="hljs-literal">true</span>, <span class="hljs-number">25</span>);
+<span class="token comment">// The last parameter is the maximum distance of this channel.</span>
+<span class="token keyword">let</span> mainChannel <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">alt<span class="token punctuation">.</span>VoiceChannel</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="hljs-comment">// Call this function to allow the player to speak and hear everyone</span>
-<span class="hljs-comment">// else in the global channel.</span>
-<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addToGlobalVoice</span>(<span class="hljs-params">player</span>) </span>{
-    <span class="hljs-keyword">if</span> (mainChannel.isPlayerInChannel(player)) {
-        <span class="hljs-keyword">return</span>;
-    }
+<span class="token comment">// Call this function to allow the player to speak and hear everyone</span>
+<span class="token comment">// else in the global channel.</span>
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">addToGlobalVoice</span><span class="token punctuation">(</span><span class="token parameter">player</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>mainChannel<span class="token punctuation">.</span><span class="token function">isPlayerInChannel</span><span class="token punctuation">(</span>player<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    mainChannel.addPlayer(player);
-}
+    mainChannel<span class="token punctuation">.</span><span class="token function">addPlayer</span><span class="token punctuation">(</span>player<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-<span class="hljs-comment">// Call this function to remove the player and stop them from</span>
-<span class="hljs-comment">// speaking or hearing anyone else.</span>
-<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">removeFromGlobalVoice</span>(<span class="hljs-params">player</span>) </span>{
-    <span class="hljs-keyword">if</span> (!mainChannel.isPlayerInChannel(player)) {
-        <span class="hljs-keyword">return</span>;
-    }
+<span class="token comment">// Call this function to remove the player and stop them from</span>
+<span class="token comment">// speaking or hearing anyone else.</span>
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">removeFromGlobalVoice</span><span class="token punctuation">(</span><span class="token parameter">player</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>mainChannel<span class="token punctuation">.</span><span class="token function">isPlayerInChannel</span><span class="token punctuation">(</span>player<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    mainChannel.removePlayer(player);
-}
+    mainChannel<span class="token punctuation">.</span><span class="token function">removePlayer</span><span class="token punctuation">(</span>player<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 
                                 
@@ -2595,7 +2599,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"How to use alt:V Voice","description":"How to implement voice into your gamemode.","prefix":"[Snippet]","level":"1.6.11","depth":2,"next":{"title":"Table","level":"1.7","depth":1,"path":"docs/articles/tables/README.md","ref":"docs/articles/tables/README.md","articles":[{"title":"Cause of Death","level":"1.7.1","depth":2,"path":"docs/articles/tables/cause-of-death.md","ref":"docs/articles/tables/cause-of-death.md","articles":[]},{"title":"GTA:V Controls","level":"1.7.2","depth":2,"path":"docs/articles/tables/controls.md","ref":"docs/articles/tables/controls.md","articles":[]},{"title":"Explosion Types","level":"1.7.3","depth":2,"path":"docs/articles/tables/explosions.md","ref":"docs/articles/tables/explosions.md","articles":[]},{"title":"Frontend Sounds","level":"1.7.4","depth":2,"path":"docs/articles/tables/frontend-sounds.md","ref":"docs/articles/tables/frontend-sounds.md","articles":[]},{"title":"Missing Interiors - IPLs","level":"1.7.5","depth":2,"path":"docs/articles/tables/ipls.md","ref":"docs/articles/tables/ipls.md","articles":[]},{"title":"Ped Bones","level":"1.7.6","depth":2,"path":"docs/articles/tables/ped-bones.md","ref":"docs/articles/tables/ped-bones.md","articles":[]},{"title":"Vehicle Bones","level":"1.7.7","depth":2,"path":"docs/articles/tables/vehicle-bones.md","ref":"docs/articles/tables/vehicle-bones.md","articles":[]},{"title":"Vehicle Color IDs","level":"1.7.8","depth":2,"path":"docs/articles/tables/vehicle-colors.md","ref":"docs/articles/tables/vehicle-colors.md","articles":[]},{"title":"Vehicle Mods","level":"1.7.9","depth":2,"path":"docs/articles/tables/vehicle-mods.md","ref":"docs/articles/tables/vehicle-mods.md","articles":[]},{"title":"Vehicle Seats","level":"1.7.10","depth":2,"path":"docs/articles/tables/vehicle-seats.md","ref":"docs/articles/tables/vehicle-seats.md","articles":[]},{"title":"Vehicle Window Tint","level":"1.7.11","depth":2,"path":"docs/articles/tables/vehicle-window-tint.md","ref":"docs/articles/tables/vehicle-window-tint.md","articles":[]},{"title":"Weapon Components","level":"1.7.12","depth":2,"path":"docs/articles/tables/weapon-components.md","ref":"docs/articles/tables/weapon-components.md","articles":[]},{"title":"Weapon Pickups","level":"1.7.13","depth":2,"path":"docs/articles/tables/weapon-pickups.md","ref":"docs/articles/tables/weapon-pickups.md","articles":[]},{"title":"Weapon Tint","level":"1.7.14","depth":2,"path":"docs/articles/tables/weapon-tint.md","ref":"docs/articles/tables/weapon-tint.md","articles":[]},{"title":"Weapon List","level":"1.7.15","depth":2,"path":"docs/articles/tables/weapons.md","ref":"docs/articles/tables/weapons.md","articles":[]},{"title":"Weather IDs","level":"1.7.16","depth":2,"path":"docs/articles/tables/weather.md","ref":"docs/articles/tables/weather.md","articles":[]}]},"previous":{"title":"How to Create 2D & 3D Text Labels","level":"1.6.10","depth":2,"path":"docs/articles/snippets/textlabels.md","ref":"docs/articles/snippets/textlabels.md","articles":[]},"dir":"ltr"},"config":{"plugins":["gitbook-plugin-expandable-contract-chapters","honkit-plugin-sitemap","honkit-plugin-robots"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"honkit-plugin-robots":{},"search":{},"robots":{"data":["User-agent: *","Disallow:"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"gitbook-plugin-expandable-contract-chapters":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"url":"https://altv.stuyk.com"},"honkit-plugin-sitemap":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"alt:V Unofficial Docs","gitbook":"*","description":"The unofficial documentation for alt:V's Javascript Modules."},"file":{"path":"docs/articles/snippets/voice.md","mtime":"2021-03-16T14:10:39.595Z","type":"markdown"},"gitbook":{"version":"3.6.17","time":"2021-03-16T14:10:57.364Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"How to use alt:V Voice","description":"How to implement voice into your gamemode.","prefix":"[Snippet]","level":"1.6.11","depth":2,"next":{"title":"Table","level":"1.7","depth":1,"path":"docs/articles/tables/README.md","ref":"docs/articles/tables/README.md","articles":[{"title":"Cause of Death","level":"1.7.1","depth":2,"path":"docs/articles/tables/cause-of-death.md","ref":"docs/articles/tables/cause-of-death.md","articles":[]},{"title":"GTA:V Controls","level":"1.7.2","depth":2,"path":"docs/articles/tables/controls.md","ref":"docs/articles/tables/controls.md","articles":[]},{"title":"Explosion Types","level":"1.7.3","depth":2,"path":"docs/articles/tables/explosions.md","ref":"docs/articles/tables/explosions.md","articles":[]},{"title":"Frontend Sounds","level":"1.7.4","depth":2,"path":"docs/articles/tables/frontend-sounds.md","ref":"docs/articles/tables/frontend-sounds.md","articles":[]},{"title":"Missing Interiors - IPLs","level":"1.7.5","depth":2,"path":"docs/articles/tables/ipls.md","ref":"docs/articles/tables/ipls.md","articles":[]},{"title":"Ped Bones","level":"1.7.6","depth":2,"path":"docs/articles/tables/ped-bones.md","ref":"docs/articles/tables/ped-bones.md","articles":[]},{"title":"Vehicle Bones","level":"1.7.7","depth":2,"path":"docs/articles/tables/vehicle-bones.md","ref":"docs/articles/tables/vehicle-bones.md","articles":[]},{"title":"Vehicle Color IDs","level":"1.7.8","depth":2,"path":"docs/articles/tables/vehicle-colors.md","ref":"docs/articles/tables/vehicle-colors.md","articles":[]},{"title":"Vehicle Mods","level":"1.7.9","depth":2,"path":"docs/articles/tables/vehicle-mods.md","ref":"docs/articles/tables/vehicle-mods.md","articles":[]},{"title":"Vehicle Seats","level":"1.7.10","depth":2,"path":"docs/articles/tables/vehicle-seats.md","ref":"docs/articles/tables/vehicle-seats.md","articles":[]},{"title":"Vehicle Window Tint","level":"1.7.11","depth":2,"path":"docs/articles/tables/vehicle-window-tint.md","ref":"docs/articles/tables/vehicle-window-tint.md","articles":[]},{"title":"Weapon Components","level":"1.7.12","depth":2,"path":"docs/articles/tables/weapon-components.md","ref":"docs/articles/tables/weapon-components.md","articles":[]},{"title":"Weapon Pickups","level":"1.7.13","depth":2,"path":"docs/articles/tables/weapon-pickups.md","ref":"docs/articles/tables/weapon-pickups.md","articles":[]},{"title":"Weapon Tint","level":"1.7.14","depth":2,"path":"docs/articles/tables/weapon-tint.md","ref":"docs/articles/tables/weapon-tint.md","articles":[]},{"title":"Weapon List","level":"1.7.15","depth":2,"path":"docs/articles/tables/weapons.md","ref":"docs/articles/tables/weapons.md","articles":[]},{"title":"Weather IDs","level":"1.7.16","depth":2,"path":"docs/articles/tables/weather.md","ref":"docs/articles/tables/weather.md","articles":[]}]},"previous":{"title":"How to Create 2D & 3D Text Labels","level":"1.6.10","depth":2,"path":"docs/articles/snippets/textlabels.md","ref":"docs/articles/snippets/textlabels.md","articles":[]},"dir":"ltr"},"config":{"plugins":["gitbook-plugin-expandable-contract-chapters","-highlight","prism","honkit-plugin-sitemap","honkit-plugin-robots","honkit-plugin-theme-osiris"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"honkit-plugin-robots":{},"search":{},"robots":{"data":["User-agent: *","Disallow:"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"gitbook-plugin-expandable-contract-chapters":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"url":"https://altv.stuyk.com"},"honkit-plugin-theme-osiris":{},"honkit-plugin-sitemap":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"alt:V Unofficial Docs","gitbook":"*","description":"The unofficial documentation for alt:V's Javascript Modules."},"file":{"path":"docs/articles/snippets/voice.md","mtime":"2021-03-16T16:43:40.828Z","type":"markdown"},"gitbook":{"version":"3.6.17","time":"2021-03-16T16:43:53.318Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -2673,6 +2677,6 @@
         
     
 
+        <script src="https://cdn.jsdelivr.net/npm/less@3.13" ></script>
     </body>
 </html>
-

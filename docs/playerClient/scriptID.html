@@ -20,7 +20,11 @@
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-honkit-plugin-theme-osiris/osiris.css">
                 
             
                 
@@ -2522,11 +2526,11 @@
 <p>Used to get the script identifier of a player.</p>
 <p>This is used to talk to natives and apply natives to a player or vehicle.</p>
 <p><strong>Syntax</strong></p>
-<pre><code class="lang-ts"><span class="hljs-keyword">readonly</span> scriptID: <span class="hljs-built_in">number</span>;
+<pre class="language-"><code class="lang-ts">readonly scriptID: number;
 </code></pre>
 <p><strong>Example Usage</strong></p>
-<pre><code class="lang-js"><span class="hljs-comment">// Freeze the local player.</span>
-native.freezeEntityPosition(alt.Player.local.scriptID, <span class="hljs-literal">true</span>);
+<pre class="language-"><code class="lang-js"><span class="token comment">// Freeze the local player.</span>
+native<span class="token punctuation">.</span><span class="token function">freezeEntityPosition</span><span class="token punctuation">(</span>alt<span class="token punctuation">.</span>Player<span class="token punctuation">.</span>local<span class="token punctuation">.</span>scriptID<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p><em>alt.Player.local can also be a <strong>player instance</strong> from server</em></p>
 
@@ -2572,7 +2576,7 @@ native.freezeEntityPosition(alt.Player.local.scriptID, <span class="hljs-literal
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"[C] player.scriptID","description":"Get the script ID of a player.","prefix":"[Client]","level":"1.10.24","depth":2,"next":{"title":"[C] player.seat","level":"1.10.25","depth":2,"path":"docs/playerClient/seat.md","ref":"docs/playerClient/seat.md","articles":[]},"previous":{"title":"[C] player.rot","level":"1.10.23","depth":2,"path":"docs/playerClient/rot.md","ref":"docs/playerClient/rot.md","articles":[]},"dir":"ltr"},"config":{"plugins":["gitbook-plugin-expandable-contract-chapters","honkit-plugin-sitemap","honkit-plugin-robots"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"honkit-plugin-robots":{},"search":{},"robots":{"data":["User-agent: *","Disallow:"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"gitbook-plugin-expandable-contract-chapters":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"url":"https://altv.stuyk.com"},"honkit-plugin-sitemap":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"alt:V Unofficial Docs","gitbook":"*","description":"The unofficial documentation for alt:V's Javascript Modules."},"file":{"path":"docs/playerClient/scriptID.md","mtime":"2021-03-16T14:10:39.599Z","type":"markdown"},"gitbook":{"version":"3.6.17","time":"2021-03-16T14:10:57.364Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"[C] player.scriptID","description":"Get the script ID of a player.","prefix":"[Client]","level":"1.10.24","depth":2,"next":{"title":"[C] player.seat","level":"1.10.25","depth":2,"path":"docs/playerClient/seat.md","ref":"docs/playerClient/seat.md","articles":[]},"previous":{"title":"[C] player.rot","level":"1.10.23","depth":2,"path":"docs/playerClient/rot.md","ref":"docs/playerClient/rot.md","articles":[]},"dir":"ltr"},"config":{"plugins":["gitbook-plugin-expandable-contract-chapters","-highlight","prism","honkit-plugin-sitemap","honkit-plugin-robots","honkit-plugin-theme-osiris"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"honkit-plugin-robots":{},"search":{},"robots":{"data":["User-agent: *","Disallow:"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"gitbook-plugin-expandable-contract-chapters":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"url":"https://altv.stuyk.com"},"honkit-plugin-theme-osiris":{},"honkit-plugin-sitemap":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"alt:V Unofficial Docs","gitbook":"*","description":"The unofficial documentation for alt:V's Javascript Modules."},"file":{"path":"docs/playerClient/scriptID.md","mtime":"2021-03-16T16:43:40.832Z","type":"markdown"},"gitbook":{"version":"3.6.17","time":"2021-03-16T16:43:53.318Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -2650,6 +2654,6 @@ native.freezeEntityPosition(alt.Player.local.scriptID, <span class="hljs-literal
         
     
 
+        <script src="https://cdn.jsdelivr.net/npm/less@3.13" ></script>
     </body>
 </html>
-

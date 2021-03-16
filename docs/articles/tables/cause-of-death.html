@@ -20,7 +20,11 @@
                 
             
                 
-                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-honkit-plugin-theme-osiris/osiris.css">
                 
             
                 
@@ -2522,235 +2526,235 @@
 <h1 id="cause-of-death">Cause of Death</h1>
 <p>This object of Cause of Death represents the weaponHash that kills a player.</p>
 <p>Hash can also be used to spawn weapons.</p>
-<pre><code class="lang-js"><span class="hljs-keyword">const</span> CauseOfDeath = {
-    <span class="hljs-number">2460120199</span>: <span class="hljs-string">&apos;Antique Cavalry Dagger&apos;</span>,
-    <span class="hljs-number">2508868239</span>: <span class="hljs-string">&apos;Baseball Bat&apos;</span>,
-    <span class="hljs-number">4192643659</span>: <span class="hljs-string">&apos;Bottle&apos;</span>,
-    <span class="hljs-number">2227010557</span>: <span class="hljs-string">&apos;Crowbar&apos;</span>,
-    <span class="hljs-number">2725352035</span>: <span class="hljs-string">&apos;Fist Ignore&apos;</span>,
-    <span class="hljs-number">2343591895</span>: <span class="hljs-string">&apos;Flashlight&apos;</span>,
-    <span class="hljs-number">1141786504</span>: <span class="hljs-string">&apos;Golf Club&apos;</span>,
-    <span class="hljs-number">1317494643</span>: <span class="hljs-string">&apos;Hammer&apos;</span>,
-    <span class="hljs-number">4191993645</span>: <span class="hljs-string">&apos;Hatchet&apos;</span>,
-    <span class="hljs-number">3638508604</span>: <span class="hljs-string">&apos;Knuckle&apos;</span>,
-    <span class="hljs-number">2578778090</span>: <span class="hljs-string">&apos;Knife&apos;</span>,
-    <span class="hljs-number">3713923289</span>: <span class="hljs-string">&apos;Machete&apos;</span>,
-    <span class="hljs-number">3756226112</span>: <span class="hljs-string">&apos;Switchblade&apos;</span>,
-    <span class="hljs-number">1737195953</span>: <span class="hljs-string">&apos;Nightstick&apos;</span>,
-    <span class="hljs-number">419712736</span>: <span class="hljs-string">&apos;Pipe Wrench&apos;</span>,
-    <span class="hljs-number">3441901897</span>: <span class="hljs-string">&apos;Battle Axe&apos;</span>,
-    <span class="hljs-number">2484171525</span>: <span class="hljs-string">&apos;Pool Cue&apos;</span>,
-    <span class="hljs-number">940833800</span>: <span class="hljs-string">&apos;Stone Hatchet&apos;</span>,
-    <span class="hljs-number">453432689</span>: <span class="hljs-string">&apos;Pistol&apos;</span>,
-    <span class="hljs-number">3219281620</span>: <span class="hljs-string">&apos;Pistol MK2&apos;</span>,
-    <span class="hljs-number">1593441988</span>: <span class="hljs-string">&apos;Combat Pistol&apos;</span>,
-    <span class="hljs-number">584646201</span>: <span class="hljs-string">&apos;AP Pistol&apos;</span>,
-    <span class="hljs-number">911657153</span>: <span class="hljs-string">&apos;Stun Gun&apos;</span>,
-    <span class="hljs-number">2578377531</span>: <span class="hljs-string">&apos;Pistol .50&apos;</span>,
-    <span class="hljs-number">3218215474</span>: <span class="hljs-string">&apos;SNS Pistol&apos;</span>,
-    <span class="hljs-number">2285322324</span>: <span class="hljs-string">&apos;SNS Pistol MK2&apos;</span>,
-    <span class="hljs-number">3523564046</span>: <span class="hljs-string">&apos;Heavy Pistol&apos;</span>,
-    <span class="hljs-number">137902532</span>: <span class="hljs-string">&apos;Vintage Pistol&apos;</span>,
-    <span class="hljs-number">1198879012</span>: <span class="hljs-string">&apos;Flare Gun&apos;</span>,
-    <span class="hljs-number">3696079510</span>: <span class="hljs-string">&apos;Marksman Pistol&apos;</span>,
-    <span class="hljs-number">3249783761</span>: <span class="hljs-string">&apos;Heavy Revolver&apos;</span>,
-    <span class="hljs-number">3415619887</span>: <span class="hljs-string">&apos;Heavy Revolver MK2&apos;</span>,
-    <span class="hljs-number">2548703416</span>: <span class="hljs-string">&apos;Double Action&apos;</span>,
-    <span class="hljs-number">2939590305</span>: <span class="hljs-string">&apos;Up-n-Atomizer&apos;</span>,
-    <span class="hljs-number">324215364</span>: <span class="hljs-string">&apos;Micro SMG&apos;</span>,
-    <span class="hljs-number">736523883</span>: <span class="hljs-string">&apos;SMG&apos;</span>,
-    <span class="hljs-number">2024373456</span>: <span class="hljs-string">&apos;SMG MK2&apos;</span>,
-    <span class="hljs-number">4024951519</span>: <span class="hljs-string">&apos;Assault SMG&apos;</span>,
-    <span class="hljs-number">171789620</span>: <span class="hljs-string">&apos;Combat PDW&apos;</span>,
-    <span class="hljs-number">3675956304</span>: <span class="hljs-string">&apos;Machine Pistol&apos;</span>,
-    <span class="hljs-number">3173288789</span>: <span class="hljs-string">&apos;Mini SMG&apos;</span>,
-    <span class="hljs-number">1198256469</span>: <span class="hljs-string">&apos;Unholy Hellbringer&apos;</span>,
-    <span class="hljs-number">487013001</span>: <span class="hljs-string">&apos;Pump Shotgun&apos;</span>,
-    <span class="hljs-number">1432025498</span>: <span class="hljs-string">&apos;Pump Shotgun MK2&apos;</span>,
-    <span class="hljs-number">2017895192</span>: <span class="hljs-string">&apos;Sawed-Off Shotgun&apos;</span>,
-    <span class="hljs-number">3800352039</span>: <span class="hljs-string">&apos;Assault Shotgun&apos;</span>,
-    <span class="hljs-number">2640438543</span>: <span class="hljs-string">&apos;Bullpup Shotgun&apos;</span>,
-    <span class="hljs-number">2828843422</span>: <span class="hljs-string">&apos;Musket&apos;</span>,
-    <span class="hljs-number">984333226</span>: <span class="hljs-string">&apos;Heavy Shotgun&apos;</span>,
-    <span class="hljs-number">4019527611</span>: <span class="hljs-string">&apos;Double Barrel Shotgun&apos;</span>,
-    <span class="hljs-number">317205821</span>: <span class="hljs-string">&apos;Sweeper Shotgun&apos;</span>,
-    <span class="hljs-number">3220176749</span>: <span class="hljs-string">&apos;Assault Rifle&apos;</span>,
-    <span class="hljs-number">961495388</span>: <span class="hljs-string">&apos;Assault Rifle MK2&apos;</span>,
-    <span class="hljs-number">2210333304</span>: <span class="hljs-string">&apos;Carbine Rifle&apos;</span>,
-    <span class="hljs-number">4208062921</span>: <span class="hljs-string">&apos;Carbine Rifle MK2&apos;</span>,
-    <span class="hljs-number">2937143193</span>: <span class="hljs-string">&apos;Advanced Rifle&apos;</span>,
-    <span class="hljs-number">3231910285</span>: <span class="hljs-string">&apos;Special Carbine&apos;</span>,
-    <span class="hljs-number">2526821735</span>: <span class="hljs-string">&apos;Special Carbine MK2&apos;</span>,
-    <span class="hljs-number">2132975508</span>: <span class="hljs-string">&apos;Bullpup Rifle&apos;</span>,
-    <span class="hljs-number">2228681469</span>: <span class="hljs-string">&apos;Bullpup Rifle MK2&apos;</span>,
-    <span class="hljs-number">1649403952</span>: <span class="hljs-string">&apos;Compact Rifle&apos;</span>,
-    <span class="hljs-number">2634544996</span>: <span class="hljs-string">&apos;MG&apos;</span>,
-    <span class="hljs-number">2144741730</span>: <span class="hljs-string">&apos;Combat MG&apos;</span>,
-    <span class="hljs-number">3686625920</span>: <span class="hljs-string">&apos;Combat MG MK2&apos;</span>,
-    <span class="hljs-number">1627465347</span>: <span class="hljs-string">&apos;Gusenberg Sweeper&apos;</span>,
-    <span class="hljs-number">100416529</span>: <span class="hljs-string">&apos;Sniper Rifle&apos;</span>,
-    <span class="hljs-number">205991906</span>: <span class="hljs-string">&apos;Heavy Sniper&apos;</span>,
-    <span class="hljs-number">177293209</span>: <span class="hljs-string">&apos;Heavy Sniper MK2&apos;</span>,
-    <span class="hljs-number">3342088282</span>: <span class="hljs-string">&apos;Marksman Rifle&apos;</span>,
-    <span class="hljs-number">1785463520</span>: <span class="hljs-string">&apos;Marksman Rifle MK2&apos;</span>,
-    <span class="hljs-number">2982836145</span>: <span class="hljs-string">&apos;RPG&apos;</span>,
-    <span class="hljs-number">2726580491</span>: <span class="hljs-string">&apos;Grenade Launcher&apos;</span>,
-    <span class="hljs-number">1305664598</span>: <span class="hljs-string">&apos;Smoke Grenade Launcher&apos;</span>,
-    <span class="hljs-number">1119849093</span>: <span class="hljs-string">&apos;Minigun&apos;</span>,
-    <span class="hljs-number">2138347493</span>: <span class="hljs-string">&apos;Firework Launcher&apos;</span>,
-    <span class="hljs-number">1834241177</span>: <span class="hljs-string">&apos;Railgun&apos;</span>,
-    <span class="hljs-number">1672152130</span>: <span class="hljs-string">&apos;Homing Launcher&apos;</span>,
-    <span class="hljs-number">125959754</span>: <span class="hljs-string">&apos;Compact Grenade Launcher&apos;</span>,
-    <span class="hljs-number">3056410471</span>: <span class="hljs-string">&apos;Ray Minigun&apos;</span>,
-    <span class="hljs-number">2481070269</span>: <span class="hljs-string">&apos;Grenade&apos;</span>,
-    <span class="hljs-number">2694266206</span>: <span class="hljs-string">&apos;BZ Gas&apos;</span>,
-    <span class="hljs-number">4256991824</span>: <span class="hljs-string">&apos;Smoke Grenade&apos;</span>,
-    <span class="hljs-number">1233104067</span>: <span class="hljs-string">&apos;Flare&apos;</span>,
-    <span class="hljs-number">615608432</span>: <span class="hljs-string">&apos;Molotov&apos;</span>,
-    <span class="hljs-number">741814745</span>: <span class="hljs-string">&apos;Sticky Bomb&apos;</span>,
-    <span class="hljs-number">2874559379</span>: <span class="hljs-string">&apos;Proximity Mine&apos;</span>,
-    <span class="hljs-number">126349499</span>: <span class="hljs-string">&apos;Snowball&apos;</span>,
-    <span class="hljs-number">3125143736</span>: <span class="hljs-string">&apos;Pipe Bomb&apos;</span>,
-    <span class="hljs-number">600439132</span>: <span class="hljs-string">&apos;Baseball&apos;</span>,
-    <span class="hljs-number">883325847</span>: <span class="hljs-string">&apos;Jerry Can&apos;</span>,
-    <span class="hljs-number">101631238</span>: <span class="hljs-string">&apos;Fire Extinguisher Ignore&apos;</span>,
-    <span class="hljs-number">4222310262</span>: <span class="hljs-string">&apos;Parachute Ignore&apos;</span>,
-    <span class="hljs-number">2461879995</span>: <span class="hljs-string">&apos;Electric Fence Ignore&apos;</span>,
-    <span class="hljs-number">3425972830</span>: <span class="hljs-string">&apos;Hit by Water Cannon Ignore&apos;</span>,
-    <span class="hljs-number">133987706</span>: <span class="hljs-string">&apos;Vehicle Death Ignore&apos;</span>,
-    <span class="hljs-number">2741846334</span>: <span class="hljs-string">&apos;Vehicle Death Ignore&apos;</span>,
-    <span class="hljs-number">3452007600</span>: <span class="hljs-string">&apos;Fall Ignore&apos;</span>,
-    <span class="hljs-number">4194021054</span>: <span class="hljs-string">&apos;Animal Ignore&apos;</span>,
-    <span class="hljs-number">324506233</span>: <span class="hljs-string">&apos;Airstrike Rocket&apos;</span>,
-    <span class="hljs-number">2339582971</span>: <span class="hljs-string">&apos;Bleeding Ignore&apos;</span>,
-    <span class="hljs-number">2294779575</span>: <span class="hljs-string">&apos;Briefcase Ignore&apos;</span>,
-    <span class="hljs-number">28811031</span>: <span class="hljs-string">&apos;Briefcase 02 Ignore&apos;</span>,
-    <span class="hljs-number">148160082</span>: <span class="hljs-string">&apos;Cougar Ignore&apos;</span>,
-    <span class="hljs-number">1223143800</span>: <span class="hljs-string">&apos;Barbed Wire Ignore&apos;</span>,
-    <span class="hljs-number">4284007675</span>: <span class="hljs-string">&apos;Drowning Ignore&apos;</span>,
-    <span class="hljs-number">1936677264</span>: <span class="hljs-string">&apos;Drowning In Vehicle Ignore&apos;</span>,
-    <span class="hljs-number">539292904</span>: <span class="hljs-string">&apos;Explosion Ignore&apos;</span>,
-    <span class="hljs-number">910830060</span>: <span class="hljs-string">&apos;Exhaustion Ignore&apos;</span>,
-    <span class="hljs-number">3750660587</span>: <span class="hljs-string">&apos;Fire Ignore&apos;</span>,
-    <span class="hljs-number">341774354</span>: <span class="hljs-string">&apos;Vehicle Heli Crash Ignore&apos;</span>,
-    <span class="hljs-number">3204302209</span>: <span class="hljs-string">&apos;Vehicle Rocket Ignore&apos;</span>,
-    <span class="hljs-number">2282558706</span>: <span class="hljs-string">&apos;Vehicle Akula Barrage Ignore&apos;</span>,
-    <span class="hljs-number">431576697</span>: <span class="hljs-string">&apos;Vehicle Akula Minigun Ignore&apos;</span>,
-    <span class="hljs-number">2092838988</span>: <span class="hljs-string">&apos;Vehicle Akula Missile Ignore&apos;</span>,
-    <span class="hljs-number">476907586</span>: <span class="hljs-string">&apos;Vehicle Akula Turret Dual Ignore&apos;</span>,
-    <span class="hljs-number">3048454573</span>: <span class="hljs-string">&apos;Vehicle Akula Turret Single Ignore&apos;</span>,
-    <span class="hljs-number">328167896</span>: <span class="hljs-string">&apos;Vehicle APC Cannon Ignore&apos;</span>,
-    <span class="hljs-number">190244068</span>: <span class="hljs-string">&apos;Vehicle APC MG Ignore&apos;</span>,
-    <span class="hljs-number">1151689097</span>: <span class="hljs-string">&apos;Vehicle APC Missile Ignore&apos;</span>,
-    <span class="hljs-number">3293463361</span>: <span class="hljs-string">&apos;Vehicle Ardent MG Ignore&apos;</span>,
-    <span class="hljs-number">2556895291</span>: <span class="hljs-string">&apos;Vehicle Avenger Cannon Ignore&apos;</span>,
-    <span class="hljs-number">2756453005</span>: <span class="hljs-string">&apos;Vehicle Barrage Rear GL Ignore&apos;</span>,
-    <span class="hljs-number">1200179045</span>: <span class="hljs-string">&apos;Vehicle Barrage Rear MG Ignore&apos;</span>,
-    <span class="hljs-number">525623141</span>: <span class="hljs-string">&apos;Vehicle Barrage Rear Minigun Ignore&apos;</span>,
-    <span class="hljs-number">4148791700</span>: <span class="hljs-string">&apos;Vehicle Barrage Top MG Ignore&apos;</span>,
-    <span class="hljs-number">1000258817</span>: <span class="hljs-string">&apos;Vehicle Barrage Top Minigun Ignore&apos;</span>,
-    <span class="hljs-number">3628350041</span>: <span class="hljs-string">&apos;Vehicle Bombushka Cannon Ignore&apos;</span>,
-    <span class="hljs-number">741027160</span>: <span class="hljs-string">&apos;Vehicle Bombushka Dual MG Ignore&apos;</span>,
-    <span class="hljs-number">3959029566</span>: <span class="hljs-string">&apos;Vehicle Cannon Blazer Ignore&apos;</span>,
-    <span class="hljs-number">1817275304</span>: <span class="hljs-string">&apos;Vehicle Caracara MG Ignore&apos;</span>,
-    <span class="hljs-number">1338760315</span>: <span class="hljs-string">&apos;Vehicle Caracara Minigun Ignore&apos;</span>,
-    <span class="hljs-number">2722615358</span>: <span class="hljs-string">&apos;Vehicle Cherno Missile Ignore&apos;</span>,
-    <span class="hljs-number">3936892403</span>: <span class="hljs-string">&apos;Vehicle Comet MG Ignore&apos;</span>,
-    <span class="hljs-number">2600428406</span>: <span class="hljs-string">&apos;Vehicle Deluxo MG Ignore&apos;</span>,
-    <span class="hljs-number">3036244276</span>: <span class="hljs-string">&apos;Vehicle Deluxo Missile Ignore&apos;</span>,
-    <span class="hljs-number">1595421922</span>: <span class="hljs-string">&apos;Vehicle Dogfighter MG Ignore&apos;</span>,
-    <span class="hljs-number">3393648765</span>: <span class="hljs-string">&apos;Vehicle Dogfighter Missile Ignore&apos;</span>,
-    <span class="hljs-number">2700898573</span>: <span class="hljs-string">&apos;Vehicle Dune Grenade Launcher Ignore&apos;</span>,
-    <span class="hljs-number">3507816399</span>: <span class="hljs-string">&apos;Vehicle Dune MG Ignore&apos;</span>,
-    <span class="hljs-number">1416047217</span>: <span class="hljs-string">&apos;Vehicle Dune Minigun Ignore&apos;</span>,
-    <span class="hljs-number">1566990507</span>: <span class="hljs-string">&apos;Vehicle Enemy Laser Ignore&apos;</span>,
-    <span class="hljs-number">1987049393</span>: <span class="hljs-string">&apos;Vehicle Hacker Missile Ignore&apos;</span>,
-    <span class="hljs-number">2011877270</span>: <span class="hljs-string">&apos;Vehicle Hacker Missile Homing Ignore&apos;</span>,
-    <span class="hljs-number">1331922171</span>: <span class="hljs-string">&apos;Vehicle Halftrack Dual MG Ignore&apos;</span>,
-    <span class="hljs-number">1226518132</span>: <span class="hljs-string">&apos;Vehicle Halftrack Quad MG Ignore&apos;</span>,
-    <span class="hljs-number">855547631</span>: <span class="hljs-string">&apos;Vehicle Havok Minigun Ignore&apos;</span>,
-    <span class="hljs-number">785467445</span>: <span class="hljs-string">&apos;Vehicle Hunter Barrage Ignore&apos;</span>,
-    <span class="hljs-number">704686874</span>: <span class="hljs-string">&apos;Vehicle Hunter Cannon Ignore&apos;</span>,
-    <span class="hljs-number">1119518887</span>: <span class="hljs-string">&apos;Vehicle Hunter MG Ignore&apos;</span>,
-    <span class="hljs-number">153396725</span>: <span class="hljs-string">&apos;Vehicle Hunter Missile Ignore&apos;</span>,
-    <span class="hljs-number">2861067768</span>: <span class="hljs-string">&apos;Vehicle Insurgent Minigun Ignore&apos;</span>,
-    <span class="hljs-number">507170720</span>: <span class="hljs-string">&apos;Vehicle Khanjali Cannon Ignore&apos;</span>,
-    <span class="hljs-number">2206953837</span>: <span class="hljs-string">&apos;Vehicle Khanjali Cannon Heavy Ignore&apos;</span>,
-    <span class="hljs-number">394659298</span>: <span class="hljs-string">&apos;Vehicle Khanjali GL Ignore&apos;</span>,
-    <span class="hljs-number">711953949</span>: <span class="hljs-string">&apos;Vehicle Khanjali MG Ignore&apos;</span>,
-    <span class="hljs-number">3754621092</span>: <span class="hljs-string">&apos;Vehicle Menacer MG Ignore&apos;</span>,
-    <span class="hljs-number">3303022956</span>: <span class="hljs-string">&apos;Vehicle Microlight MG Ignore&apos;</span>,
-    <span class="hljs-number">3846072740</span>: <span class="hljs-string">&apos;Vehicle Mobileops Cannon Ignore&apos;</span>,
-    <span class="hljs-number">3857952303</span>: <span class="hljs-string">&apos;Vehicle Mogul Dual Nose Ignore&apos;</span>,
-    <span class="hljs-number">3123149825</span>: <span class="hljs-string">&apos;Vehicle Mogul Dual Turret Ignore&apos;</span>,
-    <span class="hljs-number">4128808778</span>: <span class="hljs-string">&apos;Vehicle Mogul Nose Ignore&apos;</span>,
-    <span class="hljs-number">3808236382</span>: <span class="hljs-string">&apos;Vehicle Mogul Turret Ignore&apos;</span>,
-    <span class="hljs-number">2220197671</span>: <span class="hljs-string">&apos;Vehicle Mule4 MG Ignore&apos;</span>,
-    <span class="hljs-number">1198717003</span>: <span class="hljs-string">&apos;Vehicle Mule4 Missile Ignore&apos;</span>,
-    <span class="hljs-number">3708963429</span>: <span class="hljs-string">&apos;Vehicle Mule4 Turret GL Ignore&apos;</span>,
-    <span class="hljs-number">2786772340</span>: <span class="hljs-string">&apos;Vehicle Nightshark MG Ignore&apos;</span>,
-    <span class="hljs-number">1097917585</span>: <span class="hljs-string">&apos;Vehicle Nose Turret Valkyrie Ignore&apos;</span>,
-    <span class="hljs-number">3643944669</span>: <span class="hljs-string">&apos;Vehicle Oppressor MG Ignore&apos;</span>,
-    <span class="hljs-number">2344076862</span>: <span class="hljs-string">&apos;Vehicle Oppressor Missile Ignore&apos;</span>,
-    <span class="hljs-number">3595383913</span>: <span class="hljs-string">&apos;Vehicle Oppressor2 Cannon Ignore&apos;</span>,
-    <span class="hljs-number">3796180438</span>: <span class="hljs-string">&apos;Vehicle Oppressor2 MG Ignore&apos;</span>,
-    <span class="hljs-number">1966766321</span>: <span class="hljs-string">&apos;Vehicle Oppressor2 Missile Ignore&apos;</span>,
-    <span class="hljs-number">3473446624</span>: <span class="hljs-string">&apos;Vehicle Plane Rocket Ignore&apos;</span>,
-    <span class="hljs-number">1186503822</span>: <span class="hljs-string">&apos;Vehicle Player Buzzard Ignore&apos;</span>,
-    <span class="hljs-number">3800181289</span>: <span class="hljs-string">&apos;Vehicle Player Lazer Ignore&apos;</span>,
-    <span class="hljs-number">1638077257</span>: <span class="hljs-string">&apos;Vehicle Player Savage Ignore&apos;</span>,
-    <span class="hljs-number">2456521956</span>: <span class="hljs-string">&apos;Vehicle Pounder2 Barrage Ignore&apos;</span>,
-    <span class="hljs-number">2467888918</span>: <span class="hljs-string">&apos;Vehicle Pounder2 GL Ignore&apos;</span>,
-    <span class="hljs-number">2263283790</span>: <span class="hljs-string">&apos;Vehicle Pounder2 Mini Ignore&apos;</span>,
-    <span class="hljs-number">162065050</span>: <span class="hljs-string">&apos;Vehicle Pounder2 Missile Ignore&apos;</span>,
-    <span class="hljs-number">3530961278</span>: <span class="hljs-string">&apos;Vehicle Radar Ignore&apos;</span>,
-    <span class="hljs-number">3177079402</span>: <span class="hljs-string">&apos;Vehicle Revolter MG Ignore&apos;</span>,
-    <span class="hljs-number">3878337474</span>: <span class="hljs-string">&apos;Vehicle Rogue Cannon Ignore&apos;</span>,
-    <span class="hljs-number">158495693</span>: <span class="hljs-string">&apos;Vehicle Rogue MG Ignore&apos;</span>,
-    <span class="hljs-number">1820910717</span>: <span class="hljs-string">&apos;Vehicle Rogue Missile Ignore&apos;</span>,
-    <span class="hljs-number">50118905</span>: <span class="hljs-string">&apos;Vehicle Ruiner Bullet Ignore&apos;</span>,
-    <span class="hljs-number">84788907</span>: <span class="hljs-string">&apos;Vehicle Ruiner Rocket Ignore&apos;</span>,
-    <span class="hljs-number">3946965070</span>: <span class="hljs-string">&apos;Vehicle Savestra MG Ignore&apos;</span>,
-    <span class="hljs-number">231629074</span>: <span class="hljs-string">&apos;Vehicle Scramjet MG Ignore&apos;</span>,
-    <span class="hljs-number">3169388763</span>: <span class="hljs-string">&apos;Vehicle Scramjet Missile Ignore&apos;</span>,
-    <span class="hljs-number">1371067624</span>: <span class="hljs-string">&apos;Vehicle Seabreeze MG Ignore&apos;</span>,
-    <span class="hljs-number">3450622333</span>: <span class="hljs-string">&apos;Vehicle Searchlight Ignore&apos;</span>,
-    <span class="hljs-number">4171469727</span>: <span class="hljs-string">&apos;Vehicle Space Rocket Ignore&apos;</span>,
-    <span class="hljs-number">3355244860</span>: <span class="hljs-string">&apos;Vehicle Speedo4 MG Ignore&apos;</span>,
-    <span class="hljs-number">3595964737</span>: <span class="hljs-string">&apos;Vehicle Speedo4 Turret MG Ignore&apos;</span>,
-    <span class="hljs-number">2667462330</span>: <span class="hljs-string">&apos;Vehicle Speedo4 Turret Mini Ignore&apos;</span>,
-    <span class="hljs-number">968648323</span>: <span class="hljs-string">&apos;Vehicle Strikeforce Barrage Ignore&apos;</span>,
-    <span class="hljs-number">955522731</span>: <span class="hljs-string">&apos;Vehicle Strikeforce Cannon Ignore&apos;</span>,
-    <span class="hljs-number">519052682</span>: <span class="hljs-string">&apos;Vehicle Strikeforce Missile Ignore&apos;</span>,
-    <span class="hljs-number">1176362416</span>: <span class="hljs-string">&apos;Vehicle Subcar MG Ignore&apos;</span>,
-    <span class="hljs-number">3565779982</span>: <span class="hljs-string">&apos;Vehicle Subcar Missile Ignore&apos;</span>,
-    <span class="hljs-number">3884172218</span>: <span class="hljs-string">&apos;Vehicle Subcar Torpedo Ignore&apos;</span>,
-    <span class="hljs-number">1744687076</span>: <span class="hljs-string">&apos;Vehicle Tampa Dual Minigun Ignore&apos;</span>,
-    <span class="hljs-number">3670375085</span>: <span class="hljs-string">&apos;Vehicle Tampa Fixed Minigun Ignore&apos;</span>,
-    <span class="hljs-number">2656583842</span>: <span class="hljs-string">&apos;Vehicle Tampa Missile Ignore&apos;</span>,
-    <span class="hljs-number">1015268368</span>: <span class="hljs-string">&apos;Vehicle Tampa Mortar Ignore&apos;</span>,
-    <span class="hljs-number">1945616459</span>: <span class="hljs-string">&apos;Vehicle Tank Ignore&apos;</span>,
-    <span class="hljs-number">3683206664</span>: <span class="hljs-string">&apos;Vehicle Technical Minigun Ignore&apos;</span>,
-    <span class="hljs-number">1697521053</span>: <span class="hljs-string">&apos;Vehicle Thruster MG Ignore&apos;</span>,
-    <span class="hljs-number">1177935125</span>: <span class="hljs-string">&apos;Vehicle Thruster Missile Ignore&apos;</span>,
-    <span class="hljs-number">2156678476</span>: <span class="hljs-string">&apos;Vehicle Trailer Dualaa Ignore&apos;</span>,
-    <span class="hljs-number">341154295</span>: <span class="hljs-string">&apos;Vehicle Trailer Missile Ignore&apos;</span>,
-    <span class="hljs-number">1192341548</span>: <span class="hljs-string">&apos;Vehicle Trailer Quad MG Ignore&apos;</span>,
-    <span class="hljs-number">2966510603</span>: <span class="hljs-string">&apos;Vehicle Tula Dual MG Ignore&apos;</span>,
-    <span class="hljs-number">1217122433</span>: <span class="hljs-string">&apos;Vehicle Tula MG Ignore&apos;</span>,
-    <span class="hljs-number">376489128</span>: <span class="hljs-string">&apos;Vehicle Tula Minigun Ignore&apos;</span>,
-    <span class="hljs-number">1100844565</span>: <span class="hljs-string">&apos;Vehicle Tula Nose MG Ignore&apos;</span>,
-    <span class="hljs-number">3041872152</span>: <span class="hljs-string">&apos;Vehicle Turret Boxville Ignore&apos;</span>,
-    <span class="hljs-number">1155224728</span>: <span class="hljs-string">&apos;Vehicle Turret Insurgent Ignore&apos;</span>,
-    <span class="hljs-number">729375873</span>: <span class="hljs-string">&apos;Vehicle Turret Limo Ignore&apos;</span>,
-    <span class="hljs-number">2144528907</span>: <span class="hljs-string">&apos;Vehicle Turret Technical Ignore&apos;</span>,
-    <span class="hljs-number">2756787765</span>: <span class="hljs-string">&apos;Vehicle Turret Valkyrie Ignore&apos;</span>,
-    <span class="hljs-number">4094131943</span>: <span class="hljs-string">&apos;Vehicle Vigilante MG Ignore&apos;</span>,
-    <span class="hljs-number">1347266149</span>: <span class="hljs-string">&apos;Vehicle Vigilante Missile Ignore&apos;</span>,
-    <span class="hljs-number">2275421702</span>: <span class="hljs-string">&apos;Vehicle Viseris MG Ignore&apos;</span>,
-    <span class="hljs-number">1150790720</span>: <span class="hljs-string">&apos;Vehicle Volatol Dual MG Ignore&apos;</span>,
-    <span class="hljs-number">1741783703</span>: <span class="hljs-string">&apos;Vehicle Water Cannon Ignore&apos;</span>,
-};
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> CauseOfDeath <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token number">2460120199</span><span class="token operator">:</span> <span class="token string">&apos;Antique Cavalry Dagger&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">2508868239</span><span class="token operator">:</span> <span class="token string">&apos;Baseball Bat&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">4192643659</span><span class="token operator">:</span> <span class="token string">&apos;Bottle&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">2227010557</span><span class="token operator">:</span> <span class="token string">&apos;Crowbar&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">2725352035</span><span class="token operator">:</span> <span class="token string">&apos;Fist Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">2343591895</span><span class="token operator">:</span> <span class="token string">&apos;Flashlight&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">1141786504</span><span class="token operator">:</span> <span class="token string">&apos;Golf Club&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">1317494643</span><span class="token operator">:</span> <span class="token string">&apos;Hammer&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">4191993645</span><span class="token operator">:</span> <span class="token string">&apos;Hatchet&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3638508604</span><span class="token operator">:</span> <span class="token string">&apos;Knuckle&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">2578778090</span><span class="token operator">:</span> <span class="token string">&apos;Knife&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3713923289</span><span class="token operator">:</span> <span class="token string">&apos;Machete&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3756226112</span><span class="token operator">:</span> <span class="token string">&apos;Switchblade&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">1737195953</span><span class="token operator">:</span> <span class="token string">&apos;Nightstick&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">419712736</span><span class="token operator">:</span> <span class="token string">&apos;Pipe Wrench&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3441901897</span><span class="token operator">:</span> <span class="token string">&apos;Battle Axe&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">2484171525</span><span class="token operator">:</span> <span class="token string">&apos;Pool Cue&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">940833800</span><span class="token operator">:</span> <span class="token string">&apos;Stone Hatchet&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">453432689</span><span class="token operator">:</span> <span class="token string">&apos;Pistol&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3219281620</span><span class="token operator">:</span> <span class="token string">&apos;Pistol MK2&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">1593441988</span><span class="token operator">:</span> <span class="token string">&apos;Combat Pistol&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">584646201</span><span class="token operator">:</span> <span class="token string">&apos;AP Pistol&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">911657153</span><span class="token operator">:</span> <span class="token string">&apos;Stun Gun&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">2578377531</span><span class="token operator">:</span> <span class="token string">&apos;Pistol .50&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3218215474</span><span class="token operator">:</span> <span class="token string">&apos;SNS Pistol&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">2285322324</span><span class="token operator">:</span> <span class="token string">&apos;SNS Pistol MK2&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3523564046</span><span class="token operator">:</span> <span class="token string">&apos;Heavy Pistol&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">137902532</span><span class="token operator">:</span> <span class="token string">&apos;Vintage Pistol&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">1198879012</span><span class="token operator">:</span> <span class="token string">&apos;Flare Gun&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3696079510</span><span class="token operator">:</span> <span class="token string">&apos;Marksman Pistol&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3249783761</span><span class="token operator">:</span> <span class="token string">&apos;Heavy Revolver&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3415619887</span><span class="token operator">:</span> <span class="token string">&apos;Heavy Revolver MK2&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">2548703416</span><span class="token operator">:</span> <span class="token string">&apos;Double Action&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">2939590305</span><span class="token operator">:</span> <span class="token string">&apos;Up-n-Atomizer&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">324215364</span><span class="token operator">:</span> <span class="token string">&apos;Micro SMG&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">736523883</span><span class="token operator">:</span> <span class="token string">&apos;SMG&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">2024373456</span><span class="token operator">:</span> <span class="token string">&apos;SMG MK2&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">4024951519</span><span class="token operator">:</span> <span class="token string">&apos;Assault SMG&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">171789620</span><span class="token operator">:</span> <span class="token string">&apos;Combat PDW&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3675956304</span><span class="token operator">:</span> <span class="token string">&apos;Machine Pistol&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3173288789</span><span class="token operator">:</span> <span class="token string">&apos;Mini SMG&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">1198256469</span><span class="token operator">:</span> <span class="token string">&apos;Unholy Hellbringer&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">487013001</span><span class="token operator">:</span> <span class="token string">&apos;Pump Shotgun&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">1432025498</span><span class="token operator">:</span> <span class="token string">&apos;Pump Shotgun MK2&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">2017895192</span><span class="token operator">:</span> <span class="token string">&apos;Sawed-Off Shotgun&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3800352039</span><span class="token operator">:</span> <span class="token string">&apos;Assault Shotgun&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">2640438543</span><span class="token operator">:</span> <span class="token string">&apos;Bullpup Shotgun&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">2828843422</span><span class="token operator">:</span> <span class="token string">&apos;Musket&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">984333226</span><span class="token operator">:</span> <span class="token string">&apos;Heavy Shotgun&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">4019527611</span><span class="token operator">:</span> <span class="token string">&apos;Double Barrel Shotgun&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">317205821</span><span class="token operator">:</span> <span class="token string">&apos;Sweeper Shotgun&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3220176749</span><span class="token operator">:</span> <span class="token string">&apos;Assault Rifle&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">961495388</span><span class="token operator">:</span> <span class="token string">&apos;Assault Rifle MK2&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">2210333304</span><span class="token operator">:</span> <span class="token string">&apos;Carbine Rifle&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">4208062921</span><span class="token operator">:</span> <span class="token string">&apos;Carbine Rifle MK2&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">2937143193</span><span class="token operator">:</span> <span class="token string">&apos;Advanced Rifle&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3231910285</span><span class="token operator">:</span> <span class="token string">&apos;Special Carbine&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">2526821735</span><span class="token operator">:</span> <span class="token string">&apos;Special Carbine MK2&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">2132975508</span><span class="token operator">:</span> <span class="token string">&apos;Bullpup Rifle&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">2228681469</span><span class="token operator">:</span> <span class="token string">&apos;Bullpup Rifle MK2&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">1649403952</span><span class="token operator">:</span> <span class="token string">&apos;Compact Rifle&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">2634544996</span><span class="token operator">:</span> <span class="token string">&apos;MG&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">2144741730</span><span class="token operator">:</span> <span class="token string">&apos;Combat MG&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3686625920</span><span class="token operator">:</span> <span class="token string">&apos;Combat MG MK2&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">1627465347</span><span class="token operator">:</span> <span class="token string">&apos;Gusenberg Sweeper&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">100416529</span><span class="token operator">:</span> <span class="token string">&apos;Sniper Rifle&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">205991906</span><span class="token operator">:</span> <span class="token string">&apos;Heavy Sniper&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">177293209</span><span class="token operator">:</span> <span class="token string">&apos;Heavy Sniper MK2&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3342088282</span><span class="token operator">:</span> <span class="token string">&apos;Marksman Rifle&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">1785463520</span><span class="token operator">:</span> <span class="token string">&apos;Marksman Rifle MK2&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">2982836145</span><span class="token operator">:</span> <span class="token string">&apos;RPG&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">2726580491</span><span class="token operator">:</span> <span class="token string">&apos;Grenade Launcher&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">1305664598</span><span class="token operator">:</span> <span class="token string">&apos;Smoke Grenade Launcher&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">1119849093</span><span class="token operator">:</span> <span class="token string">&apos;Minigun&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">2138347493</span><span class="token operator">:</span> <span class="token string">&apos;Firework Launcher&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">1834241177</span><span class="token operator">:</span> <span class="token string">&apos;Railgun&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">1672152130</span><span class="token operator">:</span> <span class="token string">&apos;Homing Launcher&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">125959754</span><span class="token operator">:</span> <span class="token string">&apos;Compact Grenade Launcher&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3056410471</span><span class="token operator">:</span> <span class="token string">&apos;Ray Minigun&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">2481070269</span><span class="token operator">:</span> <span class="token string">&apos;Grenade&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">2694266206</span><span class="token operator">:</span> <span class="token string">&apos;BZ Gas&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">4256991824</span><span class="token operator">:</span> <span class="token string">&apos;Smoke Grenade&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">1233104067</span><span class="token operator">:</span> <span class="token string">&apos;Flare&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">615608432</span><span class="token operator">:</span> <span class="token string">&apos;Molotov&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">741814745</span><span class="token operator">:</span> <span class="token string">&apos;Sticky Bomb&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">2874559379</span><span class="token operator">:</span> <span class="token string">&apos;Proximity Mine&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">126349499</span><span class="token operator">:</span> <span class="token string">&apos;Snowball&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3125143736</span><span class="token operator">:</span> <span class="token string">&apos;Pipe Bomb&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">600439132</span><span class="token operator">:</span> <span class="token string">&apos;Baseball&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">883325847</span><span class="token operator">:</span> <span class="token string">&apos;Jerry Can&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">101631238</span><span class="token operator">:</span> <span class="token string">&apos;Fire Extinguisher Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">4222310262</span><span class="token operator">:</span> <span class="token string">&apos;Parachute Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">2461879995</span><span class="token operator">:</span> <span class="token string">&apos;Electric Fence Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3425972830</span><span class="token operator">:</span> <span class="token string">&apos;Hit by Water Cannon Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">133987706</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Death Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">2741846334</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Death Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3452007600</span><span class="token operator">:</span> <span class="token string">&apos;Fall Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">4194021054</span><span class="token operator">:</span> <span class="token string">&apos;Animal Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">324506233</span><span class="token operator">:</span> <span class="token string">&apos;Airstrike Rocket&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">2339582971</span><span class="token operator">:</span> <span class="token string">&apos;Bleeding Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">2294779575</span><span class="token operator">:</span> <span class="token string">&apos;Briefcase Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">28811031</span><span class="token operator">:</span> <span class="token string">&apos;Briefcase 02 Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">148160082</span><span class="token operator">:</span> <span class="token string">&apos;Cougar Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">1223143800</span><span class="token operator">:</span> <span class="token string">&apos;Barbed Wire Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">4284007675</span><span class="token operator">:</span> <span class="token string">&apos;Drowning Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">1936677264</span><span class="token operator">:</span> <span class="token string">&apos;Drowning In Vehicle Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">539292904</span><span class="token operator">:</span> <span class="token string">&apos;Explosion Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">910830060</span><span class="token operator">:</span> <span class="token string">&apos;Exhaustion Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3750660587</span><span class="token operator">:</span> <span class="token string">&apos;Fire Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">341774354</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Heli Crash Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3204302209</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Rocket Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">2282558706</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Akula Barrage Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">431576697</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Akula Minigun Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">2092838988</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Akula Missile Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">476907586</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Akula Turret Dual Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3048454573</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Akula Turret Single Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">328167896</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle APC Cannon Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">190244068</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle APC MG Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">1151689097</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle APC Missile Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3293463361</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Ardent MG Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">2556895291</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Avenger Cannon Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">2756453005</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Barrage Rear GL Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">1200179045</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Barrage Rear MG Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">525623141</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Barrage Rear Minigun Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">4148791700</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Barrage Top MG Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">1000258817</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Barrage Top Minigun Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3628350041</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Bombushka Cannon Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">741027160</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Bombushka Dual MG Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3959029566</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Cannon Blazer Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">1817275304</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Caracara MG Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">1338760315</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Caracara Minigun Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">2722615358</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Cherno Missile Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3936892403</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Comet MG Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">2600428406</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Deluxo MG Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3036244276</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Deluxo Missile Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">1595421922</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Dogfighter MG Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3393648765</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Dogfighter Missile Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">2700898573</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Dune Grenade Launcher Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3507816399</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Dune MG Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">1416047217</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Dune Minigun Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">1566990507</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Enemy Laser Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">1987049393</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Hacker Missile Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">2011877270</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Hacker Missile Homing Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">1331922171</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Halftrack Dual MG Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">1226518132</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Halftrack Quad MG Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">855547631</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Havok Minigun Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">785467445</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Hunter Barrage Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">704686874</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Hunter Cannon Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">1119518887</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Hunter MG Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">153396725</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Hunter Missile Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">2861067768</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Insurgent Minigun Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">507170720</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Khanjali Cannon Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">2206953837</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Khanjali Cannon Heavy Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">394659298</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Khanjali GL Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">711953949</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Khanjali MG Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3754621092</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Menacer MG Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3303022956</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Microlight MG Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3846072740</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Mobileops Cannon Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3857952303</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Mogul Dual Nose Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3123149825</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Mogul Dual Turret Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">4128808778</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Mogul Nose Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3808236382</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Mogul Turret Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">2220197671</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Mule4 MG Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">1198717003</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Mule4 Missile Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3708963429</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Mule4 Turret GL Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">2786772340</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Nightshark MG Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">1097917585</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Nose Turret Valkyrie Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3643944669</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Oppressor MG Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">2344076862</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Oppressor Missile Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3595383913</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Oppressor2 Cannon Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3796180438</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Oppressor2 MG Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">1966766321</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Oppressor2 Missile Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3473446624</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Plane Rocket Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">1186503822</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Player Buzzard Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3800181289</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Player Lazer Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">1638077257</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Player Savage Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">2456521956</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Pounder2 Barrage Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">2467888918</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Pounder2 GL Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">2263283790</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Pounder2 Mini Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">162065050</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Pounder2 Missile Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3530961278</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Radar Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3177079402</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Revolter MG Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3878337474</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Rogue Cannon Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">158495693</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Rogue MG Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">1820910717</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Rogue Missile Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">50118905</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Ruiner Bullet Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">84788907</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Ruiner Rocket Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3946965070</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Savestra MG Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">231629074</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Scramjet MG Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3169388763</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Scramjet Missile Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">1371067624</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Seabreeze MG Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3450622333</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Searchlight Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">4171469727</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Space Rocket Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3355244860</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Speedo4 MG Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3595964737</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Speedo4 Turret MG Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">2667462330</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Speedo4 Turret Mini Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">968648323</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Strikeforce Barrage Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">955522731</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Strikeforce Cannon Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">519052682</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Strikeforce Missile Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">1176362416</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Subcar MG Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3565779982</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Subcar Missile Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3884172218</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Subcar Torpedo Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">1744687076</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Tampa Dual Minigun Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3670375085</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Tampa Fixed Minigun Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">2656583842</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Tampa Missile Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">1015268368</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Tampa Mortar Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">1945616459</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Tank Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3683206664</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Technical Minigun Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">1697521053</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Thruster MG Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">1177935125</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Thruster Missile Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">2156678476</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Trailer Dualaa Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">341154295</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Trailer Missile Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">1192341548</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Trailer Quad MG Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">2966510603</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Tula Dual MG Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">1217122433</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Tula MG Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">376489128</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Tula Minigun Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">1100844565</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Tula Nose MG Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">3041872152</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Turret Boxville Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">1155224728</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Turret Insurgent Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">729375873</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Turret Limo Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">2144528907</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Turret Technical Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">2756787765</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Turret Valkyrie Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">4094131943</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Vigilante MG Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">1347266149</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Vigilante Missile Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">2275421702</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Viseris MG Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">1150790720</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Volatol Dual MG Ignore&apos;</span><span class="token punctuation">,</span>
+    <span class="token number">1741783703</span><span class="token operator">:</span> <span class="token string">&apos;Vehicle Water Cannon Ignore&apos;</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
 
                                 
@@ -2795,7 +2799,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Cause of Death","description":"List of all the causes of death.","prefix":"[Table]","level":"1.7.1","depth":2,"next":{"title":"GTA:V Controls","level":"1.7.2","depth":2,"path":"docs/articles/tables/controls.md","ref":"docs/articles/tables/controls.md","articles":[]},"previous":{"title":"Table","level":"1.7","depth":1,"path":"docs/articles/tables/README.md","ref":"docs/articles/tables/README.md","articles":[{"title":"Cause of Death","level":"1.7.1","depth":2,"path":"docs/articles/tables/cause-of-death.md","ref":"docs/articles/tables/cause-of-death.md","articles":[]},{"title":"GTA:V Controls","level":"1.7.2","depth":2,"path":"docs/articles/tables/controls.md","ref":"docs/articles/tables/controls.md","articles":[]},{"title":"Explosion Types","level":"1.7.3","depth":2,"path":"docs/articles/tables/explosions.md","ref":"docs/articles/tables/explosions.md","articles":[]},{"title":"Frontend Sounds","level":"1.7.4","depth":2,"path":"docs/articles/tables/frontend-sounds.md","ref":"docs/articles/tables/frontend-sounds.md","articles":[]},{"title":"Missing Interiors - IPLs","level":"1.7.5","depth":2,"path":"docs/articles/tables/ipls.md","ref":"docs/articles/tables/ipls.md","articles":[]},{"title":"Ped Bones","level":"1.7.6","depth":2,"path":"docs/articles/tables/ped-bones.md","ref":"docs/articles/tables/ped-bones.md","articles":[]},{"title":"Vehicle Bones","level":"1.7.7","depth":2,"path":"docs/articles/tables/vehicle-bones.md","ref":"docs/articles/tables/vehicle-bones.md","articles":[]},{"title":"Vehicle Color IDs","level":"1.7.8","depth":2,"path":"docs/articles/tables/vehicle-colors.md","ref":"docs/articles/tables/vehicle-colors.md","articles":[]},{"title":"Vehicle Mods","level":"1.7.9","depth":2,"path":"docs/articles/tables/vehicle-mods.md","ref":"docs/articles/tables/vehicle-mods.md","articles":[]},{"title":"Vehicle Seats","level":"1.7.10","depth":2,"path":"docs/articles/tables/vehicle-seats.md","ref":"docs/articles/tables/vehicle-seats.md","articles":[]},{"title":"Vehicle Window Tint","level":"1.7.11","depth":2,"path":"docs/articles/tables/vehicle-window-tint.md","ref":"docs/articles/tables/vehicle-window-tint.md","articles":[]},{"title":"Weapon Components","level":"1.7.12","depth":2,"path":"docs/articles/tables/weapon-components.md","ref":"docs/articles/tables/weapon-components.md","articles":[]},{"title":"Weapon Pickups","level":"1.7.13","depth":2,"path":"docs/articles/tables/weapon-pickups.md","ref":"docs/articles/tables/weapon-pickups.md","articles":[]},{"title":"Weapon Tint","level":"1.7.14","depth":2,"path":"docs/articles/tables/weapon-tint.md","ref":"docs/articles/tables/weapon-tint.md","articles":[]},{"title":"Weapon List","level":"1.7.15","depth":2,"path":"docs/articles/tables/weapons.md","ref":"docs/articles/tables/weapons.md","articles":[]},{"title":"Weather IDs","level":"1.7.16","depth":2,"path":"docs/articles/tables/weather.md","ref":"docs/articles/tables/weather.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["gitbook-plugin-expandable-contract-chapters","honkit-plugin-sitemap","honkit-plugin-robots"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"honkit-plugin-robots":{},"search":{},"robots":{"data":["User-agent: *","Disallow:"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"gitbook-plugin-expandable-contract-chapters":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"url":"https://altv.stuyk.com"},"honkit-plugin-sitemap":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"alt:V Unofficial Docs","gitbook":"*","description":"The unofficial documentation for alt:V's Javascript Modules."},"file":{"path":"docs/articles/tables/cause-of-death.md","mtime":"2021-03-16T14:10:39.595Z","type":"markdown"},"gitbook":{"version":"3.6.17","time":"2021-03-16T14:10:57.364Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Cause of Death","description":"List of all the causes of death.","prefix":"[Table]","level":"1.7.1","depth":2,"next":{"title":"GTA:V Controls","level":"1.7.2","depth":2,"path":"docs/articles/tables/controls.md","ref":"docs/articles/tables/controls.md","articles":[]},"previous":{"title":"Table","level":"1.7","depth":1,"path":"docs/articles/tables/README.md","ref":"docs/articles/tables/README.md","articles":[{"title":"Cause of Death","level":"1.7.1","depth":2,"path":"docs/articles/tables/cause-of-death.md","ref":"docs/articles/tables/cause-of-death.md","articles":[]},{"title":"GTA:V Controls","level":"1.7.2","depth":2,"path":"docs/articles/tables/controls.md","ref":"docs/articles/tables/controls.md","articles":[]},{"title":"Explosion Types","level":"1.7.3","depth":2,"path":"docs/articles/tables/explosions.md","ref":"docs/articles/tables/explosions.md","articles":[]},{"title":"Frontend Sounds","level":"1.7.4","depth":2,"path":"docs/articles/tables/frontend-sounds.md","ref":"docs/articles/tables/frontend-sounds.md","articles":[]},{"title":"Missing Interiors - IPLs","level":"1.7.5","depth":2,"path":"docs/articles/tables/ipls.md","ref":"docs/articles/tables/ipls.md","articles":[]},{"title":"Ped Bones","level":"1.7.6","depth":2,"path":"docs/articles/tables/ped-bones.md","ref":"docs/articles/tables/ped-bones.md","articles":[]},{"title":"Vehicle Bones","level":"1.7.7","depth":2,"path":"docs/articles/tables/vehicle-bones.md","ref":"docs/articles/tables/vehicle-bones.md","articles":[]},{"title":"Vehicle Color IDs","level":"1.7.8","depth":2,"path":"docs/articles/tables/vehicle-colors.md","ref":"docs/articles/tables/vehicle-colors.md","articles":[]},{"title":"Vehicle Mods","level":"1.7.9","depth":2,"path":"docs/articles/tables/vehicle-mods.md","ref":"docs/articles/tables/vehicle-mods.md","articles":[]},{"title":"Vehicle Seats","level":"1.7.10","depth":2,"path":"docs/articles/tables/vehicle-seats.md","ref":"docs/articles/tables/vehicle-seats.md","articles":[]},{"title":"Vehicle Window Tint","level":"1.7.11","depth":2,"path":"docs/articles/tables/vehicle-window-tint.md","ref":"docs/articles/tables/vehicle-window-tint.md","articles":[]},{"title":"Weapon Components","level":"1.7.12","depth":2,"path":"docs/articles/tables/weapon-components.md","ref":"docs/articles/tables/weapon-components.md","articles":[]},{"title":"Weapon Pickups","level":"1.7.13","depth":2,"path":"docs/articles/tables/weapon-pickups.md","ref":"docs/articles/tables/weapon-pickups.md","articles":[]},{"title":"Weapon Tint","level":"1.7.14","depth":2,"path":"docs/articles/tables/weapon-tint.md","ref":"docs/articles/tables/weapon-tint.md","articles":[]},{"title":"Weapon List","level":"1.7.15","depth":2,"path":"docs/articles/tables/weapons.md","ref":"docs/articles/tables/weapons.md","articles":[]},{"title":"Weather IDs","level":"1.7.16","depth":2,"path":"docs/articles/tables/weather.md","ref":"docs/articles/tables/weather.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["gitbook-plugin-expandable-contract-chapters","-highlight","prism","honkit-plugin-sitemap","honkit-plugin-robots","honkit-plugin-theme-osiris"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"honkit-plugin-robots":{},"search":{},"robots":{"data":["User-agent: *","Disallow:"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"gitbook-plugin-expandable-contract-chapters":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"url":"https://altv.stuyk.com"},"honkit-plugin-theme-osiris":{},"honkit-plugin-sitemap":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"alt:V Unofficial Docs","gitbook":"*","description":"The unofficial documentation for alt:V's Javascript Modules."},"file":{"path":"docs/articles/tables/cause-of-death.md","mtime":"2021-03-16T16:43:40.828Z","type":"markdown"},"gitbook":{"version":"3.6.17","time":"2021-03-16T16:43:53.318Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -2873,6 +2877,6 @@
         
     
 
+        <script src="https://cdn.jsdelivr.net/npm/less@3.13" ></script>
     </body>
 </html>
-

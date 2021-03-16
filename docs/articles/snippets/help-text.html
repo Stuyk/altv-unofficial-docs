@@ -20,7 +20,11 @@
                 
             
                 
-                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-honkit-plugin-theme-osiris/osiris.css">
                 
             
                 
@@ -2523,22 +2527,22 @@
 <p>Help text is the little box that appears in the upper left corner of your game.</p>
 <p>You cannot change the position of this text.</p>
 <h2 id="example">Example</h2>
-<pre><code class="lang-js">alt.onServer(<span class="hljs-string">&apos;showHelpText&apos;</span>, showHelpText);
+<pre class="language-"><code class="lang-js">alt<span class="token punctuation">.</span><span class="token function">onServer</span><span class="token punctuation">(</span><span class="token string">&apos;showHelpText&apos;</span><span class="token punctuation">,</span> showHelpText<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">showHelpText</span>(<span class="hljs-params">text, milliseconds</span>) </span>{
-    native.beginTextCommandDisplayHelp(<span class="hljs-string">&apos;STRING&apos;</span>);
-    native.addTextComponentScaleform(text);
-    native.endTextCommandDisplayHelp(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, milliseconds);
-}
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">showHelpText</span><span class="token punctuation">(</span><span class="token parameter">text<span class="token punctuation">,</span> milliseconds</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    native<span class="token punctuation">.</span><span class="token function">beginTextCommandDisplayHelp</span><span class="token punctuation">(</span><span class="token string">&apos;STRING&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    native<span class="token punctuation">.</span><span class="token function">addTextComponentScaleform</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    native<span class="token punctuation">.</span><span class="token function">endTextCommandDisplayHelp</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> milliseconds<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h2 id="example-usage">Example Usage</h2>
 <p><strong>Server Side</strong></p>
-<pre><code class="lang-js">alt.on(<span class="hljs-string">&apos;playerConnect&apos;</span>, <span class="hljs-function">(<span class="hljs-params">player</span>) =&gt;</span> {
-    alt.emitClient(player, <span class="hljs-string">&apos;showHelpText&apos;</span>, <span class="hljs-string">&apos;Press ~INPUT_MOVE_UP_ONLY~ to move forward.&apos;</span>, <span class="hljs-number">5000</span>);
-});
+<pre class="language-"><code class="lang-js">alt<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">&apos;playerConnect&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">player</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    alt<span class="token punctuation">.</span><span class="token function">emitClient</span><span class="token punctuation">(</span>player<span class="token punctuation">,</span> <span class="token string">&apos;showHelpText&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Press ~INPUT_MOVE_UP_ONLY~ to move forward.&apos;</span><span class="token punctuation">,</span> <span class="token number">5000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p><strong>Client Side</strong></p>
-<pre><code class="lang-js">showHelpText(<span class="hljs-string">&apos;Press ~INPUT_MOVE_UP_ONLY~ to move forward.&apos;</span>, <span class="hljs-number">5000</span>);
+<pre class="language-"><code class="lang-js"><span class="token function">showHelpText</span><span class="token punctuation">(</span><span class="token string">&apos;Press ~INPUT_MOVE_UP_ONLY~ to move forward.&apos;</span><span class="token punctuation">,</span> <span class="token number">5000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 
                                 
@@ -2583,7 +2587,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Using Help Text","description":"How to create text in the upper left corner of your game.","prefix":"[Snippet]","level":"1.6.3","depth":2,"next":{"title":"Create a Marker","level":"1.6.4","depth":2,"path":"docs/articles/snippets/markers.md","ref":"docs/articles/snippets/markers.md","articles":[]},"previous":{"title":"Flickering Webview","level":"1.6.2","depth":2,"path":"docs/articles/snippets/flickering-webview.md","ref":"docs/articles/snippets/flickering-webview.md","articles":[]},"dir":"ltr"},"config":{"plugins":["gitbook-plugin-expandable-contract-chapters","honkit-plugin-sitemap","honkit-plugin-robots"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"honkit-plugin-robots":{},"search":{},"robots":{"data":["User-agent: *","Disallow:"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"gitbook-plugin-expandable-contract-chapters":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"url":"https://altv.stuyk.com"},"honkit-plugin-sitemap":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"alt:V Unofficial Docs","gitbook":"*","description":"The unofficial documentation for alt:V's Javascript Modules."},"file":{"path":"docs/articles/snippets/help-text.md","mtime":"2021-03-16T14:10:39.595Z","type":"markdown"},"gitbook":{"version":"3.6.17","time":"2021-03-16T14:10:57.364Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Using Help Text","description":"How to create text in the upper left corner of your game.","prefix":"[Snippet]","level":"1.6.3","depth":2,"next":{"title":"Create a Marker","level":"1.6.4","depth":2,"path":"docs/articles/snippets/markers.md","ref":"docs/articles/snippets/markers.md","articles":[]},"previous":{"title":"Flickering Webview","level":"1.6.2","depth":2,"path":"docs/articles/snippets/flickering-webview.md","ref":"docs/articles/snippets/flickering-webview.md","articles":[]},"dir":"ltr"},"config":{"plugins":["gitbook-plugin-expandable-contract-chapters","-highlight","prism","honkit-plugin-sitemap","honkit-plugin-robots","honkit-plugin-theme-osiris"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"honkit-plugin-robots":{},"search":{},"robots":{"data":["User-agent: *","Disallow:"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"gitbook-plugin-expandable-contract-chapters":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"url":"https://altv.stuyk.com"},"honkit-plugin-theme-osiris":{},"honkit-plugin-sitemap":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"alt:V Unofficial Docs","gitbook":"*","description":"The unofficial documentation for alt:V's Javascript Modules."},"file":{"path":"docs/articles/snippets/help-text.md","mtime":"2021-03-16T16:43:40.824Z","type":"markdown"},"gitbook":{"version":"3.6.17","time":"2021-03-16T16:43:53.318Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -2661,6 +2665,6 @@
         
     
 
+        <script src="https://cdn.jsdelivr.net/npm/less@3.13" ></script>
     </body>
 </html>
-

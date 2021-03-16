@@ -20,7 +20,11 @@
                 
             
                 
-                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-honkit-plugin-theme-osiris/osiris.css">
                 
             
                 
@@ -2535,32 +2539,32 @@
 <h1 id="creating-a-resource">Creating a Resource</h1>
 <p>Simply create a folder inside the <code>resources</code> folder and call it whatever you want. In this bootcamp we will be calling it <code>example</code>.</p>
 <p>Your folder structure should look similar to this:</p>
-<pre><code class="lang-sh">│   altv-server.exe
+<pre class="language-"><code class="lang-sh">│   altv-server.exe
 │   server.cfg
-│   package.json <span class="hljs-comment"># Generated with &apos;npm init&apos; in cmd line.</span>
-│                <span class="hljs-comment"># See previous tutorial for more info.</span>
+│   package.json <span class="token comment"># Generated with &apos;npm init&apos; in cmd line.</span>
+│                <span class="token comment"># See previous tutorial for more info.</span>
 ├───data/
 ├───modules/
 └───resources/
-    └───example/ <span class="hljs-comment"># We created this folder.</span>
+    └───example/ <span class="token comment"># We created this folder.</span>
 </code></pre>
 <p>Create two more folders inside of <code>example</code> called <code>client</code> and <code>server</code>. Then inside of the <code>example</code> folder you will want to create a file called <code>resource.cfg</code>. You can do this by using the context menu or VSCode to create your file. Create a text file and rename the extension to <code>.cfg</code>. Example being <code>resource.txt -&gt; resource.cfg</code>.</p>
 <p><em>This can be done for all file types in the future.</em></p>
-<pre><code class="lang-sh">│   altv-server.exe
+<pre class="language-"><code class="lang-sh">│   altv-server.exe
 │   server.cfg
 │   package.json
 ├───data/
 ├───modules/
 └───resources/
     └───example/
-        ├───server/ <span class="hljs-comment"># We created this folder.</span>
-        ├───client/ <span class="hljs-comment"># We created this folder.</span>
-        └───resource.cfg <span class="hljs-comment"># We created this file.</span>
+        ├───server/ <span class="token comment"># We created this folder.</span>
+        ├───client/ <span class="token comment"># We created this folder.</span>
+        └───resource.cfg <span class="token comment"># We created this file.</span>
 </code></pre>
 <p>Great! Now let&apos;s open <code>resource.cfg</code> and we&apos;ll add information about the <code>resource</code> we are creating.</p>
-<pre><code class="lang-sh"><span class="hljs-comment"># We are making a file called `resource.cfg` and adding the text below.</span>
+<pre class="language-"><code class="lang-sh"><span class="token comment"># We are making a file called `resource.cfg` and adding the text below.</span>
 </code></pre>
-<pre><code>type: &apos;js&apos;,
+<pre class="language-"><code>type: &apos;js&apos;,
 main: server/startup.js,
 client-main: client/startup.js,
 client-files: [
@@ -2569,7 +2573,7 @@ client-files: [
 deps: []
 </code></pre><p>Now we can add the last files that we need which are <code>server/startup.js</code> and <code>client/startup.js</code>.</p>
 <p>Here&apos;s how your directory should look:</p>
-<pre><code class="lang-sh">│   altv-server.exe
+<pre class="language-"><code class="lang-sh">│   altv-server.exe
 │   server.cfg
 │   package.json
 ├───data/
@@ -2577,37 +2581,37 @@ deps: []
 └───resources/
     └───example/
         ├───server/
-        │    └───startup.js <span class="hljs-comment"># We created this file.</span>
+        │    └───startup.js <span class="token comment"># We created this file.</span>
         ├───client/
-        │    └───startup.js <span class="hljs-comment"># We created this file.</span>
+        │    └───startup.js <span class="token comment"># We created this file.</span>
         └───resource.cfg
 </code></pre>
 <p>Inside of <code>server/startup.js</code> you will want to put the following inside.</p>
-<pre><code class="lang-js"><span class="hljs-comment">/// &lt;reference types=&quot;@altv/types-server&quot; /&gt;</span>
-<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> alt <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;alt-server&apos;</span>;
+<pre class="language-"><code class="lang-js"><span class="token comment">/// &lt;reference types=&quot;@altv/types-server&quot; /&gt;</span>
+<span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> alt <span class="token keyword">from</span> <span class="token string">&apos;alt-server&apos;</span><span class="token punctuation">;</span>
 
-alt.log(<span class="hljs-string">&apos;Hello from server&apos;</span>);
+alt<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;Hello from server&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p>Inside of <code>client/startup.js</code> you will want to put the following inside.</p>
-<pre><code class="lang-js"><span class="hljs-comment">/// &lt;reference types=&quot;@altv/types-client&quot; /&gt;</span>
-<span class="hljs-comment">/// &lt;reference types=&quot;@altv/types-natives&quot; /&gt;</span>
-<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> alt <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;alt-client&apos;</span>;
-<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> native <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;natives&apos;</span>;
+<pre class="language-"><code class="lang-js"><span class="token comment">/// &lt;reference types=&quot;@altv/types-client&quot; /&gt;</span>
+<span class="token comment">/// &lt;reference types=&quot;@altv/types-natives&quot; /&gt;</span>
+<span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> alt <span class="token keyword">from</span> <span class="token string">&apos;alt-client&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> native <span class="token keyword">from</span> <span class="token string">&apos;natives&apos;</span><span class="token punctuation">;</span>
 
-alt.log(<span class="hljs-string">&apos;Hello from client&apos;</span>); <span class="hljs-comment">// Only visible in &apos;F8&apos; menu.</span>
+alt<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;Hello from client&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Only visible in &apos;F8&apos; menu.</span>
 </code></pre>
 <h1 id="open-the-whole-folder-in-vscode">Open the Whole Folder in VSCode</h1>
 <p>Before we go any further it&apos;s important that you open the entire folder structure in VSCode.</p>
 <p><code>File -&gt; Open Folder</code> and then open the folder where you have <code>altv-server</code> located. This will install all the necessary types needed to work with <a href="../../../GLOSSARY.html#altv" class="glossary-term" title="The client that this documentation is for. You can download it at https://altv.mp/.">alt:V</a> as well as configure your <code>package.json</code> a little bit further.</p>
 <p>However, if you wish to perform this step manually that is no problem.</p>
 <p>Simply run these commands in the root of your folder where <code>package.json</code> is located in a <code>terminal</code>, <code>powershell</code>, or <code>cmd</code>.</p>
-<pre><code class="lang-sh">npm i @altv/types-client --save-dev
-npm i @altv/types-server --save-dev
-npm i @altv/types-natives --save-dev
-npm i @altv/types-webview --save-dev
+<pre class="language-"><code class="lang-sh"><span class="token function">npm</span> i @altv/types-client --save-dev
+<span class="token function">npm</span> i @altv/types-server --save-dev
+<span class="token function">npm</span> i @altv/types-natives --save-dev
+<span class="token function">npm</span> i @altv/types-webview --save-dev
 </code></pre>
 <p>Your <code>package.json</code> should look similar this:</p>
-<pre><code>{
+<pre class="language-"><code>{
     &quot;name&quot;: &quot;test&quot;,
     &quot;version&quot;: &quot;1.0.0&quot;,
     &quot;description&quot;: &quot;&quot;,
@@ -2681,7 +2685,7 @@ npm i @altv/types-webview --save-dev
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"006 - Creating a Resource","description":"How to create a resource","prefix":"[Bootcamp]","level":"1.4.6","depth":2,"next":{"title":"007 - Adding a Resource","level":"1.4.7","depth":2,"path":"docs/articles/bootcamp/007.md","ref":"docs/articles/bootcamp/007.md","articles":[]},"previous":{"title":"005 - Understanding Resource Structure","level":"1.4.5","depth":2,"path":"docs/articles/bootcamp/005.md","ref":"docs/articles/bootcamp/005.md","articles":[]},"dir":"ltr"},"config":{"plugins":["gitbook-plugin-expandable-contract-chapters","honkit-plugin-sitemap","honkit-plugin-robots"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"honkit-plugin-robots":{},"search":{},"robots":{"data":["User-agent: *","Disallow:"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"gitbook-plugin-expandable-contract-chapters":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"url":"https://altv.stuyk.com"},"honkit-plugin-sitemap":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"alt:V Unofficial Docs","gitbook":"*","description":"The unofficial documentation for alt:V's Javascript Modules."},"file":{"path":"docs/articles/bootcamp/006.md","mtime":"2021-03-16T14:10:39.591Z","type":"markdown"},"gitbook":{"version":"3.6.17","time":"2021-03-16T14:10:57.364Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"006 - Creating a Resource","description":"How to create a resource","prefix":"[Bootcamp]","level":"1.4.6","depth":2,"next":{"title":"007 - Adding a Resource","level":"1.4.7","depth":2,"path":"docs/articles/bootcamp/007.md","ref":"docs/articles/bootcamp/007.md","articles":[]},"previous":{"title":"005 - Understanding Resource Structure","level":"1.4.5","depth":2,"path":"docs/articles/bootcamp/005.md","ref":"docs/articles/bootcamp/005.md","articles":[]},"dir":"ltr"},"config":{"plugins":["gitbook-plugin-expandable-contract-chapters","-highlight","prism","honkit-plugin-sitemap","honkit-plugin-robots","honkit-plugin-theme-osiris"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"honkit-plugin-robots":{},"search":{},"robots":{"data":["User-agent: *","Disallow:"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"gitbook-plugin-expandable-contract-chapters":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"url":"https://altv.stuyk.com"},"honkit-plugin-theme-osiris":{},"honkit-plugin-sitemap":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"alt:V Unofficial Docs","gitbook":"*","description":"The unofficial documentation for alt:V's Javascript Modules."},"file":{"path":"docs/articles/bootcamp/006.md","mtime":"2021-03-16T16:43:40.824Z","type":"markdown"},"gitbook":{"version":"3.6.17","time":"2021-03-16T16:43:53.318Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -2759,6 +2763,6 @@ npm i @altv/types-webview --save-dev
         
     
 
+        <script src="https://cdn.jsdelivr.net/npm/less@3.13" ></script>
     </body>
 </html>
-

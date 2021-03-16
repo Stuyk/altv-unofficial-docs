@@ -20,7 +20,11 @@
                 
             
                 
-                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-honkit-plugin-theme-osiris/osiris.css">
                 
             
                 
@@ -2523,7 +2527,7 @@
 <p>Markers are those slightly transparent objects that you see in a lot of GTA:V Gamemodes. They must be drawn on the <code>client-side</code> and they must use a <code>alt.setInterval</code> or an <code>alt.everyTick</code>.</p>
 <p><img src="https://i.imgur.com/fiMWPhp.png" alt></p>
 <h2 id="example">Example</h2>
-<pre><code class="lang-ts"><span class="hljs-comment">/*
+<pre class="language-"><code class="lang-ts">/*
     Example Interface for markers
     {
         type, 
@@ -2536,9 +2540,9 @@
         b, 
         alpha
     }
-*/</span>
+*/
 
-<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">drawMarker</span>(<span class="hljs-params">markerData</span>) </span>{
+export function drawMarker(markerData) {
     native.drawMarker(
         markerData.type,
         markerData.pos.x,
@@ -2557,34 +2561,34 @@
         markerData.g,
         markerData.b,
         markerData.alpha,
-        <span class="hljs-literal">false</span>,
-        <span class="hljs-literal">true</span>,
-        <span class="hljs-number">2</span>,
-        <span class="hljs-literal">false</span>,
-        <span class="hljs-literal">undefined</span>,
-        <span class="hljs-literal">undefined</span>,
-        <span class="hljs-literal">false</span>
+        false,
+        true,
+        2,
+        false,
+        undefined,
+        undefined,
+        false
     );
 }
 </code></pre>
 <h2 id="example-usage">Example Usage</h2>
 <p>Remember this must be done on <code>client-side</code>. It is important that you use a distance formula to limit the drawing range of a marker. That can be done by checking the distance between the player and the marker itself and then deciding whether to draw it or not.</p>
-<pre><code class="lang-js"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> alt <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;alt-client&apos;</span>;
-<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> native <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;natives&apos;</span>;
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> alt <span class="token keyword">from</span> <span class="token string">&apos;alt-client&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> native <span class="token keyword">from</span> <span class="token string">&apos;natives&apos;</span><span class="token punctuation">;</span>
 
-alt.setInterval(<span class="hljs-function">() =&gt;</span> {
-    drawMarker({
-        <span class="hljs-attr">type</span>: <span class="hljs-number">1</span>,
-        <span class="hljs-attr">pos</span>: <span class="hljs-keyword">new</span> alt.Vector3(<span class="hljs-number">25</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>),
-        <span class="hljs-attr">dir</span>: <span class="hljs-keyword">new</span> alt.Vector3(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>),
-        <span class="hljs-attr">rot</span>: <span class="hljs-keyword">new</span> alt.Vector3(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>),
-        <span class="hljs-attr">scale</span>: <span class="hljs-keyword">new</span> alt.Vector3(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>),
-        <span class="hljs-attr">r</span>: <span class="hljs-number">255</span>,
-        <span class="hljs-attr">g</span>: <span class="hljs-number">0</span>,
-        <span class="hljs-attr">b</span>: <span class="hljs-number">0</span>,
-        <span class="hljs-attr">alpha</span>: <span class="hljs-number">100</span>,
-    });
-}, <span class="hljs-number">0</span>);
+alt<span class="token punctuation">.</span><span class="token function">setInterval</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token function">drawMarker</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        type<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+        pos<span class="token operator">:</span> <span class="token keyword">new</span> <span class="token class-name">alt<span class="token punctuation">.</span>Vector3</span><span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        dir<span class="token operator">:</span> <span class="token keyword">new</span> <span class="token class-name">alt<span class="token punctuation">.</span>Vector3</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        rot<span class="token operator">:</span> <span class="token keyword">new</span> <span class="token class-name">alt<span class="token punctuation">.</span>Vector3</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        scale<span class="token operator">:</span> <span class="token keyword">new</span> <span class="token class-name">alt<span class="token punctuation">.</span>Vector3</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        r<span class="token operator">:</span> <span class="token number">255</span><span class="token punctuation">,</span>
+        g<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+        b<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+        alpha<span class="token operator">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 
                                 
@@ -2629,7 +2633,7 @@ alt.setInterval(<span class="hljs-function">() =&gt;</span> {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Create a Marker","description":"How to build and use markers.","prefix":"[Snippet]","level":"1.6.4","depth":2,"next":{"title":"Create a Notification","level":"1.6.5","depth":2,"path":"docs/articles/snippets/notifications.md","ref":"docs/articles/snippets/notifications.md","articles":[]},"previous":{"title":"Using Help Text","level":"1.6.3","depth":2,"path":"docs/articles/snippets/help-text.md","ref":"docs/articles/snippets/help-text.md","articles":[]},"dir":"ltr"},"config":{"plugins":["gitbook-plugin-expandable-contract-chapters","honkit-plugin-sitemap","honkit-plugin-robots"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"honkit-plugin-robots":{},"search":{},"robots":{"data":["User-agent: *","Disallow:"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"gitbook-plugin-expandable-contract-chapters":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"url":"https://altv.stuyk.com"},"honkit-plugin-sitemap":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"alt:V Unofficial Docs","gitbook":"*","description":"The unofficial documentation for alt:V's Javascript Modules."},"file":{"path":"docs/articles/snippets/markers.md","mtime":"2021-03-16T14:10:39.595Z","type":"markdown"},"gitbook":{"version":"3.6.17","time":"2021-03-16T14:10:57.364Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Create a Marker","description":"How to build and use markers.","prefix":"[Snippet]","level":"1.6.4","depth":2,"next":{"title":"Create a Notification","level":"1.6.5","depth":2,"path":"docs/articles/snippets/notifications.md","ref":"docs/articles/snippets/notifications.md","articles":[]},"previous":{"title":"Using Help Text","level":"1.6.3","depth":2,"path":"docs/articles/snippets/help-text.md","ref":"docs/articles/snippets/help-text.md","articles":[]},"dir":"ltr"},"config":{"plugins":["gitbook-plugin-expandable-contract-chapters","-highlight","prism","honkit-plugin-sitemap","honkit-plugin-robots","honkit-plugin-theme-osiris"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"honkit-plugin-robots":{},"search":{},"robots":{"data":["User-agent: *","Disallow:"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"gitbook-plugin-expandable-contract-chapters":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"url":"https://altv.stuyk.com"},"honkit-plugin-theme-osiris":{},"honkit-plugin-sitemap":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"alt:V Unofficial Docs","gitbook":"*","description":"The unofficial documentation for alt:V's Javascript Modules."},"file":{"path":"docs/articles/snippets/markers.md","mtime":"2021-03-16T16:43:40.828Z","type":"markdown"},"gitbook":{"version":"3.6.17","time":"2021-03-16T16:43:53.318Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -2707,6 +2711,6 @@ alt.setInterval(<span class="hljs-function">() =&gt;</span> {
         
     
 
+        <script src="https://cdn.jsdelivr.net/npm/less@3.13" ></script>
     </body>
 </html>
-

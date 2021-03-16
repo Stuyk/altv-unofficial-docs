@@ -1,0 +1,98 @@
+@background: #212121;
+@foreground: #e0e0e0;
+@link: #eee;
+@text: #eeeeee;
+
+.book {
+    background: @background url(./bg.png) !important;
+}
+
+.page-inner {
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+
+.book-header {
+    background: none !important;
+
+    .dropdown {
+        display: none !important;
+    }
+
+    h1 {
+        display: none !important;
+    }
+}
+
+.book-body {
+    background: none !important;
+    color: @foreground !important;
+}
+
+.book-summary {
+    background: rgba(37, 37, 37, 0.7) !important;
+    color: @foreground im !important;
+}
+
+.body-inner {
+    background: none !important;
+}
+
+.navigation-next,
+.navigation-prev {
+    display: none !important;
+}
+
+#book-search-input {
+    background: rgba(0, 0, 0, 0.5) !important;
+    color: @foreground !important;
+
+    input {
+        color: @foreground !important;
+        opacity: 0.8 !important;
+    }
+}
+
+a {
+    color: @link !important;
+    opacity: 0.5 !important;
+    font-weight: bold;
+    transition: 0.2s;
+
+    &:hover {
+        opacity: 1 !important;
+        text-decoration: none !important;
+    }
+}
+
+.gitbook-link {
+    display: none !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: @foreground !important;
+}
+
+p {
+    color: @text !important;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    background: rgba(20, 20, 20, 0.85);
+    box-shadow: -1px 0px 0px 0px rgba(0, 0, 0, 0.25);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(100, 100, 100, 1);
+    box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    cursor: pointer !important;
+}

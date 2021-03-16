@@ -20,7 +20,11 @@
                 
             
                 
-                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-honkit-plugin-theme-osiris/osiris.css">
                 
             
                 
@@ -2530,37 +2534,37 @@
 </ul>
 <h2 id="how-to-obtain-it">How to obtain it</h2>
 <p>Your scriptID for your player can be retrieved in this way:</p>
-<pre><code class="lang-js"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> alt <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;alt-client&apos;</span>;
-<span class="hljs-keyword">const</span> local = alt.Player.local.scriptID;
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> alt <span class="token keyword">from</span> <span class="token string">&apos;alt-client&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> local <span class="token operator">=</span> alt<span class="token punctuation">.</span>Player<span class="token punctuation">.</span>local<span class="token punctuation">.</span>scriptID<span class="token punctuation">;</span>
 </code></pre>
 <p>This is the equivalent of <code>local playerPed = PlayerPedId()</code> from FiveM.</p>
 <h2 id="example-usage">Example Usage</h2>
 <h3 id="serverside">Serverside</h3>
-<pre><code class="lang-js">alt.on(<span class="hljs-string">&apos;playerConnect&apos;</span>, <span class="hljs-function">(<span class="hljs-params">player</span>) =&gt;</span> {
-    <span class="hljs-comment">// This emits to all player</span>
-    alt.emitClient(<span class="hljs-literal">null</span>, <span class="hljs-string">&apos;joined&apos;</span>, player);
-});
+<pre class="language-"><code class="lang-js">alt<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">&apos;playerConnect&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">player</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// This emits to all player</span>
+    alt<span class="token punctuation">.</span><span class="token function">emitClient</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">&apos;joined&apos;</span><span class="token punctuation">,</span> player<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <h3 id="clientside">Clientside</h3>
-<pre><code class="lang-js">alt.onServer(<span class="hljs-string">&apos;joined&apos;</span>, <span class="hljs-function">(<span class="hljs-params">otherPlayer</span>) =&gt;</span> {
-    <span class="hljs-comment">// Check if self. Ignore self.</span>
-    <span class="hljs-keyword">if</span> (otherPlayer === alt.Player.local) {
-        <span class="hljs-comment">// Let&apos;s freeze ourself.</span>
-        <span class="hljs-comment">// Don&apos;t actually do this. This is just how most natives work with scriptID.</span>
-        alt.log(<span class="hljs-string">`You have frozen.`</span>);
-        native.freezeEntityPosition(alt.Player.local.scriptID, <span class="hljs-literal">true</span>);
+<pre class="language-"><code class="lang-js">alt<span class="token punctuation">.</span><span class="token function">onServer</span><span class="token punctuation">(</span><span class="token string">&apos;joined&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">otherPlayer</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Check if self. Ignore self.</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>otherPlayer <span class="token operator">===</span> alt<span class="token punctuation">.</span>Player<span class="token punctuation">.</span>local<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// Let&apos;s freeze ourself.</span>
+        <span class="token comment">// Don&apos;t actually do this. This is just how most natives work with scriptID.</span>
+        alt<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">You have frozen.</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        native<span class="token punctuation">.</span><span class="token function">freezeEntityPosition</span><span class="token punctuation">(</span>alt<span class="token punctuation">.</span>Player<span class="token punctuation">.</span>local<span class="token punctuation">.</span>scriptID<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        <span class="hljs-comment">// We&apos;ll unfreeze ourself in 5 seconds.</span>
-        alt.setTimeout(<span class="hljs-function">() =&gt;</span> {
-            alt.log(<span class="hljs-string">`You are unfrozen.`</span>);
-            native.freezeEntityPosition(alt.Player.local.scriptID, <span class="hljs-literal">false</span>);
-        }, <span class="hljs-number">5000</span>);
-        <span class="hljs-keyword">return</span>;
-    }
+        <span class="token comment">// We&apos;ll unfreeze ourself in 5 seconds.</span>
+        alt<span class="token punctuation">.</span><span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+            alt<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">You are unfrozen.</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            native<span class="token punctuation">.</span><span class="token function">freezeEntityPosition</span><span class="token punctuation">(</span>alt<span class="token punctuation">.</span>Player<span class="token punctuation">.</span>local<span class="token punctuation">.</span>scriptID<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">5000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    <span class="hljs-comment">// Log their scriptID to the &apos;F8&apos; console.</span>
-    alt.log(<span class="hljs-string">`Their scriptID is: <span class="hljs-subst">${otherPlayer.scriptID}</span>`</span>);
-});
+    <span class="token comment">// Log their scriptID to the &apos;F8&apos; console.</span>
+    alt<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Their scriptID is: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>otherPlayer<span class="token punctuation">.</span>scriptID<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 
                                 
@@ -2605,7 +2609,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Script ID","description":"A way for us to identify another player or ourselves on client-side.","prefix":"[Concepts]","level":"1.5.6","depth":2,"next":{"title":"Using Events","level":"1.5.7","depth":2,"path":"docs/articles/concepts/using-events.md","ref":"docs/articles/concepts/using-events.md","articles":[]},"previous":{"title":"Server Events","level":"1.5.5","depth":2,"path":"docs/articles/concepts/server-events.md","ref":"docs/articles/concepts/server-events.md","articles":[]},"dir":"ltr"},"config":{"plugins":["gitbook-plugin-expandable-contract-chapters","honkit-plugin-sitemap","honkit-plugin-robots"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"honkit-plugin-robots":{},"search":{},"robots":{"data":["User-agent: *","Disallow:"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"gitbook-plugin-expandable-contract-chapters":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"url":"https://altv.stuyk.com"},"honkit-plugin-sitemap":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"alt:V Unofficial Docs","gitbook":"*","description":"The unofficial documentation for alt:V's Javascript Modules."},"file":{"path":"docs/articles/concepts/understanding-script-id.md","mtime":"2021-03-16T14:10:39.595Z","type":"markdown"},"gitbook":{"version":"3.6.17","time":"2021-03-16T14:10:57.364Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Script ID","description":"A way for us to identify another player or ourselves on client-side.","prefix":"[Concepts]","level":"1.5.6","depth":2,"next":{"title":"Using Events","level":"1.5.7","depth":2,"path":"docs/articles/concepts/using-events.md","ref":"docs/articles/concepts/using-events.md","articles":[]},"previous":{"title":"Server Events","level":"1.5.5","depth":2,"path":"docs/articles/concepts/server-events.md","ref":"docs/articles/concepts/server-events.md","articles":[]},"dir":"ltr"},"config":{"plugins":["gitbook-plugin-expandable-contract-chapters","-highlight","prism","honkit-plugin-sitemap","honkit-plugin-robots","honkit-plugin-theme-osiris"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"honkit-plugin-robots":{},"search":{},"robots":{"data":["User-agent: *","Disallow:"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"gitbook-plugin-expandable-contract-chapters":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"url":"https://altv.stuyk.com"},"honkit-plugin-theme-osiris":{},"honkit-plugin-sitemap":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"alt:V Unofficial Docs","gitbook":"*","description":"The unofficial documentation for alt:V's Javascript Modules."},"file":{"path":"docs/articles/concepts/understanding-script-id.md","mtime":"2021-03-16T16:43:40.824Z","type":"markdown"},"gitbook":{"version":"3.6.17","time":"2021-03-16T16:43:53.318Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -2683,6 +2687,6 @@
         
     
 
+        <script src="https://cdn.jsdelivr.net/npm/less@3.13" ></script>
     </body>
 </html>
-

@@ -20,7 +20,11 @@
                 
             
                 
-                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-honkit-plugin-theme-osiris/osiris.css">
                 
             
                 
@@ -2525,105 +2529,105 @@
 <p>Here&apos;s what these labels may look like in a 2D space.</p>
 <p><img src="https://i.imgur.com/7Fbp9gD.png" alt></p>
 <h2 id="2d-text-draws">2D Text Draws</h2>
-<pre><code class="lang-js"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">drawText2d</span>(<span class="hljs-params">
-    msg,
-    x,
-    y,
-    scale,
-    fontType,
-    r,
-    g,
-    b,
-    a,
-    useOutline = <span class="hljs-literal">true</span>,
-    useDropShadow = <span class="hljs-literal">true</span>,
-    layer = <span class="hljs-number">0</span>,
-    align = <span class="hljs-number">0</span>
-</span>) </span>{
-    <span class="hljs-keyword">let</span> hex = msg.match(<span class="hljs-string">&apos;{.*}&apos;</span>);
-    <span class="hljs-keyword">if</span> (hex) {
-        <span class="hljs-keyword">const</span> rgb = hexToRgb(hex[<span class="hljs-number">0</span>].replace(<span class="hljs-string">&apos;{&apos;</span>, <span class="hljs-string">&apos;&apos;</span>).replace(<span class="hljs-string">&apos;}&apos;</span>, <span class="hljs-string">&apos;&apos;</span>));
-        r = rgb[<span class="hljs-number">0</span>];
-        g = rgb[<span class="hljs-number">1</span>];
-        b = rgb[<span class="hljs-number">2</span>];
-        msg = msg.replace(hex[<span class="hljs-number">0</span>], <span class="hljs-string">&apos;&apos;</span>);
-    }
+<pre class="language-"><code class="lang-js"><span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">drawText2d</span><span class="token punctuation">(</span>
+    <span class="token parameter">msg<span class="token punctuation">,</span>
+    x<span class="token punctuation">,</span>
+    y<span class="token punctuation">,</span>
+    scale<span class="token punctuation">,</span>
+    fontType<span class="token punctuation">,</span>
+    r<span class="token punctuation">,</span>
+    g<span class="token punctuation">,</span>
+    b<span class="token punctuation">,</span>
+    a<span class="token punctuation">,</span>
+    useOutline <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    useDropShadow <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    layer <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span>
+    align <span class="token operator">=</span> <span class="token number">0</span></span>
+<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> hex <span class="token operator">=</span> msg<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span><span class="token string">&apos;{.*}&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>hex<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> rgb <span class="token operator">=</span> <span class="token function">hexToRgb</span><span class="token punctuation">(</span>hex<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">&apos;{&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;&apos;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">&apos;}&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        r <span class="token operator">=</span> rgb<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        g <span class="token operator">=</span> rgb<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        b <span class="token operator">=</span> rgb<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        msg <span class="token operator">=</span> msg<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span>hex<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">&apos;&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    native.beginTextCommandDisplayText(<span class="hljs-string">&apos;STRING&apos;</span>);
-    native.addTextComponentSubstringPlayerName(msg);
-    native.setTextFont(fontType);
-    native.setTextScale(<span class="hljs-number">1</span>, scale);
-    native.setTextWrap(<span class="hljs-number">0.0</span>, <span class="hljs-number">1.0</span>);
-    native.setTextCentre(<span class="hljs-literal">true</span>);
-    native.setTextColour(r, g, b, a);
-    native.setTextJustification(align);
+    native<span class="token punctuation">.</span><span class="token function">beginTextCommandDisplayText</span><span class="token punctuation">(</span><span class="token string">&apos;STRING&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    native<span class="token punctuation">.</span><span class="token function">addTextComponentSubstringPlayerName</span><span class="token punctuation">(</span>msg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    native<span class="token punctuation">.</span><span class="token function">setTextFont</span><span class="token punctuation">(</span>fontType<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    native<span class="token punctuation">.</span><span class="token function">setTextScale</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> scale<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    native<span class="token punctuation">.</span><span class="token function">setTextWrap</span><span class="token punctuation">(</span><span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    native<span class="token punctuation">.</span><span class="token function">setTextCentre</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    native<span class="token punctuation">.</span><span class="token function">setTextColour</span><span class="token punctuation">(</span>r<span class="token punctuation">,</span> g<span class="token punctuation">,</span> b<span class="token punctuation">,</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    native<span class="token punctuation">.</span><span class="token function">setTextJustification</span><span class="token punctuation">(</span>align<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    <span class="hljs-keyword">if</span> (useOutline) {
-        native.setTextOutline();
-    }
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>useOutline<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        native<span class="token punctuation">.</span><span class="token function">setTextOutline</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    <span class="hljs-keyword">if</span> (useDropShadow) {
-        native.setTextDropShadow();
-    }
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>useDropShadow<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        native<span class="token punctuation">.</span><span class="token function">setTextDropShadow</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    native.endTextCommandDisplayText(x, y);
-}
+    native<span class="token punctuation">.</span><span class="token function">endTextCommandDisplayText</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h2 id="drawing-3d-text">Drawing 3D Text</h2>
 <p>Please use distance calculation to prevent text from being drawn while the player is across the map. Ensure they are within the range of where you are drawing your text before rendering it.</p>
-<pre><code class="lang-js"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">drawText3d</span>(<span class="hljs-params">
-    msg,
-    x,
-    y,
-    z,
-    scale,
-    fontType,
-    r,
-    g,
-    b,
-    a,
-    useOutline = <span class="hljs-literal">true</span>,
-    useDropShadow = <span class="hljs-literal">true</span>,
-    layer = <span class="hljs-number">0</span>
-</span>) </span>{
-    <span class="hljs-keyword">let</span> hex = msg.match(<span class="hljs-string">&apos;{.*}&apos;</span>);
-    <span class="hljs-keyword">if</span> (hex) {
-        <span class="hljs-keyword">const</span> rgb = hexToRgb(hex[<span class="hljs-number">0</span>].replace(<span class="hljs-string">&apos;{&apos;</span>, <span class="hljs-string">&apos;&apos;</span>).replace(<span class="hljs-string">&apos;}&apos;</span>, <span class="hljs-string">&apos;&apos;</span>));
-        r = rgb[<span class="hljs-number">0</span>];
-        g = rgb[<span class="hljs-number">1</span>];
-        b = rgb[<span class="hljs-number">2</span>];
-        msg = msg.replace(hex[<span class="hljs-number">0</span>], <span class="hljs-string">&apos;&apos;</span>);
-    }
+<pre class="language-"><code class="lang-js"><span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">drawText3d</span><span class="token punctuation">(</span>
+    <span class="token parameter">msg<span class="token punctuation">,</span>
+    x<span class="token punctuation">,</span>
+    y<span class="token punctuation">,</span>
+    z<span class="token punctuation">,</span>
+    scale<span class="token punctuation">,</span>
+    fontType<span class="token punctuation">,</span>
+    r<span class="token punctuation">,</span>
+    g<span class="token punctuation">,</span>
+    b<span class="token punctuation">,</span>
+    a<span class="token punctuation">,</span>
+    useOutline <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    useDropShadow <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    layer <span class="token operator">=</span> <span class="token number">0</span></span>
+<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> hex <span class="token operator">=</span> msg<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span><span class="token string">&apos;{.*}&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>hex<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> rgb <span class="token operator">=</span> <span class="token function">hexToRgb</span><span class="token punctuation">(</span>hex<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">&apos;{&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;&apos;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">&apos;}&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        r <span class="token operator">=</span> rgb<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        g <span class="token operator">=</span> rgb<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        b <span class="token operator">=</span> rgb<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        msg <span class="token operator">=</span> msg<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span>hex<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">&apos;&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    native.setDrawOrigin(x, y, z, <span class="hljs-number">0</span>);
-    native.beginTextCommandDisplayText(<span class="hljs-string">&apos;STRING&apos;</span>);
-    native.addTextComponentSubstringPlayerName(msg);
-    native.setTextFont(fontType);
-    native.setTextScale(<span class="hljs-number">1</span>, scale);
-    native.setTextWrap(<span class="hljs-number">0.0</span>, <span class="hljs-number">1.0</span>);
-    native.setTextCentre(<span class="hljs-literal">true</span>);
-    native.setTextColour(r, g, b, a);
+    native<span class="token punctuation">.</span><span class="token function">setDrawOrigin</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> z<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    native<span class="token punctuation">.</span><span class="token function">beginTextCommandDisplayText</span><span class="token punctuation">(</span><span class="token string">&apos;STRING&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    native<span class="token punctuation">.</span><span class="token function">addTextComponentSubstringPlayerName</span><span class="token punctuation">(</span>msg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    native<span class="token punctuation">.</span><span class="token function">setTextFont</span><span class="token punctuation">(</span>fontType<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    native<span class="token punctuation">.</span><span class="token function">setTextScale</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> scale<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    native<span class="token punctuation">.</span><span class="token function">setTextWrap</span><span class="token punctuation">(</span><span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    native<span class="token punctuation">.</span><span class="token function">setTextCentre</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    native<span class="token punctuation">.</span><span class="token function">setTextColour</span><span class="token punctuation">(</span>r<span class="token punctuation">,</span> g<span class="token punctuation">,</span> b<span class="token punctuation">,</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    <span class="hljs-keyword">if</span> (useOutline) {
-        native.setTextOutline();
-    }
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>useOutline<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        native<span class="token punctuation">.</span><span class="token function">setTextOutline</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    <span class="hljs-keyword">if</span> (useDropShadow) {
-        native.setTextDropShadow();
-    }
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>useDropShadow<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        native<span class="token punctuation">.</span><span class="token function">setTextDropShadow</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    native.endTextCommandDisplayText(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
-    native.clearDrawOrigin();
-}
+    native<span class="token punctuation">.</span><span class="token function">endTextCommandDisplayText</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    native<span class="token punctuation">.</span><span class="token function">clearDrawOrigin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h2 id="example-usage">Example Usage</h2>
 <p><strong>Client Side</strong></p>
-<pre><code class="lang-js">alt.setInterval(<span class="hljs-function">() =&gt;</span> {
-    drawText2d(<span class="hljs-string">&apos;Hello from Top Center of Screen&apos;</span>, <span class="hljs-number">0.5</span>, <span class="hljs-number">0.05</span>, <span class="hljs-number">0.4</span>, <span class="hljs-number">4</span>, <span class="hljs-number">255</span>, <span class="hljs-number">255</span>, <span class="hljs-number">255</span>, <span class="hljs-number">255</span>);
+<pre class="language-"><code class="lang-js">alt<span class="token punctuation">.</span><span class="token function">setInterval</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token function">drawText2d</span><span class="token punctuation">(</span><span class="token string">&apos;Hello from Top Center of Screen&apos;</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.05</span><span class="token punctuation">,</span> <span class="token number">0.4</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    <span class="hljs-keyword">const</span> playerPos = { ...alt.Player.local.pos };
-    drawText3d(<span class="hljs-string">`This is You`</span>, playerPos.x, playerPos.y, playerPos.z, <span class="hljs-number">0.3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">255</span>, <span class="hljs-number">255</span>, <span class="hljs-number">255</span>, <span class="hljs-number">255</span>);
-}, <span class="hljs-number">0</span>);
+    <span class="token keyword">const</span> playerPos <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token operator">...</span>alt<span class="token punctuation">.</span>Player<span class="token punctuation">.</span>local<span class="token punctuation">.</span>pos <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token function">drawText3d</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">This is You</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> playerPos<span class="token punctuation">.</span>x<span class="token punctuation">,</span> playerPos<span class="token punctuation">.</span>y<span class="token punctuation">,</span> playerPos<span class="token punctuation">.</span>z<span class="token punctuation">,</span> <span class="token number">0.3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 
                                 
@@ -2668,7 +2672,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"How to Create 2D & 3D Text Labels","description":"Drawing text on screen using GTA:V Natives","prefix":"[Snippet]","level":"1.6.10","depth":2,"next":{"title":"How to use alt:V Voice","level":"1.6.11","depth":2,"path":"docs/articles/snippets/voice.md","ref":"docs/articles/snippets/voice.md","articles":[]},"previous":{"title":"Pure JS SHA256","level":"1.6.9","depth":2,"path":"docs/articles/snippets/sha-256.md","ref":"docs/articles/snippets/sha-256.md","articles":[]},"dir":"ltr"},"config":{"plugins":["gitbook-plugin-expandable-contract-chapters","honkit-plugin-sitemap","honkit-plugin-robots"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"honkit-plugin-robots":{},"search":{},"robots":{"data":["User-agent: *","Disallow:"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"gitbook-plugin-expandable-contract-chapters":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"url":"https://altv.stuyk.com"},"honkit-plugin-sitemap":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"alt:V Unofficial Docs","gitbook":"*","description":"The unofficial documentation for alt:V's Javascript Modules."},"file":{"path":"docs/articles/snippets/textlabels.md","mtime":"2021-03-16T14:10:39.595Z","type":"markdown"},"gitbook":{"version":"3.6.17","time":"2021-03-16T14:10:57.364Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"How to Create 2D & 3D Text Labels","description":"Drawing text on screen using GTA:V Natives","prefix":"[Snippet]","level":"1.6.10","depth":2,"next":{"title":"How to use alt:V Voice","level":"1.6.11","depth":2,"path":"docs/articles/snippets/voice.md","ref":"docs/articles/snippets/voice.md","articles":[]},"previous":{"title":"Pure JS SHA256","level":"1.6.9","depth":2,"path":"docs/articles/snippets/sha-256.md","ref":"docs/articles/snippets/sha-256.md","articles":[]},"dir":"ltr"},"config":{"plugins":["gitbook-plugin-expandable-contract-chapters","-highlight","prism","honkit-plugin-sitemap","honkit-plugin-robots","honkit-plugin-theme-osiris"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"honkit-plugin-robots":{},"search":{},"robots":{"data":["User-agent: *","Disallow:"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"gitbook-plugin-expandable-contract-chapters":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"url":"https://altv.stuyk.com"},"honkit-plugin-theme-osiris":{},"honkit-plugin-sitemap":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"alt:V Unofficial Docs","gitbook":"*","description":"The unofficial documentation for alt:V's Javascript Modules."},"file":{"path":"docs/articles/snippets/textlabels.md","mtime":"2021-03-16T16:43:40.828Z","type":"markdown"},"gitbook":{"version":"3.6.17","time":"2021-03-16T16:43:53.318Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -2746,6 +2750,6 @@
         
     
 
+        <script src="https://cdn.jsdelivr.net/npm/less@3.13" ></script>
     </body>
 </html>
-

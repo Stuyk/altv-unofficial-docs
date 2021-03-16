@@ -20,7 +20,11 @@
                 
             
                 
-                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-honkit-plugin-theme-osiris/osiris.css">
                 
             
                 
@@ -2521,100 +2525,100 @@
                                 <p><a href="./">&lt;-- Back to Snippets</a></p>
 <h1 id="pure-js-sha256">Pure JS SHA256</h1>
 <p>If you need a hashing algorithm that works on client-side and server-side this is it.</p>
-<pre><code class="lang-js"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sha256</span>(<span class="hljs-params">ascii</span>) </span>{
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">rightRotate</span>(<span class="hljs-params">value, amount</span>) </span>{
-        <span class="hljs-keyword">return</span> (value &gt;&gt;&gt; amount) | (value &lt;&lt; (<span class="hljs-number">32</span> - amount));
-    }
+<pre class="language-"><code class="lang-js"><span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">sha256</span><span class="token punctuation">(</span><span class="token parameter">ascii</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">function</span> <span class="token function">rightRotate</span><span class="token punctuation">(</span><span class="token parameter">value<span class="token punctuation">,</span> amount</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>value <span class="token operator">&gt;&gt;&gt;</span> amount<span class="token punctuation">)</span> <span class="token operator">|</span> <span class="token punctuation">(</span>value <span class="token operator">&lt;&lt;</span> <span class="token punctuation">(</span><span class="token number">32</span> <span class="token operator">-</span> amount<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    <span class="hljs-keyword">var</span> mathPow = <span class="hljs-built_in">Math</span>.pow;
-    <span class="hljs-keyword">var</span> maxWord = mathPow(<span class="hljs-number">2</span>, <span class="hljs-number">32</span>);
-    <span class="hljs-keyword">var</span> lengthProperty = <span class="hljs-string">&apos;length&apos;</span>;
-    <span class="hljs-keyword">var</span> i, j; <span class="hljs-comment">// Used as a counter across the whole file</span>
-    <span class="hljs-keyword">var</span> result = <span class="hljs-string">&apos;&apos;</span>;
-    <span class="hljs-keyword">var</span> words = [];
-    <span class="hljs-keyword">var</span> asciiBitLength = ascii[lengthProperty] * <span class="hljs-number">8</span>;
-    <span class="hljs-keyword">var</span> hash = (sha256.h = sha256.h || []);
-    <span class="hljs-keyword">var</span> k = (sha256.k = sha256.k || []);
-    <span class="hljs-keyword">var</span> primeCounter = k[lengthProperty];
+    <span class="token keyword">var</span> mathPow <span class="token operator">=</span> Math<span class="token punctuation">.</span>pow<span class="token punctuation">;</span>
+    <span class="token keyword">var</span> maxWord <span class="token operator">=</span> <span class="token function">mathPow</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">32</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> lengthProperty <span class="token operator">=</span> <span class="token string">&apos;length&apos;</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> i<span class="token punctuation">,</span> j<span class="token punctuation">;</span> <span class="token comment">// Used as a counter across the whole file</span>
+    <span class="token keyword">var</span> result <span class="token operator">=</span> <span class="token string">&apos;&apos;</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> words <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> asciiBitLength <span class="token operator">=</span> ascii<span class="token punctuation">[</span>lengthProperty<span class="token punctuation">]</span> <span class="token operator">*</span> <span class="token number">8</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> hash <span class="token operator">=</span> <span class="token punctuation">(</span>sha256<span class="token punctuation">.</span>h <span class="token operator">=</span> sha256<span class="token punctuation">.</span>h <span class="token operator">||</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> k <span class="token operator">=</span> <span class="token punctuation">(</span>sha256<span class="token punctuation">.</span>k <span class="token operator">=</span> sha256<span class="token punctuation">.</span>k <span class="token operator">||</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> primeCounter <span class="token operator">=</span> k<span class="token punctuation">[</span>lengthProperty<span class="token punctuation">]</span><span class="token punctuation">;</span>
 
-    <span class="hljs-keyword">var</span> isComposite = {};
-    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> candidate = <span class="hljs-number">2</span>; primeCounter &lt; <span class="hljs-number">64</span>; candidate++) {
-        <span class="hljs-keyword">if</span> (!isComposite[candidate]) {
-            <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">313</span>; i += candidate) {
-                isComposite[i] = candidate;
-            }
-            hash[primeCounter] = (mathPow(candidate, <span class="hljs-number">0.5</span>) * maxWord) | <span class="hljs-number">0</span>;
-            k[primeCounter++] = (mathPow(candidate, <span class="hljs-number">1</span> / <span class="hljs-number">3</span>) * maxWord) | <span class="hljs-number">0</span>;
-        }
-    }
+    <span class="token keyword">var</span> isComposite <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> candidate <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> primeCounter <span class="token operator">&lt;</span> <span class="token number">64</span><span class="token punctuation">;</span> candidate<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>isComposite<span class="token punctuation">[</span>candidate<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">313</span><span class="token punctuation">;</span> i <span class="token operator">+=</span> candidate<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                isComposite<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> candidate<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            hash<span class="token punctuation">[</span>primeCounter<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token function">mathPow</span><span class="token punctuation">(</span>candidate<span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">)</span> <span class="token operator">*</span> maxWord<span class="token punctuation">)</span> <span class="token operator">|</span> <span class="token number">0</span><span class="token punctuation">;</span>
+            k<span class="token punctuation">[</span>primeCounter<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token function">mathPow</span><span class="token punctuation">(</span>candidate<span class="token punctuation">,</span> <span class="token number">1</span> <span class="token operator">/</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token operator">*</span> maxWord<span class="token punctuation">)</span> <span class="token operator">|</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
 
-    ascii += <span class="hljs-string">&apos;\x80&apos;</span>; <span class="hljs-comment">// Append Ƈ&apos; bit (plus zero padding)</span>
-    <span class="hljs-keyword">while</span> ((ascii[lengthProperty] % <span class="hljs-number">64</span>) - <span class="hljs-number">56</span>) ascii += <span class="hljs-string">&apos;\x00&apos;</span>; <span class="hljs-comment">// More zero padding</span>
-    <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; ascii[lengthProperty]; i++) {
-        j = ascii.charCodeAt(i);
-        <span class="hljs-keyword">if</span> (j &gt;&gt; <span class="hljs-number">8</span>) <span class="hljs-keyword">return</span>; <span class="hljs-comment">// ASCII check: only accept characters in range 0-255</span>
-        words[i &gt;&gt; <span class="hljs-number">2</span>] |= j &lt;&lt; (((<span class="hljs-number">3</span> - i) % <span class="hljs-number">4</span>) * <span class="hljs-number">8</span>);
-    }
-    words[words[lengthProperty]] = (asciiBitLength / maxWord) | <span class="hljs-number">0</span>;
-    words[words[lengthProperty]] = asciiBitLength;
+    ascii <span class="token operator">+=</span> <span class="token string">&apos;\x80&apos;</span><span class="token punctuation">;</span> <span class="token comment">// Append Ƈ&apos; bit (plus zero padding)</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>ascii<span class="token punctuation">[</span>lengthProperty<span class="token punctuation">]</span> <span class="token operator">%</span> <span class="token number">64</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">56</span><span class="token punctuation">)</span> ascii <span class="token operator">+=</span> <span class="token string">&apos;\x00&apos;</span><span class="token punctuation">;</span> <span class="token comment">// More zero padding</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> ascii<span class="token punctuation">[</span>lengthProperty<span class="token punctuation">]</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        j <span class="token operator">=</span> ascii<span class="token punctuation">.</span><span class="token function">charCodeAt</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>j <span class="token operator">&gt;&gt;</span> <span class="token number">8</span><span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span> <span class="token comment">// ASCII check: only accept characters in range 0-255</span>
+        words<span class="token punctuation">[</span>i <span class="token operator">&gt;&gt;</span> <span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">|=</span> j <span class="token operator">&lt;&lt;</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">3</span> <span class="token operator">-</span> i<span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">4</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    words<span class="token punctuation">[</span>words<span class="token punctuation">[</span>lengthProperty<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span>asciiBitLength <span class="token operator">/</span> maxWord<span class="token punctuation">)</span> <span class="token operator">|</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    words<span class="token punctuation">[</span>words<span class="token punctuation">[</span>lengthProperty<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> asciiBitLength<span class="token punctuation">;</span>
 
-    <span class="hljs-keyword">for</span> (j = <span class="hljs-number">0</span>; j &lt; words[lengthProperty]; ) {
-        <span class="hljs-keyword">var</span> w = words.slice(j, (j += <span class="hljs-number">16</span>)); <span class="hljs-comment">// The message is expanded into 64 words as part of the iteration</span>
-        <span class="hljs-keyword">var</span> oldHash = hash;
-        <span class="hljs-comment">// This is now the undefinedworking hash&quot;, often labelled as variables a...g</span>
-        <span class="hljs-comment">// (we have to truncate as well, otherwise extra entries at the end accumulate</span>
-        hash = hash.slice(<span class="hljs-number">0</span>, <span class="hljs-number">8</span>);
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> words<span class="token punctuation">[</span>lengthProperty<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> w <span class="token operator">=</span> words<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span>j<span class="token punctuation">,</span> <span class="token punctuation">(</span>j <span class="token operator">+=</span> <span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// The message is expanded into 64 words as part of the iteration</span>
+        <span class="token keyword">var</span> oldHash <span class="token operator">=</span> hash<span class="token punctuation">;</span>
+        <span class="token comment">// This is now the undefinedworking hash&quot;, often labelled as variables a...g</span>
+        <span class="token comment">// (we have to truncate as well, otherwise extra entries at the end accumulate</span>
+        hash <span class="token operator">=</span> hash<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">64</span>; i++) {
-            <span class="hljs-keyword">var</span> i2 = i + j;
-            <span class="hljs-comment">// Expand the message into 64 words</span>
-            <span class="hljs-comment">// Used below if</span>
-            <span class="hljs-keyword">var</span> w15 = w[i - <span class="hljs-number">15</span>],
-                w2 = w[i - <span class="hljs-number">2</span>];
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">64</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">var</span> i2 <span class="token operator">=</span> i <span class="token operator">+</span> j<span class="token punctuation">;</span>
+            <span class="token comment">// Expand the message into 64 words</span>
+            <span class="token comment">// Used below if</span>
+            <span class="token keyword">var</span> w15 <span class="token operator">=</span> w<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">15</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                w2 <span class="token operator">=</span> w<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 
-            <span class="hljs-comment">// Iterate</span>
-            <span class="hljs-keyword">var</span> a = hash[<span class="hljs-number">0</span>],
-                e = hash[<span class="hljs-number">4</span>];
-            <span class="hljs-keyword">var</span> temp1 =
-                hash[<span class="hljs-number">7</span>] +
-                (rightRotate(e, <span class="hljs-number">6</span>) ^ rightRotate(e, <span class="hljs-number">11</span>) ^ rightRotate(e, <span class="hljs-number">25</span>)) + <span class="hljs-comment">// S1</span>
-                ((e &amp; hash[<span class="hljs-number">5</span>]) ^ (~e &amp; hash[<span class="hljs-number">6</span>])) + <span class="hljs-comment">// ch</span>
-                k[i] +
-                <span class="hljs-comment">// Expand the message schedule if needed</span>
-                (w[i] =
-                    i &lt; <span class="hljs-number">16</span>
-                        ? w[i]
-                        : (w[i - <span class="hljs-number">16</span>] +
-                              (rightRotate(w15, <span class="hljs-number">7</span>) ^ rightRotate(w15, <span class="hljs-number">18</span>) ^ (w15 &gt;&gt;&gt; <span class="hljs-number">3</span>)) + <span class="hljs-comment">// s0</span>
-                              w[i - <span class="hljs-number">7</span>] +
-                              (rightRotate(w2, <span class="hljs-number">17</span>) ^ rightRotate(w2, <span class="hljs-number">19</span>) ^ (w2 &gt;&gt;&gt; <span class="hljs-number">10</span>))) | <span class="hljs-comment">// s1</span>
-                          <span class="hljs-number">0</span>);
-            <span class="hljs-comment">// This is only used once, so *could* be moved below, but it only saves 4 bytes and makes things unreadble</span>
-            <span class="hljs-keyword">var</span> temp2 =
-                (rightRotate(a, <span class="hljs-number">2</span>) ^ rightRotate(a, <span class="hljs-number">13</span>) ^ rightRotate(a, <span class="hljs-number">22</span>)) + <span class="hljs-comment">// S0</span>
-                ((a &amp; hash[<span class="hljs-number">1</span>]) ^ (a &amp; hash[<span class="hljs-number">2</span>]) ^ (hash[<span class="hljs-number">1</span>] &amp; hash[<span class="hljs-number">2</span>])); <span class="hljs-comment">// maj</span>
+            <span class="token comment">// Iterate</span>
+            <span class="token keyword">var</span> a <span class="token operator">=</span> hash<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                e <span class="token operator">=</span> hash<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token keyword">var</span> temp1 <span class="token operator">=</span>
+                hash<span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">]</span> <span class="token operator">+</span>
+                <span class="token punctuation">(</span><span class="token function">rightRotate</span><span class="token punctuation">(</span>e<span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span> <span class="token operator">^</span> <span class="token function">rightRotate</span><span class="token punctuation">(</span>e<span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">)</span> <span class="token operator">^</span> <span class="token function">rightRotate</span><span class="token punctuation">(</span>e<span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token comment">// S1</span>
+                <span class="token punctuation">(</span><span class="token punctuation">(</span>e <span class="token operator">&amp;</span> hash<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">^</span> <span class="token punctuation">(</span><span class="token operator">~</span>e <span class="token operator">&amp;</span> hash<span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token comment">// ch</span>
+                k<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+</span>
+                <span class="token comment">// Expand the message schedule if needed</span>
+                <span class="token punctuation">(</span>w<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span>
+                    i <span class="token operator">&lt;</span> <span class="token number">16</span>
+                        <span class="token operator">?</span> w<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+                        <span class="token operator">:</span> <span class="token punctuation">(</span>w<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">16</span><span class="token punctuation">]</span> <span class="token operator">+</span>
+                              <span class="token punctuation">(</span><span class="token function">rightRotate</span><span class="token punctuation">(</span>w15<span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">)</span> <span class="token operator">^</span> <span class="token function">rightRotate</span><span class="token punctuation">(</span>w15<span class="token punctuation">,</span> <span class="token number">18</span><span class="token punctuation">)</span> <span class="token operator">^</span> <span class="token punctuation">(</span>w15 <span class="token operator">&gt;&gt;&gt;</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token comment">// s0</span>
+                              w<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">7</span><span class="token punctuation">]</span> <span class="token operator">+</span>
+                              <span class="token punctuation">(</span><span class="token function">rightRotate</span><span class="token punctuation">(</span>w2<span class="token punctuation">,</span> <span class="token number">17</span><span class="token punctuation">)</span> <span class="token operator">^</span> <span class="token function">rightRotate</span><span class="token punctuation">(</span>w2<span class="token punctuation">,</span> <span class="token number">19</span><span class="token punctuation">)</span> <span class="token operator">^</span> <span class="token punctuation">(</span>w2 <span class="token operator">&gt;&gt;&gt;</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">|</span> <span class="token comment">// s1</span>
+                          <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment">// This is only used once, so *could* be moved below, but it only saves 4 bytes and makes things unreadble</span>
+            <span class="token keyword">var</span> temp2 <span class="token operator">=</span>
+                <span class="token punctuation">(</span><span class="token function">rightRotate</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">^</span> <span class="token function">rightRotate</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">)</span> <span class="token operator">^</span> <span class="token function">rightRotate</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> <span class="token number">22</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token comment">// S0</span>
+                <span class="token punctuation">(</span><span class="token punctuation">(</span>a <span class="token operator">&amp;</span> hash<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">^</span> <span class="token punctuation">(</span>a <span class="token operator">&amp;</span> hash<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">^</span> <span class="token punctuation">(</span>hash<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">&amp;</span> hash<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// maj</span>
 
-            hash = [(temp1 + temp2) | <span class="hljs-number">0</span>].concat(hash); <span class="hljs-comment">// We don&apos;t bother trimming off the extra ones, they&apos;re harmless as long as we&apos;re truncating when we do the slice()</span>
-            hash[<span class="hljs-number">4</span>] = (hash[<span class="hljs-number">4</span>] + temp1) | <span class="hljs-number">0</span>;
-        }
+            hash <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">(</span>temp1 <span class="token operator">+</span> temp2<span class="token punctuation">)</span> <span class="token operator">|</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>hash<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// We don&apos;t bother trimming off the extra ones, they&apos;re harmless as long as we&apos;re truncating when we do the slice()</span>
+            hash<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span>hash<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span> <span class="token operator">+</span> temp1<span class="token punctuation">)</span> <span class="token operator">|</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
 
-        <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">8</span>; i++) {
-            hash[i] = (hash[i] + oldHash[i]) | <span class="hljs-number">0</span>;
-        }
-    }
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">8</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            hash<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span>hash<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+</span> oldHash<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">|</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
 
-    <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">8</span>; i++) {
-        <span class="hljs-keyword">for</span> (j = <span class="hljs-number">3</span>; j + <span class="hljs-number">1</span>; j--) {
-            <span class="hljs-keyword">var</span> b = (hash[i] &gt;&gt; (j * <span class="hljs-number">8</span>)) &amp; <span class="hljs-number">255</span>;
-            result += (b &lt; <span class="hljs-number">16</span> ? <span class="hljs-number">0</span> : <span class="hljs-string">&apos;&apos;</span>) + b.toString(<span class="hljs-number">16</span>);
-        }
-    }
-    <span class="hljs-keyword">return</span> result;
-}
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">8</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>j <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span> j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span> j<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token punctuation">(</span>hash<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&gt;&gt;</span> <span class="token punctuation">(</span>j <span class="token operator">*</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span> <span class="token number">255</span><span class="token punctuation">;</span>
+            result <span class="token operator">+=</span> <span class="token punctuation">(</span>b <span class="token operator">&lt;</span> <span class="token number">16</span> <span class="token operator">?</span> <span class="token number">0</span> <span class="token operator">:</span> <span class="token string">&apos;&apos;</span><span class="token punctuation">)</span> <span class="token operator">+</span> b<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h2 id="example-usage">Example Usage</h2>
-<pre><code class="lang-js"><span class="hljs-keyword">const</span> result = sha256(<span class="hljs-string">`test`</span>);
-<span class="hljs-built_in">console</span>.log(result);
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token function">sha256</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">test</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p><sub><em>This was created by <a href="https://username1565.github.io/sha256/" target="_blank">https://username1565.github.io/sha256/</a></em></sub></p>
 
@@ -2660,7 +2664,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Pure JS SHA256","description":"A hashing algorithm for client and server","prefix":"[Snippet]","level":"1.6.9","depth":2,"next":{"title":"How to Create 2D & 3D Text Labels","level":"1.6.10","depth":2,"path":"docs/articles/snippets/textlabels.md","ref":"docs/articles/snippets/textlabels.md","articles":[]},"previous":{"title":"Request Model","level":"1.6.8","depth":2,"path":"docs/articles/snippets/request-model.md","ref":"docs/articles/snippets/request-model.md","articles":[]},"dir":"ltr"},"config":{"plugins":["gitbook-plugin-expandable-contract-chapters","honkit-plugin-sitemap","honkit-plugin-robots"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"honkit-plugin-robots":{},"search":{},"robots":{"data":["User-agent: *","Disallow:"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"gitbook-plugin-expandable-contract-chapters":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"url":"https://altv.stuyk.com"},"honkit-plugin-sitemap":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"alt:V Unofficial Docs","gitbook":"*","description":"The unofficial documentation for alt:V's Javascript Modules."},"file":{"path":"docs/articles/snippets/sha-256.md","mtime":"2021-03-16T14:10:39.595Z","type":"markdown"},"gitbook":{"version":"3.6.17","time":"2021-03-16T14:10:57.364Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Pure JS SHA256","description":"A hashing algorithm for client and server","prefix":"[Snippet]","level":"1.6.9","depth":2,"next":{"title":"How to Create 2D & 3D Text Labels","level":"1.6.10","depth":2,"path":"docs/articles/snippets/textlabels.md","ref":"docs/articles/snippets/textlabels.md","articles":[]},"previous":{"title":"Request Model","level":"1.6.8","depth":2,"path":"docs/articles/snippets/request-model.md","ref":"docs/articles/snippets/request-model.md","articles":[]},"dir":"ltr"},"config":{"plugins":["gitbook-plugin-expandable-contract-chapters","-highlight","prism","honkit-plugin-sitemap","honkit-plugin-robots","honkit-plugin-theme-osiris"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"honkit-plugin-robots":{},"search":{},"robots":{"data":["User-agent: *","Disallow:"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"gitbook-plugin-expandable-contract-chapters":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"url":"https://altv.stuyk.com"},"honkit-plugin-theme-osiris":{},"honkit-plugin-sitemap":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"alt:V Unofficial Docs","gitbook":"*","description":"The unofficial documentation for alt:V's Javascript Modules."},"file":{"path":"docs/articles/snippets/sha-256.md","mtime":"2021-03-16T16:43:40.828Z","type":"markdown"},"gitbook":{"version":"3.6.17","time":"2021-03-16T16:43:53.318Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -2738,6 +2742,6 @@
         
     
 
+        <script src="https://cdn.jsdelivr.net/npm/less@3.13" ></script>
     </body>
 </html>
-

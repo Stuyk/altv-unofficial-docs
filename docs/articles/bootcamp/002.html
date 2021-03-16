@@ -20,7 +20,11 @@
                 
             
                 
-                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-honkit-plugin-theme-osiris/osiris.css">
                 
             
                 
@@ -2531,9 +2535,9 @@
 
 <h1 id="client-configuration">Client Configuration</h1>
 <p>When you download <a href="../../../GLOSSARY.html#altv" class="glossary-term" title="The client that this documentation is for. You can download it at https://altv.mp/.">alt:V</a> it installed a bunch of other files inside of your <a href="../../../GLOSSARY.html#altv" class="glossary-term" title="The client that this documentation is for. You can download it at https://altv.mp/.">alt:V</a> Client folder. The files installed should look similar to this.</p>
-<pre><code class="lang-sh">│   altv-client.dll
+<pre class="language-"><code class="lang-sh">│   altv-client.dll
 │   altv.cache
-│   altv.cfg <span class="hljs-comment"># This is what we will be editing</span>
+│   altv.cfg <span class="token comment"># This is what we will be editing</span>
 │   altv.exe
 ├───cef/
 │   └───locales/
@@ -2554,7 +2558,7 @@
 │   └───swiftshader
 │           libEGL.dll
 │           libGLESv2.dll
-└───mods/ <span class="hljs-comment"># This is where you can put some client mods.</span>
+└───mods/ <span class="token comment"># This is where you can put some client mods.</span>
 </code></pre>
 <h1 id="configuration-file">Configuration File</h1>
 <p>The main file we will want to modify is called <code>altv.cfg</code>. There is no strict format to the file structure of <code>altv.cfg</code> but we are simply going to turn on debug mode.</p>
@@ -2563,7 +2567,7 @@
 <p><img src="https://i.imgur.com/fbWwNxU.png" alt></p>
 <p>Add the <code>debug</code> parameter to your configuration.</p>
 <p>Great! Now you&apos;ll be able to press <code>F8</code> in-game and type <code>reconnect</code> to reconnect to servers with <code>debug</code> mode enabled. Which is very much necessary for development.</p>
-<pre><code>branch: &apos;release&apos;
+<pre class="language-"><code>branch: &apos;release&apos;
 debug: &apos;true&apos;
 gtapath: &apos;C:\\Program Files (x86)\\Steam\\steamapps\\common\\Grand Theft Auto V&apos;
 ignoreLowPriorityProps: &apos;false&apos;
@@ -2625,7 +2629,7 @@ name: &apos;Stuyk&apos;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"002 - alt:V Client Configuration","description":"Learn about the alt:V Client's necessary configurations for development.","prefix":"[Bootcamp]","level":"1.4.2","depth":2,"next":{"title":"003 - alt:V Server Binaries","level":"1.4.3","depth":2,"path":"docs/articles/bootcamp/003.md","ref":"docs/articles/bootcamp/003.md","articles":[]},"previous":{"title":"001 - The alt:V Client","level":"1.4.1","depth":2,"path":"docs/articles/bootcamp/001.md","ref":"docs/articles/bootcamp/001.md","articles":[]},"dir":"ltr"},"config":{"plugins":["gitbook-plugin-expandable-contract-chapters","honkit-plugin-sitemap","honkit-plugin-robots"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"honkit-plugin-robots":{},"search":{},"robots":{"data":["User-agent: *","Disallow:"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"gitbook-plugin-expandable-contract-chapters":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"url":"https://altv.stuyk.com"},"honkit-plugin-sitemap":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"alt:V Unofficial Docs","gitbook":"*","description":"The unofficial documentation for alt:V's Javascript Modules."},"file":{"path":"docs/articles/bootcamp/002.md","mtime":"2021-03-16T14:10:39.591Z","type":"markdown"},"gitbook":{"version":"3.6.17","time":"2021-03-16T14:10:57.364Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"002 - alt:V Client Configuration","description":"Learn about the alt:V Client's necessary configurations for development.","prefix":"[Bootcamp]","level":"1.4.2","depth":2,"next":{"title":"003 - alt:V Server Binaries","level":"1.4.3","depth":2,"path":"docs/articles/bootcamp/003.md","ref":"docs/articles/bootcamp/003.md","articles":[]},"previous":{"title":"001 - The alt:V Client","level":"1.4.1","depth":2,"path":"docs/articles/bootcamp/001.md","ref":"docs/articles/bootcamp/001.md","articles":[]},"dir":"ltr"},"config":{"plugins":["gitbook-plugin-expandable-contract-chapters","-highlight","prism","honkit-plugin-sitemap","honkit-plugin-robots","honkit-plugin-theme-osiris"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"honkit-plugin-robots":{},"search":{},"robots":{"data":["User-agent: *","Disallow:"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"gitbook-plugin-expandable-contract-chapters":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"url":"https://altv.stuyk.com"},"honkit-plugin-theme-osiris":{},"honkit-plugin-sitemap":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"alt:V Unofficial Docs","gitbook":"*","description":"The unofficial documentation for alt:V's Javascript Modules."},"file":{"path":"docs/articles/bootcamp/002.md","mtime":"2021-03-16T16:43:40.824Z","type":"markdown"},"gitbook":{"version":"3.6.17","time":"2021-03-16T16:43:53.318Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -2703,6 +2707,6 @@ name: &apos;Stuyk&apos;
         
     
 
+        <script src="https://cdn.jsdelivr.net/npm/less@3.13" ></script>
     </body>
 </html>
-

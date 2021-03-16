@@ -20,7 +20,11 @@
                 
             
                 
-                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-honkit-plugin-theme-osiris/osiris.css">
                 
             
                 
@@ -2531,25 +2535,25 @@
 
 <h1 id="adding-a-resource-to-your-server">Adding a Resource to your Server</h1>
 <p>So, you&apos;ve created your first resource! Now you need to tell the server to load it. You can do this by opening your <code>server.cfg</code></p>
-<pre><code class="lang-sh">name: <span class="hljs-string">&quot;TestServer&quot;</span>,
-host: <span class="hljs-string">&quot;0.0.0.0&quot;</span>, <span class="hljs-comment"># Leave this alone. 4 0&apos;s binds to ANY IP ADDRESS.</span>
-port: 7788,
-players: 1024,
-<span class="hljs-comment">#password: &quot;verysecurepassword&quot;,</span>
-announce: <span class="hljs-literal">false</span>,
-<span class="hljs-comment">#token: no-token,</span>
-gamemode: <span class="hljs-string">&quot;Freeroam&quot;</span>,
-website: <span class="hljs-string">&quot;test.com&quot;</span>,
-language: <span class="hljs-string">&quot;en&quot;</span>,
-description: <span class="hljs-string">&quot;test&quot;</span>,
-debug: <span class="hljs-literal">true</span>, <span class="hljs-comment"># Make sure this is set to true.</span>
-modules: [
-  <span class="hljs-string">&quot;js-module&quot;</span>,
-],
-resources: [
-  example <span class="hljs-comment"># We put the name of our resouce we created here</span>
-],
-tags: [<span class="hljs-string">&quot;Freeroam&quot;</span>],
+<pre class="language-"><code class="lang-sh">name: <span class="token string">&quot;TestServer&quot;</span>,
+host: <span class="token string">&quot;0.0.0.0&quot;</span>, <span class="token comment"># Leave this alone. 4 0&apos;s binds to ANY IP ADDRESS.</span>
+port: <span class="token number">7788</span>,
+players: <span class="token number">1024</span>,
+<span class="token comment">#password: &quot;verysecurepassword&quot;,</span>
+announce: false,
+<span class="token comment">#token: no-token,</span>
+gamemode: <span class="token string">&quot;Freeroam&quot;</span>,
+website: <span class="token string">&quot;test.com&quot;</span>,
+language: <span class="token string">&quot;en&quot;</span>,
+description: <span class="token string">&quot;test&quot;</span>,
+debug: true, <span class="token comment"># Make sure this is set to true.</span>
+modules: <span class="token punctuation">[</span>
+  <span class="token string">&quot;js-module&quot;</span>,
+<span class="token punctuation">]</span>,
+resources: <span class="token punctuation">[</span>
+  example <span class="token comment"># We put the name of our resouce we created here</span>
+<span class="token punctuation">]</span>,
+tags: <span class="token punctuation">[</span><span class="token string">&quot;Freeroam&quot;</span><span class="token punctuation">]</span>,
 </code></pre>
 <p>Inside of <code>resources: []</code> we put the name of our resource, which we created in the <a href="006.html">previous article</a>. We used <code>example</code> so will put that in above.</p>
 <p><em>The name needs to match what your called your resource or it will not work!</em></p>
@@ -2617,7 +2621,7 @@ tags: [<span class="hljs-string">&quot;Freeroam&quot;</span>],
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"007 - Adding a Resource","description":"How to add a resource to your server.","prefix":"[Bootcamp]","level":"1.4.7","depth":2,"next":{"title":"008 - Understanding VSCode & Javascript","level":"1.4.8","depth":2,"path":"docs/articles/bootcamp/008.md","ref":"docs/articles/bootcamp/008.md","articles":[]},"previous":{"title":"006 - Creating a Resource","level":"1.4.6","depth":2,"path":"docs/articles/bootcamp/006.md","ref":"docs/articles/bootcamp/006.md","articles":[]},"dir":"ltr"},"config":{"plugins":["gitbook-plugin-expandable-contract-chapters","honkit-plugin-sitemap","honkit-plugin-robots"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"honkit-plugin-robots":{},"search":{},"robots":{"data":["User-agent: *","Disallow:"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"gitbook-plugin-expandable-contract-chapters":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"url":"https://altv.stuyk.com"},"honkit-plugin-sitemap":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"alt:V Unofficial Docs","gitbook":"*","description":"The unofficial documentation for alt:V's Javascript Modules."},"file":{"path":"docs/articles/bootcamp/007.md","mtime":"2021-03-16T14:10:39.591Z","type":"markdown"},"gitbook":{"version":"3.6.17","time":"2021-03-16T14:10:57.364Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"007 - Adding a Resource","description":"How to add a resource to your server.","prefix":"[Bootcamp]","level":"1.4.7","depth":2,"next":{"title":"008 - Understanding VSCode & Javascript","level":"1.4.8","depth":2,"path":"docs/articles/bootcamp/008.md","ref":"docs/articles/bootcamp/008.md","articles":[]},"previous":{"title":"006 - Creating a Resource","level":"1.4.6","depth":2,"path":"docs/articles/bootcamp/006.md","ref":"docs/articles/bootcamp/006.md","articles":[]},"dir":"ltr"},"config":{"plugins":["gitbook-plugin-expandable-contract-chapters","-highlight","prism","honkit-plugin-sitemap","honkit-plugin-robots","honkit-plugin-theme-osiris"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"honkit-plugin-robots":{},"search":{},"robots":{"data":["User-agent: *","Disallow:"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"gitbook-plugin-expandable-contract-chapters":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"url":"https://altv.stuyk.com"},"honkit-plugin-theme-osiris":{},"honkit-plugin-sitemap":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"alt:V Unofficial Docs","gitbook":"*","description":"The unofficial documentation for alt:V's Javascript Modules."},"file":{"path":"docs/articles/bootcamp/007.md","mtime":"2021-03-16T16:43:40.824Z","type":"markdown"},"gitbook":{"version":"3.6.17","time":"2021-03-16T16:43:53.318Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -2695,6 +2699,6 @@ tags: [<span class="hljs-string">&quot;Freeroam&quot;</span>],
         
     
 
+        <script src="https://cdn.jsdelivr.net/npm/less@3.13" ></script>
     </body>
 </html>
-

@@ -20,7 +20,11 @@
                 
             
                 
-                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-honkit-plugin-theme-osiris/osiris.css">
                 
             
                 
@@ -2548,37 +2552,37 @@
 <p>We&apos;re going to need to import the <code>chat</code> file on both the <code>server-side</code> and <code>client-side</code>. Each folder has their own respective <code>chat</code> file to import. This can be done by editing the <code>startup.js</code> file for each folder and the doing a simple import. See the reference image below to see if your file structure is correct.</p>
 <p><img src="https://i.imgur.com/stkPNq1.png" alt></p>
 <p><strong>Client Side</strong></p>
-<pre><code class="lang-js"><span class="hljs-comment">/// &lt;reference types=&quot;@altv/types-client&quot; /&gt;</span>
-<span class="hljs-comment">/// &lt;reference types=&quot;@altv/types-natives&quot; /&gt;</span>
-<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> alt <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;alt-client&apos;</span>;
-<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> native <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;natives&apos;</span>;
-<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;./chat&apos;</span>;
+<pre class="language-"><code class="lang-js"><span class="token comment">/// &lt;reference types=&quot;@altv/types-client&quot; /&gt;</span>
+<span class="token comment">/// &lt;reference types=&quot;@altv/types-natives&quot; /&gt;</span>
+<span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> alt <span class="token keyword">from</span> <span class="token string">&apos;alt-client&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> native <span class="token keyword">from</span> <span class="token string">&apos;natives&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">&apos;./chat&apos;</span><span class="token punctuation">;</span>
 
-alt.log(<span class="hljs-string">&apos;Hello from client&apos;</span>);
+alt<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;Hello from client&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p>We&apos;ll need to make some additional changes to <code>client-side</code> code because the <code>chat</code> resource is slightly out of date.</p>
 <p>Open <code>chat.js</code> in the <code>client</code> folder.</p>
 <p>Change the following line:</p>
-<pre><code class="lang-js"><span class="hljs-keyword">let</span> view = <span class="hljs-keyword">new</span> alt.WebView(<span class="hljs-string">&apos;http://resources/chat/html/index.html&apos;</span>);
+<pre class="language-"><code class="lang-js"><span class="token keyword">let</span> view <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">alt<span class="token punctuation">.</span>WebView</span><span class="token punctuation">(</span><span class="token string">&apos;http://resources/chat/html/index.html&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p>To</p>
-<pre><code class="lang-js"><span class="hljs-keyword">let</span> view = <span class="hljs-keyword">new</span> alt.WebView(<span class="hljs-string">&apos;http://resource/client/html/index.html&apos;</span>);
+<pre class="language-"><code class="lang-js"><span class="token keyword">let</span> view <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">alt<span class="token punctuation">.</span>WebView</span><span class="token punctuation">(</span><span class="token string">&apos;http://resource/client/html/index.html&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p><strong>Server Side</strong></p>
-<pre><code class="lang-js"><span class="hljs-comment">/// &lt;reference types=&quot;@altv/types-server&quot; /&gt;</span>
-<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> alt <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;alt-server&apos;</span>;
-<span class="hljs-keyword">import</span> chat <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./chat&apos;</span>;
+<pre class="language-"><code class="lang-js"><span class="token comment">/// &lt;reference types=&quot;@altv/types-server&quot; /&gt;</span>
+<span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> alt <span class="token keyword">from</span> <span class="token string">&apos;alt-server&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> chat <span class="token keyword">from</span> <span class="token string">&apos;./chat&apos;</span><span class="token punctuation">;</span>
 
-alt.log(<span class="hljs-string">&apos;Hello from server&apos;</span>);
-alt.on(<span class="hljs-string">&apos;playerConnect&apos;</span>, handleConnect);
+alt<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;Hello from server&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+alt<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">&apos;playerConnect&apos;</span><span class="token punctuation">,</span> handleConnect<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p>We&apos;ll also need to make an additional change to <code>server-side</code> code for the <code>chat</code> resource. This is to enable better handling of arguments on the recieving end when we are writing our commands.</p>
 <p>Open <code>chat.js</code> in the <code>server</code> folder.</p>
 <p>Change the following line:</p>
-<pre><code class="lang-js">callback(player, args);
+<pre class="language-"><code class="lang-js"><span class="token function">callback</span><span class="token punctuation">(</span>player<span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p>To:</p>
-<pre><code class="lang-js">callback(player, ...args);
+<pre class="language-"><code class="lang-js"><span class="token function">callback</span><span class="token punctuation">(</span>player<span class="token punctuation">,</span> <span class="token operator">...</span>args<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p><em>The above change enables better handling of arguments.</em></p>
 <h2 id="test-the-resource">Test the Resource</h2>
@@ -2640,7 +2644,7 @@ alt.on(<span class="hljs-string">&apos;playerConnect&apos;</span>, handleConnect
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"012 - Installing a Chat Resource","description":"How to install the alt:V Chat Resource","prefix":"[Bootcamp]","level":"1.4.12","depth":2,"next":{"title":"013 - Writing Commands","level":"1.4.13","depth":2,"path":"docs/articles/bootcamp/013.md","ref":"docs/articles/bootcamp/013.md","articles":[]},"previous":{"title":"011 - Spawning a Vehicle","level":"1.4.11","depth":2,"path":"docs/articles/bootcamp/011.md","ref":"docs/articles/bootcamp/011.md","articles":[]},"dir":"ltr"},"config":{"plugins":["gitbook-plugin-expandable-contract-chapters","honkit-plugin-sitemap","honkit-plugin-robots"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"honkit-plugin-robots":{},"search":{},"robots":{"data":["User-agent: *","Disallow:"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"gitbook-plugin-expandable-contract-chapters":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"url":"https://altv.stuyk.com"},"honkit-plugin-sitemap":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"alt:V Unofficial Docs","gitbook":"*","description":"The unofficial documentation for alt:V's Javascript Modules."},"file":{"path":"docs/articles/bootcamp/012.md","mtime":"2021-03-16T14:10:39.591Z","type":"markdown"},"gitbook":{"version":"3.6.17","time":"2021-03-16T14:10:57.364Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"012 - Installing a Chat Resource","description":"How to install the alt:V Chat Resource","prefix":"[Bootcamp]","level":"1.4.12","depth":2,"next":{"title":"013 - Writing Commands","level":"1.4.13","depth":2,"path":"docs/articles/bootcamp/013.md","ref":"docs/articles/bootcamp/013.md","articles":[]},"previous":{"title":"011 - Spawning a Vehicle","level":"1.4.11","depth":2,"path":"docs/articles/bootcamp/011.md","ref":"docs/articles/bootcamp/011.md","articles":[]},"dir":"ltr"},"config":{"plugins":["gitbook-plugin-expandable-contract-chapters","-highlight","prism","honkit-plugin-sitemap","honkit-plugin-robots","honkit-plugin-theme-osiris"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"honkit-plugin-robots":{},"search":{},"robots":{"data":["User-agent: *","Disallow:"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"gitbook-plugin-expandable-contract-chapters":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"url":"https://altv.stuyk.com"},"honkit-plugin-theme-osiris":{},"honkit-plugin-sitemap":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"alt:V Unofficial Docs","gitbook":"*","description":"The unofficial documentation for alt:V's Javascript Modules."},"file":{"path":"docs/articles/bootcamp/012.md","mtime":"2021-03-16T16:43:40.824Z","type":"markdown"},"gitbook":{"version":"3.6.17","time":"2021-03-16T16:43:53.318Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -2718,6 +2722,6 @@ alt.on(<span class="hljs-string">&apos;playerConnect&apos;</span>, handleConnect
         
     
 
+        <script src="https://cdn.jsdelivr.net/npm/less@3.13" ></script>
     </body>
 </html>
-

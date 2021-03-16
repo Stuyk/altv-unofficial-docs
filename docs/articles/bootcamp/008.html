@@ -20,7 +20,11 @@
                 
             
                 
-                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-honkit-plugin-theme-osiris/osiris.css">
                 
             
                 
@@ -2539,10 +2543,10 @@
 <p>Now inside of VSCode you should see your entire file library on the left-hand side and should see two different <code>startup.js</code> files. We&apos;ll be working mainly in the <code>server</code> file as this controls what happens to a player.</p>
 <h2 id="using-intellisense">Using Intellisense</h2>
 <p>Open <code>server/startup.js</code> and take a look at the code block you wrote earlier in this tutorial.</p>
-<pre><code class="lang-js"><span class="hljs-comment">/// &lt;reference types=&quot;@altv/types-server&quot; /&gt;</span>
-<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> alt <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;alt-server&apos;</span>;
+<pre class="language-"><code class="lang-js"><span class="token comment">/// &lt;reference types=&quot;@altv/types-server&quot; /&gt;</span>
+<span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> alt <span class="token keyword">from</span> <span class="token string">&apos;alt-server&apos;</span><span class="token punctuation">;</span>
 
-alt.log(<span class="hljs-string">&apos;Hello from server&apos;</span>);
+alt<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;Hello from server&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p>Start by typing <code>alt.on</code> anywhere below the <code>imports</code>.</p>
 <p><em>You should see an auto-completion box with information</em></p>
@@ -2551,29 +2555,29 @@ alt.log(<span class="hljs-string">&apos;Hello from server&apos;</span>);
 <p><img src="https://i.imgur.com/hJnlnad.png" alt></p>
 <h2 id="functions">Functions</h2>
 <p>If you are new to development and you do not know what a function is. They are very simple and easy to understand. <code>Functions</code> are what we call to <code>execute a block of code</code>. <code>Functions</code> may also <code>take</code> what we call <code>parameters</code>.</p>
-<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sayHello</span>(<span class="hljs-params"></span>) </span>{
-    alt.log(<span class="hljs-string">&apos;I am saying hello&apos;</span>);
-}
+<pre class="language-"><code class="lang-js"><span class="token keyword">function</span> <span class="token function">sayHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    alt<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;I am saying hello&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-sayHello(); <span class="hljs-comment">// This executes the above function.</span>
+<span class="token function">sayHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// This executes the above function.</span>
 </code></pre>
-<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sayMyName</span>(<span class="hljs-params">someName, someAge, someHairColor</span>) </span>{
-    alt.log(someName);
-    alt.log(someAge);
-    alt.log(<span class="hljs-string">`Hair Color is: <span class="hljs-subst">${someHairColor}</span>`</span>); <span class="hljs-comment">// String Interpolation</span>
-}
+<pre class="language-"><code class="lang-js"><span class="token keyword">function</span> <span class="token function">sayMyName</span><span class="token punctuation">(</span><span class="token parameter">someName<span class="token punctuation">,</span> someAge<span class="token punctuation">,</span> someHairColor</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    alt<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>someName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>someAge<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    alt<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Hair Color is: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>someHairColor<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// String Interpolation</span>
+<span class="token punctuation">}</span>
 
-sayMyName(<span class="hljs-string">&apos;stuyk&apos;</span>, <span class="hljs-number">27</span>, <span class="hljs-string">&apos;Brown&apos;</span>);
+<span class="token function">sayMyName</span><span class="token punctuation">(</span><span class="token string">&apos;stuyk&apos;</span><span class="token punctuation">,</span> <span class="token number">27</span><span class="token punctuation">,</span> <span class="token string">&apos;Brown&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <h2 id="properties">Properties</h2>
 <p><code>Properties</code> are single variables that can have their values <code>read</code> or <code>set</code>. However, this is dependent on the property.</p>
-<pre><code class="lang-js">alt.log(alt.globalDimension); <span class="hljs-comment">// This is reading the alt.globalDimension prop.</span>
+<pre class="language-"><code class="lang-js">alt<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>alt<span class="token punctuation">.</span>globalDimension<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// This is reading the alt.globalDimension prop.</span>
 </code></pre>
-<pre><code class="lang-js">alt.globalDimension = <span class="hljs-number">5</span>; <span class="hljs-comment">// This is setting the alt.globalDimension prop.</span>
+<pre class="language-"><code class="lang-js">alt<span class="token punctuation">.</span>globalDimension <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span> <span class="token comment">// This is setting the alt.globalDimension prop.</span>
 </code></pre>
 <h2 id="classes">Classes</h2>
 <p>A <code>class</code> almost always starts with <code>new</code>. Classes are basically an <code>object</code> with a bunch of <code>functions</code> and <code>properties</code> that are accessible from within the class. A <code>Player</code>, <code>Vehicle</code>, <code>ColShape</code>, etc. are all classes.</p>
-<pre><code class="lang-js"><span class="hljs-keyword">const</span> vehicle = <span class="hljs-keyword">new</span> alt.Vehicle(<span class="hljs-string">&apos;infernus&apos;</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> vehicle <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">alt<span class="token punctuation">.</span>Vehicle</span><span class="token punctuation">(</span><span class="token string">&apos;infernus&apos;</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <h2 id="enums">Enums</h2>
 <p>Enums are mostly unique to <code>TypeScript</code> but we can leverage those types in Javascript by extracting values from there. When you type something like <code>alt.ExplosionType.Barrel</code> you can hover over it to get the value that it&apos;s meant to be. In this case it&apos;s <code>27</code>.</p>
@@ -2632,7 +2636,7 @@ sayMyName(<span class="hljs-string">&apos;stuyk&apos;</span>, <span class="hljs-
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"008 - Understanding VSCode & Javascript","description":"Understanding what VSCode is telling you and general Javascript information.","prefix":"[Bootcamp]","level":"1.4.8","depth":2,"next":{"title":"009 - Spawning the Player","level":"1.4.9","depth":2,"path":"docs/articles/bootcamp/009.md","ref":"docs/articles/bootcamp/009.md","articles":[]},"previous":{"title":"007 - Adding a Resource","level":"1.4.7","depth":2,"path":"docs/articles/bootcamp/007.md","ref":"docs/articles/bootcamp/007.md","articles":[]},"dir":"ltr"},"config":{"plugins":["gitbook-plugin-expandable-contract-chapters","honkit-plugin-sitemap","honkit-plugin-robots"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"honkit-plugin-robots":{},"search":{},"robots":{"data":["User-agent: *","Disallow:"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"gitbook-plugin-expandable-contract-chapters":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"url":"https://altv.stuyk.com"},"honkit-plugin-sitemap":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"alt:V Unofficial Docs","gitbook":"*","description":"The unofficial documentation for alt:V's Javascript Modules."},"file":{"path":"docs/articles/bootcamp/008.md","mtime":"2021-03-16T14:10:39.591Z","type":"markdown"},"gitbook":{"version":"3.6.17","time":"2021-03-16T14:10:57.364Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"008 - Understanding VSCode & Javascript","description":"Understanding what VSCode is telling you and general Javascript information.","prefix":"[Bootcamp]","level":"1.4.8","depth":2,"next":{"title":"009 - Spawning the Player","level":"1.4.9","depth":2,"path":"docs/articles/bootcamp/009.md","ref":"docs/articles/bootcamp/009.md","articles":[]},"previous":{"title":"007 - Adding a Resource","level":"1.4.7","depth":2,"path":"docs/articles/bootcamp/007.md","ref":"docs/articles/bootcamp/007.md","articles":[]},"dir":"ltr"},"config":{"plugins":["gitbook-plugin-expandable-contract-chapters","-highlight","prism","honkit-plugin-sitemap","honkit-plugin-robots","honkit-plugin-theme-osiris"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"honkit-plugin-robots":{},"search":{},"robots":{"data":["User-agent: *","Disallow:"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"gitbook-plugin-expandable-contract-chapters":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"url":"https://altv.stuyk.com"},"honkit-plugin-theme-osiris":{},"honkit-plugin-sitemap":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"alt:V Unofficial Docs","gitbook":"*","description":"The unofficial documentation for alt:V's Javascript Modules."},"file":{"path":"docs/articles/bootcamp/008.md","mtime":"2021-03-16T16:43:40.824Z","type":"markdown"},"gitbook":{"version":"3.6.17","time":"2021-03-16T16:43:53.318Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -2710,6 +2714,6 @@ sayMyName(<span class="hljs-string">&apos;stuyk&apos;</span>, <span class="hljs-
         
     
 
+        <script src="https://cdn.jsdelivr.net/npm/less@3.13" ></script>
     </body>
 </html>
-
