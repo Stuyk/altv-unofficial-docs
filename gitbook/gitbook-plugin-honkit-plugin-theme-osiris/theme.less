@@ -24,6 +24,14 @@
     }
 }
 
+.page-inner {
+    max-width: unset !important;
+}
+
+li {
+    color: @text !important;
+}
+
 .book-body {
     background: none !important;
     color: @foreground !important;
@@ -80,6 +88,26 @@ h6 {
 
 p {
     color: @text !important;
+}
+
+.markdown-section code {
+    background-color: transparent !important;
+}
+
+.markdown-section table {
+    border: transparent !important;
+}
+
+.markdown-section table tr {
+    background-color: rgba(0, 0, 0, 0.2) !important;
+    color: @text !important;
+    border: transparent !important;
+
+    &:nth-child(odd) {
+        background-color: rgba(0, 0, 0, 0.4) !important;
+        color: @text !important;
+        border: transparent !important;
+    }
 }
 
 ::-webkit-scrollbar {

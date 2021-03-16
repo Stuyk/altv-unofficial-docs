@@ -14,6 +14,12 @@
 .book-header h1 {
   display: none !important;
 }
+.page-inner {
+  max-width: unset !important;
+}
+li {
+  color: #eeeeee !important;
+}
 .book-body {
   background: none !important;
   color: #e0e0e0 !important;
@@ -60,6 +66,22 @@ h6 {
 }
 p {
   color: #eeeeee !important;
+}
+.markdown-section code {
+  background-color: transparent !important;
+}
+.markdown-section table {
+  border: transparent !important;
+}
+.markdown-section table tr {
+  background-color: rgba(0, 0, 0, 0.2) !important;
+  color: #eeeeee !important;
+  border: transparent !important;
+}
+.markdown-section table tr:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.4) !important;
+  color: #eeeeee !important;
+  border: transparent !important;
 }
 ::-webkit-scrollbar {
   width: 8px;
