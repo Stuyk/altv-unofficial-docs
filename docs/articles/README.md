@@ -6,16 +6,14 @@ prefix: '[Article]'
 
 [<-- Back to Welcome](../README.md)
 
-<img src="https://i.imgur.com/CArM62I.png" height="100" align="right">&nbsp;&nbsp;
-
 # Articles
 
 Here are some places you can visit to get some more information.
 
--   [Bootcamp](./bootcamp/index.md)
+-   [Bootcamp](./bootcamp/README.md)
 -   [Getting Started with alt:V Development](./getting-started.md)
--   [Client](./client/index.md)
--   [Concepts](./concepts/index.md)
--   [Server](./server/index.md)
--   [Snippets](./snippets/index.md)
--   [Tables](./tables/index.md)
+-   [Client](./client/README.md)
+-   [Concepts](./concepts/README.md)
+-   [Server](./server/README.md)
+-   [Snippets](./snippets/README.md)
+-   [Tables](./tables/README.md)

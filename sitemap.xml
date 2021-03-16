@@ -72,10 +72,9 @@
 <url> <loc>https://altv.stuyk.com/docs/articles/concepts/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://altv.stuyk.com/docs/articles/concepts/radians-degrees.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://altv.stuyk.com/docs/articles/concepts/ragemp-migration.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://altv.stuyk.com/docs/articles/concepts/server-events.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://altv.stuyk.com/docs/articles/concepts/understanding-script-id.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://altv.stuyk.com/docs/articles/concepts/using-events.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>https://altv.stuyk.com/docs/articles/server/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>https://altv.stuyk.com/docs/articles/server/server-events.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://altv.stuyk.com/docs/articles/snippets/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://altv.stuyk.com/docs/articles/snippets/cayo-period-island.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://altv.stuyk.com/docs/articles/snippets/flickering-webview.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
