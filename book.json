@@ -1,13 +1,23 @@
 {
     "title": "alt:V Unofficial Docs",
     "description": "The unofficial documentation for alt:V's Javascript Modules.",
-    "plugins": ["gitbook-plugin-expandable-contract-chapters", "honkit-plugin-sitemap", "honkit-plugin-robots"],
+    "plugins": [
+        "gitbook-plugin-expandable-contract-chapters",
+        "-highlight",
+        "prism",
+        "honkit-plugin-sitemap",
+        "honkit-plugin-robots",
+        "honkit-plugin-theme-osiris"
+    ],
     "pluginsConfig": {
         "sitemap": {
             "url": "https://altv.stuyk.com"
         },
         "robots": {
             "data": ["User-agent: *", "Disallow:"]
+        },
+        "prism": {
+            "css": ["prismjs/themes/prism-okaidia.css"]
         }
     }
 }

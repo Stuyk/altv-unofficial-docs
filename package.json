@@ -14,11 +14,13 @@
     "license": "ISC",
     "devDependencies": {
         "gitbook-plugin-expandable-contract-chapters": "^1.0.2",
+        "gitbook-plugin-prism": "^2.4.0",
         "glob": "^7.1.6",
         "gray-matter-from-file": "^1.0.6",
         "honkit": "^3.6.17",
         "honkit-plugin-robots": "^1.0.1",
-        "honkit-plugin-sitemap": "^1.0.2"
+        "honkit-plugin-sitemap": "^1.0.2",
+        "honkit-plugin-theme-osiris": "^1.0.1"
     },
     "prettier": {
         "tabWidth": 4,

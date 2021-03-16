@@ -4,8 +4,6 @@ description: "The unofficial documentation for alt:V's Javascript Modules."
 prefix: "[!!!]"
 ---
 
-<img src="https://i.imgur.com/0aXCU9X.gif" height="150" align="right">&nbsp;&nbsp;<h1>alt:V Unofficial Documentation</h1>
-
 ## 📝 Getting Started
 
 It is highly recommended that you start with the Bootcamp.
