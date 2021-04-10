@@ -72,6 +72,7 @@
 <url> <loc>https://altv.stuyk.com/docs/articles/concepts/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://altv.stuyk.com/docs/articles/concepts/import-native.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://altv.stuyk.com/docs/articles/concepts/importing-alt.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://altv.stuyk.com/docs/articles/concepts/mongodb-guide.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://altv.stuyk.com/docs/articles/concepts/radians-degrees.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://altv.stuyk.com/docs/articles/concepts/ragemp-migration.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://altv.stuyk.com/docs/articles/concepts/server-events.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
