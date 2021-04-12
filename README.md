@@ -28,3 +28,15 @@ The goal with this was to make contributing so easy that you just make a pull re
 -   [Official alt:V Natives](https://natives.altv.mp/)
 -   [Official alt:V Docs](https://docs.altv.mp/)
 -   [NodeJS Download](https://nodejs.org/en/download/)
+
+## 💲 Brave Verified Publisher
+
+Want to earn passive income just by browsing websites? 
+
+Start using the privacy enabled browser called [Brave](https://brave.com/download/).
+
+Using brave supports the unofficial documentation and you.
+
+## ❤️ Need a Roleplay Gamemode Fast?
+
+If you're looking for an easy base roleplay gamemode to start out with check out the [Athena Framework](https://gtavathena.com/)
