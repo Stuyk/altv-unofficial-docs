@@ -65,6 +65,13 @@ const categories = [
         name: "Natives",
         pages: [],
     },
+    // Mapping
+    {
+        pageIdentifier: "/mapping/",
+        filePath: "docs/mapping/README.md",
+        name: "Mapping",
+        pages: [],
+    }
 ];
 
 if (fs.existsSync("SUMMARY.md")) {
