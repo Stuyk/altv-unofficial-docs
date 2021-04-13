@@ -86,7 +86,7 @@
 <url> <loc>https://altv.stuyk.com/docs/articles/snippets/help-text.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://altv.stuyk.com/docs/articles/snippets/markers.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://altv.stuyk.com/docs/articles/snippets/notifications.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>https://altv.stuyk.com/docs/articles/snippets/password-encryption.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://altv.stuyk.com/docs/articles/snippets/password-hashing.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://altv.stuyk.com/docs/articles/snippets/player-spotlight.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://altv.stuyk.com/docs/articles/snippets/prototyping.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://altv.stuyk.com/docs/articles/snippets/request-model.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
