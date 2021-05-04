@@ -8,7 +8,8 @@
         "honkit-plugin-sitemap",
         "honkit-plugin-robots",
         "honkit-plugin-theme-osiris",
-        "honkit-plugin-google-analytics"
+        "honkit-plugin-google-analytics",
+        "honkit-plugin-adsense"
     ],
     "pluginsConfig": {
         "sitemap": {
@@ -22,6 +23,10 @@
         },
         "analytics": {
             "uid": "UA-83296585-4"
+        },
+        "adsense": {
+            "client": "ca-pub-3314445478682546",
+            "slot": "7102610497"
         }
     }
 }
