@@ -39,6 +39,7 @@
 <url> <loc>https://altv.stuyk.com/docs/altClient/clearNextTick.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://altv.stuyk.com/docs/altClient/clearTimeout.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://altv.stuyk.com/docs/altClient/doesConfigFlagExist.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://altv.stuyk.com/docs/altClient/emit.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://altv.stuyk.com/docs/altClient/emitServer.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://altv.stuyk.com/docs/altClient/everyTick.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://altv.stuyk.com/docs/altClient/gameControlsEnabled.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
