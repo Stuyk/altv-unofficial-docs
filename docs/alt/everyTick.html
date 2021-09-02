@@ -358,7 +358,33 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.19" data-path="on.html">
+        <li class="chapter " data-level="1.2.19" data-path="off.html">
+            
+                <a href="off.html">
+            
+                    
+                    [S] alt.off
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.20" data-path="offClient.html">
+            
+                <a href="offClient.html">
+            
+                    
+                    [S] alt.offClient
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.21" data-path="on.html">
             
                 <a href="on.html">
             
@@ -371,7 +397,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.20" data-path="once.html">
+        <li class="chapter " data-level="1.2.22" data-path="once.html">
             
                 <a href="once.html">
             
@@ -384,7 +410,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.21" data-path="onceClient.html">
+        <li class="chapter " data-level="1.2.23" data-path="onceClient.html">
             
                 <a href="onceClient.html">
             
@@ -397,7 +423,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.22" data-path="onClient.html">
+        <li class="chapter " data-level="1.2.24" data-path="onClient.html">
             
                 <a href="onClient.html">
             
@@ -410,7 +436,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.23" data-path="restartResource.html">
+        <li class="chapter " data-level="1.2.25" data-path="restartResource.html">
             
                 <a href="restartResource.html">
             
@@ -423,7 +449,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.24" data-path="setInterval.html">
+        <li class="chapter " data-level="1.2.26" data-path="setInterval.html">
             
                 <a href="setInterval.html">
             
@@ -436,7 +462,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.25" data-path="setPassword.html">
+        <li class="chapter " data-level="1.2.27" data-path="setPassword.html">
             
                 <a href="setPassword.html">
             
@@ -449,7 +475,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.26" data-path="setTimeout.html">
+        <li class="chapter " data-level="1.2.28" data-path="setTimeout.html">
             
                 <a href="setTimeout.html">
             
@@ -462,7 +488,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.27" data-path="startResource.html">
+        <li class="chapter " data-level="1.2.29" data-path="startResource.html">
             
                 <a href="startResource.html">
             
@@ -475,7 +501,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.28" data-path="stopResource.html">
+        <li class="chapter " data-level="1.2.30" data-path="stopResource.html">
             
                 <a href="stopResource.html">
             
@@ -488,7 +514,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.29" data-path="version.html">
+        <li class="chapter " data-level="1.2.31" data-path="version.html">
             
                 <a href="version.html">
             
@@ -4163,10 +4189,13 @@
                                 <h1 id="alteverytick">alt.everyTick</h1>
 <p>A very heavy event loop that is triggered roughly every 1-2ms. Meaning that it will absolutely obliterate your console if you log something inside of it.</p>
 <p>Best practice is to not use this on server-side unless it makes sense for your game mode. In most cases this is not true.</p>
-<h2 id="usage">Usage</h2>
+<h3 id="declaration">Declaration</h3>
+<pre class="language-"><code class="lang-typescript">alt<span class="token punctuation">.</span><span class="token function">everyTick</span><span class="token punctuation">(</span><span class="token function-variable function">handler</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token operator">...</span>args<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">void</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">number</span>
+</code></pre>
+<h3 id="usage">Usage</h3>
 <pre class="language-"><code class="lang-js">alt<span class="token punctuation">.</span><span class="token function">everyTick</span><span class="token punctuation">(</span>someCallbackFunction<span class="token punctuation">)</span>
 </code></pre>
-<h2 id="example-usage">Example Usage</h2>
+<h3 id="example-usage">Example Usage</h3>
 <pre class="language-"><code class="lang-js"><span class="token keyword">function</span> <span class="token function">someCallbackFunction</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;Spamming Console&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
@@ -4217,7 +4246,7 @@ alt<span class="token punctuation">.</span><span class="token function">everyTic
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"[S] alt.everyTick","description":"Schedules execution of handler on every frame.","prefix":"[Server]","level":"1.2.8","depth":2,"next":{"title":"[S] alt.getNetTime","level":"1.2.9","depth":2,"path":"docs/alt/getNetTime.md","ref":"docs/alt/getNetTime.md","articles":[]},"previous":{"title":"[S] alt.emitClient","level":"1.2.7","depth":2,"path":"docs/alt/emitClient.md","ref":"docs/alt/emitClient.md","articles":[]},"dir":"ltr"},"config":{"plugins":["gitbook-plugin-expandable-contract-chapters","prism","-highlight","honkit-plugin-sitemap","honkit-plugin-robots","honkit-plugin-theme-darkening","honkit-plugin-google-analytics"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-funky.css"]},"honkit-plugin-theme-darkening":{},"honkit-plugin-robots":{},"analytics":{"uid":"UA-83296585-4"},"search":{},"robots":{"data":["User-agent: *","Disallow:"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"honkit-plugin-google-analytics":{},"gitbook-plugin-expandable-contract-chapters":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"url":"https://altv.stuyk.com"},"honkit-plugin-sitemap":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"alt:V Unofficial Docs","gitbook":"*","description":"The unofficial documentation for alt:V's Javascript Modules."},"file":{"path":"docs/alt/everyTick.md","mtime":"2021-09-02T19:15:53.548Z","type":"markdown"},"gitbook":{"version":"3.6.17","time":"2021-09-02T19:16:02.360Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"[S] alt.everyTick","description":"Schedules execution of handler on every frame.","prefix":"[Server]","level":"1.2.8","depth":2,"next":{"title":"[S] alt.getNetTime","level":"1.2.9","depth":2,"path":"docs/alt/getNetTime.md","ref":"docs/alt/getNetTime.md","articles":[]},"previous":{"title":"[S] alt.emitClient","level":"1.2.7","depth":2,"path":"docs/alt/emitClient.md","ref":"docs/alt/emitClient.md","articles":[]},"dir":"ltr"},"config":{"plugins":["gitbook-plugin-expandable-contract-chapters","prism","-highlight","honkit-plugin-sitemap","honkit-plugin-robots","honkit-plugin-theme-darkening","honkit-plugin-google-analytics"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-funky.css"]},"honkit-plugin-theme-darkening":{},"honkit-plugin-robots":{},"analytics":{"uid":"UA-83296585-4"},"search":{},"robots":{"data":["User-agent: *","Disallow:"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"honkit-plugin-google-analytics":{},"gitbook-plugin-expandable-contract-chapters":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"url":"https://altv.stuyk.com"},"honkit-plugin-sitemap":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"alt:V Unofficial Docs","gitbook":"*","description":"The unofficial documentation for alt:V's Javascript Modules."},"file":{"path":"docs/alt/everyTick.md","mtime":"2021-09-02T19:40:34.820Z","type":"markdown"},"gitbook":{"version":"3.6.17","time":"2021-09-02T19:40:36.202Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
