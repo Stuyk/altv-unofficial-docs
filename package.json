@@ -1,6 +1,6 @@
 {
     "name": "altv-unofficial-docs",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "",
     "main": "index.js",
     "scripts": {
@@ -22,7 +22,7 @@
         "honkit-plugin-google-analytics": "^1.0.0",
         "honkit-plugin-robots": "^1.0.1",
         "honkit-plugin-sitemap": "^1.0.2",
-        "honkit-plugin-theme-osiris": "^1.0.3"
+        "honkit-plugin-theme-darkening": "^1.0.2"
     },
     "prettier": {
         "tabWidth": 4,

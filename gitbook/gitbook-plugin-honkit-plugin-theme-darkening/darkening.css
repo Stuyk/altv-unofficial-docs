@@ -1,0 +1,174 @@
+.book {
+  background: #0c0c0c !important;
+  font-family: 'Roboto', sans-serif !important;
+}
+.page-inner {
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+.book-header {
+  background: none !important;
+}
+.book-header .dropdown {
+  display: none !important;
+}
+.book-header h1 {
+  display: none !important;
+}
+.page-inner {
+  max-width: unset !important;
+}
+li {
+  color: #eeeeee !important;
+}
+.book-body {
+  background: none !important;
+  color: #e0e0e0 !important;
+}
+.book-summary {
+  background: #080808 !important;
+  color: #e0e0e0 !important;
+}
+.body-inner {
+  background: none !important;
+}
+.navigation-next,
+.navigation-prev {
+  display: none !important;
+}
+.js-toolbar-action .fa {
+  font-size: 16px !important;
+}
+#book-search-input {
+  background: #030303 !important;
+  color: #e0e0e0 !important;
+  font-family: 'Roboto', sans-serif !important;
+}
+#book-search-input input {
+  color: #e0e0e0 !important;
+  opacity: 0.8 !important;
+}
+a {
+  color: #29B6F6 !important;
+  opacity: 1 !important;
+  transition: 0.2s;
+  font-family: 'Roboto', sans-serif !important;
+}
+a:hover {
+  color: #81D4FA !important;
+  opacity: 1 !important;
+  text-decoration: none !important;
+}
+a h1,
+a h2,
+a h3,
+a h4,
+a h5,
+a h6 {
+  color: #29B6F6 !important;
+  opacity: 1 !important;
+  font-weight: bold;
+  transition: 0.2s;
+}
+a h1:hover,
+a h2:hover,
+a h3:hover,
+a h4:hover,
+a h5:hover,
+a h6:hover {
+  color: #81D4FA !important;
+  opacity: 1 !important;
+  text-decoration: none !important;
+}
+.gitbook-link {
+  display: none !important;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #e0e0e0 !important;
+  font-family: 'Roboto', sans-serif !important;
+}
+p {
+  color: #afafaf !important;
+  font-family: 'Roboto', sans-serif !important;
+}
+.markdown-section code {
+  background-color: transparent !important;
+}
+.markdown-section table {
+  border: transparent !important;
+}
+.markdown-section table tr {
+  background-color: rgba(0, 0, 0, 0.2) !important;
+  color: #eeeeee !important;
+  border: transparent !important;
+}
+.markdown-section table tr:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.4) !important;
+  color: #eeeeee !important;
+  border: transparent !important;
+}
+ul li a {
+  color: #afafaf !important;
+  font-weight: bold !important;
+}
+pre {
+  border: 2px solid #161616 !important;
+  border-radius: 6px !important;
+  background: #060606 !important;
+}
+.language,
+.code,
+code[class*="language-"],
+.markdown-section,
+code[class*="language-"],
+pre[class*="language-"] {
+  font-family: 'Fira Code', monospace !important;
+}
+.markdown-section {
+  color: #ABB2BF !important;
+}
+.language- {
+  color: #ABB2BF !important;
+}
+.markdown-section code {
+  color: #ABB2BF !important;
+}
+.function,
+.punctuation {
+  color: #61AFEF !important;
+}
+.class-name {
+  color: #BF3015 !important;
+}
+.parameter {
+  color: #ABB2BF !important;
+}
+.string {
+  color: #98C359 !important;
+}
+.number {
+  color: #D19A66 !important;
+}
+.keyword {
+  color: #C678D0 !important;
+}
+.operator {
+  color: #3BB6C2 !important;
+}
+::-webkit-scrollbar {
+  width: 12px;
+  background: rgba(20, 20, 20, 0.85);
+  box-shadow: -1px 0px 0px 0px rgba(0, 0, 0, 0.25);
+}
+::-webkit-scrollbar-thumb {
+  background: #646464;
+  box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.1);
+}
+::-webkit-scrollbar-thumb:hover {
+  cursor: pointer !important;
+}

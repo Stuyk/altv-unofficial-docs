@@ -2,9 +2,12 @@
 @foreground: #e0e0e0;
 @link: #eee;
 @text: #eeeeee;
+@hover: #81D4FA;
+@link: #29B6F6;
 
 .book {
-    background: @background url(./bg.png) !important;
+    background: rgba(12, 12, 12, 1) !important;
+    font-family: 'Roboto', sans-serif !important;
 }
 
 .page-inner {
@@ -38,8 +41,8 @@ li {
 }
 
 .book-summary {
-    background: rgba(37, 37, 37, 0.7) !important;
-    color: @foreground im !important;
+    background: rgba(8, 8, 8, 1) !important;
+    color: @foreground !important;
 }
 
 .body-inner {
@@ -51,9 +54,14 @@ li {
     display: none !important;
 }
 
+.js-toolbar-action .fa {
+    font-size: 16px !important;
+}
+
 #book-search-input {
-    background: rgba(0, 0, 0, 0.5) !important;
+    background: rgba(3, 3, 3, 1) !important;
     color: @foreground !important;
+    font-family: 'Roboto', sans-serif !important;
 
     input {
         color: @foreground !important;
@@ -63,11 +71,25 @@ li {
 
 a {
     color: @link !important;
-    opacity: 0.5 !important;
+    opacity: 1 !important;
+    transition: 0.2s;
+    font-family: 'Roboto', sans-serif !important;
+
+    &:hover {
+        color: @hover !important;
+        opacity: 1 !important;
+        text-decoration: none !important;
+    }
+}
+
+a h1, a h2, a h3, a h4, a h5, a h6 {
+    color: @link !important;
+    opacity: 1 !important;
     font-weight: bold;
     transition: 0.2s;
 
     &:hover {
+        color: @hover !important;
         opacity: 1 !important;
         text-decoration: none !important;
     }
@@ -84,10 +106,12 @@ h4,
 h5,
 h6 {
     color: @foreground !important;
+    font-family: 'Roboto', sans-serif !important;
 }
 
 p {
-    color: @text !important;
+    color: rgb(175, 175, 175) !important;
+    font-family: 'Roboto', sans-serif !important;
 }
 
 .markdown-section code {
@@ -110,8 +134,63 @@ p {
     }
 }
 
+ul li a {
+    color: rgba(175, 175, 175, 1) !important;
+    font-weight: bold !important;
+}
+
+pre {
+    border: 2px solid rgba(22, 22, 22, 1) !important;
+    border-radius: 6px !important;
+    background: rgba(6, 6, 6, 1) !important;
+}
+
+.language, .code, code[class*="language-"], .markdown-section, code[class*="language-"], pre[class*="language-"] {
+    font-family: 'Fira Code', monospace !important;
+}
+
+.markdown-section {
+    color: #ABB2BF !important;
+}
+
+.language- {
+    color: #ABB2BF !important;
+}
+
+.markdown-section code {
+    color: #ABB2BF !important;
+}
+
+.function, .punctuation {
+    color: #61AFEF !important;
+}
+
+.class-name {
+    color: #BF3015 !important;
+}
+
+.parameter {
+    color: #ABB2BF !important;
+}
+
+.string {
+    color: #98C359 !important;
+}
+
+.number {
+    color: #D19A66 !important;
+}
+
+.keyword {
+    color: #C678D0 !important;
+}
+
+.operator {
+    color: #3BB6C2 !important;
+}
+    
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 12px;
     background: rgba(20, 20, 20, 0.85);
     box-shadow: -1px 0px 0px 0px rgba(0, 0, 0, 0.25);
 }
