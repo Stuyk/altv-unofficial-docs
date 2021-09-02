@@ -7,7 +7,7 @@
         "-highlight",
         "honkit-plugin-sitemap",
         "honkit-plugin-robots",
-        "honkit-plugin-theme-osiris",
+        "honkit-plugin-theme-darkening",
         "honkit-plugin-google-analytics"
     ],
     "pluginsConfig": {
@@ -18,7 +18,7 @@
             "data": ["User-agent: *", "Disallow:"]
         },
         "prism": {
-            "css": ["prismjs/themes/prism-okaidia.css"]
+            "css": ["prismjs/themes/prism-funky.css"]
         },
         "analytics": {
             "uid": "UA-83296585-4"
