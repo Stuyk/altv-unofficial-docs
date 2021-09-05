@@ -1,7 +1,32 @@
 ---
-title: 'hasArmoredWindows'
-description: 'Placeholder for hasArmoredWindows'
+title: 'vehicle.hasArmoredWindows'
+description: 'Used to get if the vehicle has armored windows.'
 prefix: '[Server]'
 ---
 
-# hasArmoredWindows
+# hasArmoredWindows()
+
+Used to `get` if the vehicle has armored windows.
+
+Returns a `boolean`.
+
+### Declaration
+
+```typescript
+vehicle.hasArmoredWindows: boolean;
+```
+
+### Usage
+
+```js
+const isArmored = vehicle.hasArmoredWindows;
+```
+
+### Real World Example
+
+```js
+const vehicle = new alt.Vehicle(`elegy`, 0, 0, 0, 0, 0, 0);
+const isArmored = vehicle.hasArmoredWindows;
+```
+
+_These examples assume you have imported `alt` from `alt-server`._

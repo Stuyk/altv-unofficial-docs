@@ -1,6 +1,6 @@
 ---
 title: 'vehicle.customSecondaryColor'
-description: 'Placeholder for customSecondaryColor'
+description: 'Used to set or get the custom primary color of the vehicle.'
 prefix: '[Server]'
 ---
 
