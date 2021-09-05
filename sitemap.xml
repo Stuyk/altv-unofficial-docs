@@ -254,6 +254,7 @@
 <url> <loc>https://altv.stuyk.com/docs/playerClient/visible.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://altv.stuyk.com/docs/vehicle/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://altv.stuyk.com/docs/vehicle/activeRadioStation.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://altv.stuyk.com/docs/vehicle/all.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://altv.stuyk.com/docs/vehicle/bodyAdditionalHealth.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://altv.stuyk.com/docs/vehicle/bodyHealth.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://altv.stuyk.com/docs/vehicle/customPrimaryColor.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
@@ -333,11 +334,11 @@
 <url> <loc>https://altv.stuyk.com/docs/vehicle/setPartBulletHoles.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://altv.stuyk.com/docs/vehicle/setPartDamageLevel.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://altv.stuyk.com/docs/vehicle/setRearWheels.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>https://altv.stuyk.com/docs/vehicle/setRoofOpened.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://altv.stuyk.com/docs/vehicle/setScriptDataBase64.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://altv.stuyk.com/docs/vehicle/setSpecialLightDamaged.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://altv.stuyk.com/docs/vehicle/setWheelBurst.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://altv.stuyk.com/docs/vehicle/setWheelDetached.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://altv.stuyk.com/docs/vehicle/setWheelFixed.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://altv.stuyk.com/docs/vehicle/setWheelHasTire.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://altv.stuyk.com/docs/vehicle/setWheelHealth.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://altv.stuyk.com/docs/vehicle/setWheelOnFire.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
