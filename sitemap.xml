@@ -292,7 +292,6 @@
 <url> <loc>https://altv.stuyk.com/docs/vehicle/headlightColor.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://altv.stuyk.com/docs/vehicle/interiorColor.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://altv.stuyk.com/docs/vehicle/isLightDamaged.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>https://altv.stuyk.com/docs/vehicle/isRoofOpened.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://altv.stuyk.com/docs/vehicle/isSpecialLightDamaged.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://altv.stuyk.com/docs/vehicle/isWheelBurst.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://altv.stuyk.com/docs/vehicle/isWheelDetached.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
@@ -303,6 +302,7 @@
 <url> <loc>https://altv.stuyk.com/docs/vehicle/livery.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://altv.stuyk.com/docs/vehicle/lockState.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://altv.stuyk.com/docs/vehicle/manualEngineControl.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://altv.stuyk.com/docs/vehicle/model.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://altv.stuyk.com/docs/vehicle/modKit.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://altv.stuyk.com/docs/vehicle/modKitsCount.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://altv.stuyk.com/docs/vehicle/neon.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
