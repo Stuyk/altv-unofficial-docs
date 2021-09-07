@@ -116,6 +116,12 @@ ul li a {
   color: #afafaf !important;
   font-weight: bold !important;
 }
+.active {
+  border-left: 2px solid #81D4FA !important;
+}
+.active a {
+  color: #81D4FA !important;
+}
 pre {
   border: 2px solid #161616 !important;
   border-radius: 6px !important;
